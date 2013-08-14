@@ -18,7 +18,7 @@ using namespace std;
 
 int main(int argc, char** argv) {
     
-    GameState *gs = new IntroState();
+    GameState *gs = new RaceState();
     
     
     sf::RenderWindow window(sf::VideoMode(800, 600), "Space Race");
@@ -27,11 +27,8 @@ int main(int argc, char** argv) {
     {
         gs->init();
         while (gs->updateLoop(window));
-        cout << "Changing game state" << endl;
         GameState* freeThis = gs;
         gs = gs->quit();
-        if (gs == NULL)
-            cout << "quit == NULL" << endl;
         delete freeThis;
     }
     

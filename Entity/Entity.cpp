@@ -67,6 +67,11 @@ sf::Vector2f Entity::size()
     return m_size;
 }
 
+sf::FloatRect Entity::hitbox()
+{
+    return sf::FloatRect(m_sprite.getPosition().x, m_sprite.getPosition().y, m_size.x, m_size.y);
+}
+
 void Entity::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
     target.draw(m_sprite);

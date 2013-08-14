@@ -13,6 +13,8 @@
 
 #include <iostream>
 
+using namespace std;
+
 #define SPEED 200
 
 RaceState::RaceState() {
@@ -32,6 +34,7 @@ void RaceState::init()
 
 bool RaceState::updateLoop(sf::RenderWindow& window)
 {
+    cout << "==begin frame==" << endl;
     if (!GameState::updateLoop(window))
         return false;
     else if (sf::Keyboard::isKeyPressed(sf::Keyboard::F1))
@@ -58,20 +61,21 @@ bool RaceState::updateLoop(sf::RenderWindow& window)
     else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
         m_player.move(Down, elapsedTime);
     
-    if (m_elapsedTime >= 0.5)
+    if (m_elapsedTime >= 0.05)
     {
-        mobMgr.createMob();
+        m_mobMgr.createMob();
         m_elapsedTime = 0.0;
     }
     
-    mobMgr.manageMobs(elapsedTime);
+    m_mobMgr.manageMobs(elapsedTime);
     
     window.clear();
     sf::sleep(sf::milliseconds(10));
     window.draw(m_player);
-    window.draw(mobMgr);
+    window.draw(m_mobMgr);
     window.display();
-    
+
+    cout << "==end frame==" << endl;    
     return m_loopAgain;
 }
 

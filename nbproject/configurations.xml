@@ -12,6 +12,10 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <logicalFolder name="f4" displayName="Collider" projectFiles="true">
+        <itemPath>../SpaceRace/Collider/Collider.cpp</itemPath>
+        <itemPath>../SpaceRace/Collider/Collider.h</itemPath>
+      </logicalFolder>
       <logicalFolder name="f2" displayName="ContentManager" projectFiles="true">
         <itemPath>../SpaceRace/ContentManager/ContentManager.cpp</itemPath>
         <itemPath>../SpaceRace/ContentManager/ContentManager.h</itemPath>
@@ -69,6 +73,7 @@
             <pElem>GameState</pElem>
             <pElem>Entity</pElem>
             <pElem>.</pElem>
+            <pElem>Collider</pElem>
           </incDir>
           <warningLevel>2</warningLevel>
         </ccTool>
@@ -84,6 +89,10 @@
           </linkerLibItems>
         </linkerTool>
       </compileType>
+      <item path="../SpaceRace/Collider/Collider.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../SpaceRace/Collider/Collider.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="../SpaceRace/ContentManager/ContentManager.cpp"
             ex="false"
             tool="1"
@@ -170,6 +179,7 @@
             <pElem>GameState</pElem>
             <pElem>Entity</pElem>
             <pElem>.</pElem>
+            <pElem>Collider</pElem>
           </incDir>
         </ccTool>
         <fortranCompilerTool>
@@ -190,6 +200,10 @@
           </linkerLibItems>
         </linkerTool>
       </compileType>
+      <item path="../SpaceRace/Collider/Collider.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../SpaceRace/Collider/Collider.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="../SpaceRace/ContentManager/ContentManager.cpp"
             ex="false"
             tool="1"

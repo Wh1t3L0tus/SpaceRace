@@ -27,6 +27,7 @@ public:
     float getSpeed();
     sf::Vector2f position();
     sf::Vector2f size();
+    sf::FloatRect hitbox();
     virtual ~Entity();
     
     virtual void draw(sf::RenderTarget& target, sf::RenderStates states = sf::RenderStates::Default) const;

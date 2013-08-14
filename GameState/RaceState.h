@@ -21,7 +21,7 @@ public:
     virtual bool updateLoop(sf::RenderWindow &window);
 //    virtual GameState* quit();
 private:
-    MobManager mobMgr;    
+    MobManager m_mobMgr;    
     Player m_player;
     sf::Clock m_clock;
     float m_elapsedTime;
