@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="89">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="HeaderFiles"
+                   displayName="Header Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="ResourceFiles"
+                   displayName="Resource Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="SourceFiles"
+                   displayName="Source Files"
+                   projectFiles="true">
+      <logicalFolder name="f2" displayName="ContentManager" projectFiles="true">
+        <itemPath>../SpaceRace/ContentManager/ContentManager.cpp</itemPath>
+        <itemPath>../SpaceRace/ContentManager/ContentManager.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f3" displayName="Entity" projectFiles="true">
+        <itemPath>../SpaceRace/Entity/Entity.cpp</itemPath>
+        <itemPath>../SpaceRace/Entity/Entity.h</itemPath>
+        <itemPath>../SpaceRace/Entity/Mob.cpp</itemPath>
+        <itemPath>../SpaceRace/Entity/Mob.h</itemPath>
+        <itemPath>../SpaceRace/Entity/MobManager.cpp</itemPath>
+        <itemPath>../SpaceRace/Entity/MobManager.h</itemPath>
+        <itemPath>../SpaceRace/Entity/Player.cpp</itemPath>
+        <itemPath>../SpaceRace/Entity/Player.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f1" displayName="GameState" projectFiles="true">
+        <itemPath>../SpaceRace/GameState/GameState.h</itemPath>
+        <itemPath>../SpaceRace/GameState/IntroState.cpp</itemPath>
+        <itemPath>../SpaceRace/GameState/IntroState.h</itemPath>
+        <itemPath>../SpaceRace/GameState/MenuState.cpp</itemPath>
+        <itemPath>../SpaceRace/GameState/MenuState.h</itemPath>
+        <itemPath>../SpaceRace/GameState/PauseState.cpp</itemPath>
+        <itemPath>../SpaceRace/GameState/PauseState.h</itemPath>
+        <itemPath>../SpaceRace/GameState/RaceState.cpp</itemPath>
+        <itemPath>../SpaceRace/GameState/RaceState.h</itemPath>
+      </logicalFolder>
+      <itemPath>../SpaceRace/Random.h</itemPath>
+      <itemPath>main.cpp</itemPath>
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="Test Files"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Debug" type="1">
+      <toolsSet>
+        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <ccTool>
+          <incDir>
+            <pElem>../../SFML/include</pElem>
+            <pElem>ContentManager</pElem>
+            <pElem>GameState</pElem>
+            <pElem>Entity</pElem>
+            <pElem>.</pElem>
+          </incDir>
+          <warningLevel>2</warningLevel>
+        </ccTool>
+        <linkerTool>
+          <output>../../bin/${CND_CONF}/SpaceRace</output>
+          <linkerAddLib>
+            <pElem>../../SFML/lib</pElem>
+          </linkerAddLib>
+          <linkerLibItems>
+            <linkerLibLibItem>sfml-graphics-d</linkerLibLibItem>
+            <linkerLibLibItem>sfml-window-d</linkerLibLibItem>
+            <linkerLibLibItem>sfml-system-d</linkerLibLibItem>
+          </linkerLibItems>
+        </linkerTool>
+      </compileType>
+      <item path="../SpaceRace/ContentManager/ContentManager.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../SpaceRace/ContentManager/ContentManager.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../SpaceRace/Entity/Entity.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../SpaceRace/Entity/Entity.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../SpaceRace/Entity/Mob.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../SpaceRace/Entity/Mob.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../SpaceRace/Entity/MobManager.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../SpaceRace/Entity/MobManager.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../SpaceRace/Entity/Player.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../SpaceRace/Entity/Player.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../SpaceRace/GameState/GameState.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../SpaceRace/GameState/IntroState.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../SpaceRace/GameState/IntroState.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../SpaceRace/GameState/MenuState.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../SpaceRace/GameState/MenuState.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../SpaceRace/GameState/PauseState.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../SpaceRace/GameState/PauseState.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../SpaceRace/GameState/RaceState.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../SpaceRace/GameState/RaceState.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../SpaceRace/Random.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+    </conf>
+    <conf name="Release" type="1">
+      <toolsSet>
+        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+          <incDir>
+            <pElem>../../SFML/include</pElem>
+            <pElem>ContentManager</pElem>
+            <pElem>GameState</pElem>
+            <pElem>Entity</pElem>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+        <linkerTool>
+          <output>../../bin/${CND_CONF}/SpaceRace</output>
+          <linkerAddLib>
+            <pElem>../../SFML/lib</pElem>
+          </linkerAddLib>
+          <linkerLibItems>
+            <linkerLibLibItem>sfml-graphics</linkerLibLibItem>
+            <linkerLibLibItem>sfml-window</linkerLibLibItem>
+            <linkerLibLibItem>sfml-system</linkerLibLibItem>
+          </linkerLibItems>
+        </linkerTool>
+      </compileType>
+      <item path="../SpaceRace/ContentManager/ContentManager.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../SpaceRace/ContentManager/ContentManager.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../SpaceRace/Entity/Entity.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../SpaceRace/Entity/Entity.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../SpaceRace/Entity/Mob.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../SpaceRace/Entity/Mob.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../SpaceRace/Entity/MobManager.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../SpaceRace/Entity/MobManager.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../SpaceRace/Entity/Player.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../SpaceRace/Entity/Player.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../SpaceRace/GameState/GameState.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../SpaceRace/GameState/IntroState.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../SpaceRace/GameState/IntroState.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../SpaceRace/GameState/MenuState.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../SpaceRace/GameState/MenuState.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../SpaceRace/GameState/PauseState.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../SpaceRace/GameState/PauseState.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../SpaceRace/GameState/RaceState.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../SpaceRace/GameState/RaceState.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../SpaceRace/Random.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>
