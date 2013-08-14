@@ -15,8 +15,11 @@ class Player : public Entity {
 public:
     Player();
     virtual ~Player();
+    
+    bool isAlive();
+    void destroy();
 private:
-
+    bool m_alive;
 };
 
 #endif	/* PLAYER_H */

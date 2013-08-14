@@ -10,12 +10,11 @@
 #include "ContentManager.h"
 #include "MenuState.h"
 #include "MobManager.h"
+#include "GameOverState.h"
 
 #include <iostream>
 
 using namespace std;
-
-#define SPEED 200
 
 RaceState::RaceState() {
     m_pNextState = NULL;
@@ -29,12 +28,11 @@ void RaceState::init()
     GameState::init();
     m_clock.restart();
     m_elapsedTime = 0.0;
-//    m_player.setPosition(400 - m_player.size().x / 2, 600 - m_player.size().y);
+    m_player.setPosition(400 - m_player.size().x / 2, 600 - m_player.size().y);
 }
 
 bool RaceState::updateLoop(sf::RenderWindow& window)
 {
-    cout << "==begin frame==" << endl;
     if (!GameState::updateLoop(window))
         return false;
     else if (sf::Keyboard::isKeyPressed(sf::Keyboard::F1))
@@ -67,7 +65,13 @@ bool RaceState::updateLoop(sf::RenderWindow& window)
         m_elapsedTime = 0.0;
     }
     
-    m_mobMgr.manageMobs(elapsedTime);
+    m_mobMgr.manageMobs(elapsedTime, m_player);
+    
+    if (m_player.isAlive() == false)
+    {
+        m_loopAgain = false;
+        m_pNextState = new GameOverState();
+    }
     
     window.clear();
     sf::sleep(sf::milliseconds(10));
@@ -75,7 +79,6 @@ bool RaceState::updateLoop(sf::RenderWindow& window)
     window.draw(m_mobMgr);
     window.display();
 
-    cout << "==end frame==" << endl;    
     return m_loopAgain;
 }
 

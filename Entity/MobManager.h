@@ -11,12 +11,13 @@
 #include <vector>
 #include <SFML/Graphics.hpp>
 #include "Mob.h"
+#include "Player.h"
 
 class MobManager : public sf::Drawable {
 public:
     MobManager();
     void createMob();
-    void manageMobs(float elapsedTime);
+    void manageMobs(float elapsedTime, Player &player);
     virtual ~MobManager();
     
     virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;

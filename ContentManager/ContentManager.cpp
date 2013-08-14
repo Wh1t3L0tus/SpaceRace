@@ -25,6 +25,7 @@ ContentManager::ContentManager() {
     m_textureMap.add("intro", "../../etc/SpaceRace/intro.png");
     m_textureMap.add("pause", "../../etc/SpaceRace/pause.png");
     m_textureMap.add("spacecraft2", "../../etc/SpaceRace/ospacecraft2.png");
+    m_textureMap.add("gameover", "../../etc/SpaceRace/gameover.png");
 }
 
 ContentManager::~ContentManager() {

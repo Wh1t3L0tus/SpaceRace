@@ -31,6 +31,8 @@
         <itemPath>../SpaceRace/Entity/Player.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f1" displayName="GameState" projectFiles="true">
+        <itemPath>../SpaceRace/GameState/GameOverState.cpp</itemPath>
+        <itemPath>../SpaceRace/GameState/GameOverState.h</itemPath>
         <itemPath>../SpaceRace/GameState/GameState.h</itemPath>
         <itemPath>../SpaceRace/GameState/IntroState.cpp</itemPath>
         <itemPath>../SpaceRace/GameState/IntroState.h</itemPath>
@@ -118,6 +120,16 @@
       <item path="../SpaceRace/Entity/Player.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="../SpaceRace/Entity/Player.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../SpaceRace/GameState/GameOverState.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../SpaceRace/GameState/GameOverState.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
       <item path="../SpaceRace/GameState/GameState.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -229,6 +241,16 @@
       <item path="../SpaceRace/Entity/Player.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="../SpaceRace/Entity/Player.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../SpaceRace/GameState/GameOverState.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../SpaceRace/GameState/GameOverState.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
       <item path="../SpaceRace/GameState/GameState.h" ex="false" tool="3" flavor2="0">
       </item>

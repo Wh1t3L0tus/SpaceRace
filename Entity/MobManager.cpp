@@ -43,7 +43,7 @@ void MobManager::createMob()
     m->setSpeed(Random::range(200, 500));
 }
 
-void MobManager::manageMobs(float elapsedTime)
+void MobManager::manageMobs(float elapsedTime, Player& player)
 {    
     //move the mob
     for (std::vector<Mob*>::iterator it = m_pool.begin(); it != m_pool.end(); ++it)
@@ -57,7 +57,7 @@ void MobManager::manageMobs(float elapsedTime)
     }
 
     std::set<Mob*> mobToErase;
-    //check for mob collision
+    //check for collisions between mobs
     for (unsigned int i = 0; i < m_pool.size(); i++)
     {
         for (unsigned int j = 0; j < m_pool.size(); j++)
@@ -67,6 +67,16 @@ void MobManager::manageMobs(float elapsedTime)
                 mobToErase.insert(m_pool[i]);
                 mobToErase.insert(m_pool[j]);
             }
+        }
+    }
+    
+    //check for collision between mobs and player
+    for (unsigned int i = 0; i < m_pool.size(); i++)
+    {
+        if (Collider::collide(*m_pool[i], player))
+        {
+            player.destroy();
+            mobToErase.insert(m_pool[i]);
         }
     }
     

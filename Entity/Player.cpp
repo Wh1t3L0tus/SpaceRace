@@ -7,11 +7,23 @@
 
 #include "Player.h"
 #include "ContentManager.h"
+#include <iostream>
 
-Player::Player() : Entity(ContentManager::getInstance()->getTexture("spaceCraft")) {
+using namespace std;
+
+Player::Player() : Entity(ContentManager::getInstance()->getTexture("spaceCraft")), m_alive(true) {
     setSpeed(500);
 }
 
 Player::~Player() {
 }
 
+bool Player::isAlive()
+{
+    return m_alive;
+}
+
+void Player::destroy()
+{
+    m_alive = false;
+}
