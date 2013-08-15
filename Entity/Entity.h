@@ -27,13 +27,13 @@ public:
     virtual float getSpeed();
     virtual sf::Vector2f position();
     virtual sf::Vector2f size();
-    virtual sf::FloatRect hitbox();
+    
+//    virtual sf::FloatRect hitbox();
     virtual ~Entity();
     
     virtual void draw(sf::RenderTarget& target, sf::RenderStates states = sf::RenderStates::Default) const;
 private:
     sf::Sprite m_sprite;
-//    sf::Vector2f m_position;
     sf::Vector2f m_size;
     float m_speed;//speed in pixels/sec
     

@@ -8,12 +8,12 @@
 #ifndef COLLIDER_H
 #define	COLLIDER_H
 
-#include "Entity.h"
+#include "Collidable.h"
 
 class Collider {
 public:
     
-    static bool collide(Entity e1, Entity e2);
+    static bool collide(Collidable& e1, Collidable& e2);
 
 
 };

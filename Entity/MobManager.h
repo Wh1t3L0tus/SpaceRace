@@ -10,7 +10,7 @@
 
 #include <vector>
 #include <SFML/Graphics.hpp>
-#include "Mob.h"
+#include "SpaceShip.h"
 #include "Player.h"
 
 class MobManager : public sf::Drawable {
@@ -22,7 +22,7 @@ public:
     
     virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 private:
-    std::vector<Mob*> m_pool;
+    std::vector<SpaceShip*> m_pool;
 };
 
 #endif	/* MOBMANAGER_H */

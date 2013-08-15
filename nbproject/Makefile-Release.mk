@@ -41,6 +41,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/_ext/683866282/Mob.o \
 	${OBJECTDIR}/_ext/683866282/MobManager.o \
 	${OBJECTDIR}/_ext/683866282/Player.o \
+	${OBJECTDIR}/_ext/683866282/SpaceShip.o \
 	${OBJECTDIR}/_ext/533720680/GameOverState.o \
 	${OBJECTDIR}/_ext/533720680/IntroState.o \
 	${OBJECTDIR}/_ext/533720680/MenuState.o \
@@ -102,6 +103,11 @@ ${OBJECTDIR}/_ext/683866282/Player.o: ../SpaceRace/Entity/Player.cpp
 	${MKDIR} -p ${OBJECTDIR}/_ext/683866282
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -I../../SFML/include -IContentManager -IGameState -IEntity -I. -ICollider -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/683866282/Player.o ../SpaceRace/Entity/Player.cpp
+
+${OBJECTDIR}/_ext/683866282/SpaceShip.o: ../SpaceRace/Entity/SpaceShip.cpp 
+	${MKDIR} -p ${OBJECTDIR}/_ext/683866282
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -I../../SFML/include -IContentManager -IGameState -IEntity -I. -ICollider -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/683866282/SpaceShip.o ../SpaceRace/Entity/SpaceShip.cpp
 
 ${OBJECTDIR}/_ext/533720680/GameOverState.o: ../SpaceRace/GameState/GameOverState.cpp 
 	${MKDIR} -p ${OBJECTDIR}/_ext/533720680

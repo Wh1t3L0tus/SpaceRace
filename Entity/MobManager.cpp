@@ -15,9 +15,9 @@
 using namespace std;
 
 
-void findAndErase(Mob* m, std::vector<Mob*> &v)
+void findAndErase(SpaceShip* m, std::vector<SpaceShip*> &v)
 {
-    for (std::vector<Mob*>::iterator it = v.begin(); it != v.end(); ++it)
+    for (std::vector<SpaceShip*>::iterator it = v.begin(); it != v.end(); ++it)
     {
         if (*it == m)
         {
@@ -32,16 +32,15 @@ MobManager::MobManager() : m_pool() {
 }
 
 MobManager::~MobManager() {
-    for (std::vector<Mob*>::iterator it = m_pool.begin(); it != m_pool.end(); ++it)
+    for (std::vector<SpaceShip*>::iterator it = m_pool.begin(); it != m_pool.end(); ++it)
         delete *it;
 }
 
 void MobManager::createMob()
 {
-    int x = Random::range(1, 5)*160 - 130;
-    Mob *m = new Mob(x, -200);
+    int x = Random::range(1, 5) * 160 - 130;
+    SpaceShip *m = new SpaceShip(sf::Vector2f(x, -200), "spacecraft2", Random::range(200, 500));
     m_pool.push_back(m);
-    m->setSpeed(Random::range(200, 500));
 //    cout << "create " << (void*)m << endl;
 }
 
@@ -51,7 +50,10 @@ void MobManager::manageMobs(float elapsedTime, Player& player)
     for (unsigned int i = 0; i < m_pool.size(); i++)
     {
 //        cout << "trying to move " << (void*)m_pool[i] << " " << m_pool.size() << endl;
+        if (Random::range(1, 1000) == 1)
+            m_pool[i]->takeLane((Lane)Random::range(LeftLane, RightLane));
         m_pool[i]->move(Down, elapsedTime);
+        m_pool[i]->update(elapsedTime);    
         if (m_pool[i]->position().y > 900)
         {
 //            cout << "destroy " << (void*)m_pool[i] << endl;
@@ -61,7 +63,7 @@ void MobManager::manageMobs(float elapsedTime, Player& player)
         }  
     }
 
-    std::set<Mob*> mobToErase;
+    std::set<SpaceShip*> mobToErase;
     //check for collisions between mobs
     for (unsigned int i = 0; i < m_pool.size(); i++)
     {
@@ -86,12 +88,12 @@ void MobManager::manageMobs(float elapsedTime, Player& player)
     }
     
     //cleaning
-    for (std::set<Mob*>::iterator it = mobToErase.begin(); it != mobToErase.end(); ++it)
+    for (std::set<SpaceShip*>::iterator it = mobToErase.begin(); it != mobToErase.end(); ++it)
         findAndErase(*it, m_pool);
 }
 
 void MobManager::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
-    for (std::vector<Mob*>::const_iterator it = m_pool.begin(); it != m_pool.end(); ++it)
+    for (std::vector<SpaceShip*>::const_iterator it = m_pool.begin(); it != m_pool.end(); ++it)
         target.draw(**it, states);
 }

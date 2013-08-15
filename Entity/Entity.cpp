@@ -7,7 +7,7 @@
 
 #include "Entity.h"
 
-Entity::Entity(sf::Vector2f pos) : /**m_position(pos), **/m_size(0, 0), m_speed(0.0) {
+Entity::Entity(sf::Vector2f pos) : m_size(0, 0), m_speed(0.0) {
 }
 
 Entity::Entity(sf::Texture &texture, sf::Vector2f pos) : m_sprite(texture), /**m_position(pos), **/m_size(m_sprite.getTextureRect().width, m_sprite.getTextureRect().height), m_speed(0.0) {
@@ -19,7 +19,6 @@ Entity::~Entity() {
 
 void Entity::move(sf::Vector2f movement)
 {
-//    m_position += movement;
     m_sprite.setPosition(m_sprite.getPosition() + movement);
 }
 
@@ -37,13 +36,11 @@ void Entity::move(Direction dir, float elapsedSeconds)
 
 void Entity::setPosition(sf::Vector2f position)
 {
-//    m_position = position;
     m_sprite.setPosition(position);
 }
 
 void Entity::setPosition(float x, float y)
 {
-//    m_position = sf::Vector2f(x, y);
     m_sprite.setPosition(x, y);
 }
 
@@ -67,10 +64,10 @@ sf::Vector2f Entity::size()
     return m_size;
 }
 
-sf::FloatRect Entity::hitbox()
-{
-    return sf::FloatRect(m_sprite.getPosition().x, m_sprite.getPosition().y, m_size.x, m_size.y);
-}
+//sf::FloatRect Entity::hitbox()
+//{
+//    return sf::FloatRect(m_sprite.getPosition().x, m_sprite.getPosition().y, m_size.x, m_size.y);
+//}
 
 void Entity::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
