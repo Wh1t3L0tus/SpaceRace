@@ -42,21 +42,22 @@ void MobManager::createMob()
     Mob *m = new Mob(x, -200);
     m_pool.push_back(m);
     m->setSpeed(Random::range(200, 500));
-    cout << "create " << (void*)m << endl;
+//    cout << "create " << (void*)m << endl;
 }
 
 void MobManager::manageMobs(float elapsedTime, Player& player)
 {    
-    //move the mob
-    for (std::vector<Mob*>::iterator it = m_pool.begin(); it != m_pool.end(); ++it)
+    //move the mob and check if it is out of screen (if so delete it))
+    for (unsigned int i = 0; i < m_pool.size(); i++)
     {
-//        cout << "trying to move " << (void*)*it << " " << m_pool.size() << endl;
-        (*it)->move(Down, elapsedTime);
-        if ((*it)->position().y > 900)
+//        cout << "trying to move " << (void*)m_pool[i] << " " << m_pool.size() << endl;
+        m_pool[i]->move(Down, elapsedTime);
+        if (m_pool[i]->position().y > 900)
         {
-//            cout << "destroy " << (void*)*it << endl;
-            delete *it;
-            m_pool.erase(it);
+//            cout << "destroy " << (void*)m_pool[i] << endl;
+            delete m_pool[i];
+            m_pool.erase(m_pool.begin()+i);
+            i--;
         }  
     }
 

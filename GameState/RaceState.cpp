@@ -57,13 +57,11 @@ bool RaceState::updateLoop(sf::RenderWindow& window)
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
         m_player.takeLane(LeftLane);
     
-    if (m_elapsedTime >= 3)
+    if (m_elapsedTime >= 0.05)
     {
-//        m_mobMgr.createMob();
+        m_mobMgr.createMob();
         m_elapsedTime = 0.0;
     }
-    
-    cout << "Lane " << LaneExplorer::getLaneFromAbscissa(sf::Mouse::getPosition(window).x) << endl;
 
     m_player.update(elapsedTime);
     
