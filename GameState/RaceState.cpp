@@ -11,6 +11,7 @@
 #include "MenuState.h"
 #include "MobManager.h"
 #include "GameOverState.h"
+#include "LaneExplorer.h"
 
 #include <iostream>
 
@@ -28,7 +29,7 @@ void RaceState::init()
     GameState::init();
     m_clock.restart();
     m_elapsedTime = 0.0;
-    m_player.setPosition(400 - m_player.size().x / 2, 600 - m_player.size().y);
+    m_player.setPosition(LaneExplorer::getAbscissaFromLane(3), 600 - m_player.size().y);
 }
 
 bool RaceState::updateLoop(sf::RenderWindow& window)
@@ -51,19 +52,23 @@ bool RaceState::updateLoop(sf::RenderWindow& window)
     m_clock.restart();
     
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
-        m_player.move(Left, elapsedTime);
+        m_player.takeLane(LeftLane);
     else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
-        m_player.move(Right, elapsedTime);
-    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
-        m_player.move(Up, elapsedTime);
-    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
-        m_player.move(Down, elapsedTime);
+        m_player.takeLane(RightLane);
+//    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
+//        m_player.move(Up, elapsedTime);
+//    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
+//        m_player.move(Down, elapsedTime);
+
     
-    if (m_elapsedTime >= 0.05)
+    if (m_elapsedTime >= 3)
     {
         m_mobMgr.createMob();
         m_elapsedTime = 0.0;
+        m_player.takeLane(LeftLane);
     }
+
+    m_player.update(elapsedTime);
     
     m_mobMgr.manageMobs(elapsedTime, m_player);
     

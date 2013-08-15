@@ -19,15 +19,15 @@ class Entity : public sf::Drawable {
 public:
     Entity(sf::Vector2f pos = sf::Vector2f(0, 0));
     Entity(sf::Texture &texture, sf::Vector2f pos = sf::Vector2f(0, 0));
-    void move(sf::Vector2f movement);
-    void move(Direction dir, float elapsedSeconds);
-    void setPosition(sf::Vector2f position);
-    void setPosition(float x, float y);
-    void setSpeed(float speed);
-    float getSpeed();
-    sf::Vector2f position();
-    sf::Vector2f size();
-    sf::FloatRect hitbox();
+    virtual void move(sf::Vector2f movement);
+    virtual void move(Direction dir, float elapsedSeconds);
+    virtual void setPosition(sf::Vector2f position);
+    virtual void setPosition(float x, float y);
+    virtual void setSpeed(float speed);
+    virtual float getSpeed();
+    virtual sf::Vector2f position();
+    virtual sf::Vector2f size();
+    virtual sf::FloatRect hitbox();
     virtual ~Entity();
     
     virtual void draw(sf::RenderTarget& target, sf::RenderStates states = sf::RenderStates::Default) const;

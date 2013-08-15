@@ -38,9 +38,11 @@ MobManager::~MobManager() {
 
 void MobManager::createMob()
 {
-    Mob *m = new Mob(Random::range(0, 800 - 100), -200);
+    int x = Random::range(1, 5)*160 - 130;
+    Mob *m = new Mob(x, -200);
     m_pool.push_back(m);
     m->setSpeed(Random::range(200, 500));
+    cout << "create " << (void*)m << endl;
 }
 
 void MobManager::manageMobs(float elapsedTime, Player& player)
@@ -48,9 +50,11 @@ void MobManager::manageMobs(float elapsedTime, Player& player)
     //move the mob
     for (std::vector<Mob*>::iterator it = m_pool.begin(); it != m_pool.end(); ++it)
     {
+        cout << "trying to move " << (void*)*it << " " << m_pool.size() << endl;
         (*it)->move(Down, elapsedTime);
         if ((*it)->position().y > 900)
         {
+            cout << "destroy " << (void*)*it << endl;
             delete *it;
             m_pool.erase(it);
         }  

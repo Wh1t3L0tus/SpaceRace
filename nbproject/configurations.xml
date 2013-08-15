@@ -57,6 +57,7 @@
                    kind="IMPORTANT_FILES_FOLDER">
       <itemPath>Makefile</itemPath>
     </logicalFolder>
+    <itemPath>../SpaceRace/LaneExplorer.h</itemPath>
   </logicalFolder>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
@@ -166,6 +167,8 @@
             flavor2="0">
       </item>
       <item path="../SpaceRace/GameState/RaceState.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../SpaceRace/LaneExplorer.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../SpaceRace/Random.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -287,6 +290,8 @@
             flavor2="0">
       </item>
       <item path="../SpaceRace/GameState/RaceState.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../SpaceRace/LaneExplorer.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../SpaceRace/Random.h" ex="false" tool="3" flavor2="0">
       </item>
