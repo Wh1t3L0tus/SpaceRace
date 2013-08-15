@@ -26,7 +26,7 @@ public:
     void setPosition(float x, float y);
 private:
     bool m_alive;
-    int m_abscissaGoal;
+    float m_abscissaGoal;
 };
 
 #endif	/* PLAYER_H */

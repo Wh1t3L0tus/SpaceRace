@@ -51,22 +51,19 @@ bool RaceState::updateLoop(sf::RenderWindow& window)
     m_elapsedTime += elapsedTime;
     m_clock.restart();
     
+
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
+        m_player.takeLane(RightLane);
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
         m_player.takeLane(LeftLane);
-    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
-        m_player.takeLane(RightLane);
-//    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
-//        m_player.move(Up, elapsedTime);
-//    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
-//        m_player.move(Down, elapsedTime);
-
     
     if (m_elapsedTime >= 3)
     {
-        m_mobMgr.createMob();
+//        m_mobMgr.createMob();
         m_elapsedTime = 0.0;
-        m_player.takeLane(LeftLane);
     }
+    
+    cout << "Lane " << LaneExplorer::getLaneFromAbscissa(sf::Mouse::getPosition(window).x) << endl;
 
     m_player.update(elapsedTime);
     
@@ -79,10 +76,11 @@ bool RaceState::updateLoop(sf::RenderWindow& window)
     }
     
     window.clear();
-    sf::sleep(sf::milliseconds(10));
     window.draw(m_player);
     window.draw(m_mobMgr);
     window.display();
+    
+    sf::sleep(sf::milliseconds(10));
 
     return m_loopAgain;
 }

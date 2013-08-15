@@ -50,11 +50,11 @@ void MobManager::manageMobs(float elapsedTime, Player& player)
     //move the mob
     for (std::vector<Mob*>::iterator it = m_pool.begin(); it != m_pool.end(); ++it)
     {
-        cout << "trying to move " << (void*)*it << " " << m_pool.size() << endl;
+//        cout << "trying to move " << (void*)*it << " " << m_pool.size() << endl;
         (*it)->move(Down, elapsedTime);
         if ((*it)->position().y > 900)
         {
-            cout << "destroy " << (void*)*it << endl;
+//            cout << "destroy " << (void*)*it << endl;
             delete *it;
             m_pool.erase(it);
         }  

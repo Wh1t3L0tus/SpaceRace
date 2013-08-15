@@ -52,9 +52,9 @@ void Player::update(float elapsedSeconds)
 void Player::takeLane(Lane destination)
 {
     if (destination == LeftLane)
-        m_abscissaGoal = LaneExplorer::getAbscissaFromLane(LaneExplorer::getLaneFromAbscissa(position().x) - 1);
+        m_abscissaGoal = LaneExplorer::getAbscissaFromLane(LaneExplorer::getLaneFromAbscissa(position().x + size().x / 2) - 1);
     else if (destination == RightLane)
-        m_abscissaGoal = LaneExplorer::getAbscissaFromLane(LaneExplorer::getLaneFromAbscissa(position().x) + 1);
+        m_abscissaGoal = LaneExplorer::getAbscissaFromLane(LaneExplorer::getLaneFromAbscissa(position().x + size().x / 2) + 1);
 }
 
 void Player::setPosition(sf::Vector2f pos)
