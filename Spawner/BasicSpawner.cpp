@@ -13,7 +13,7 @@
 
 using namespace std;
 
-BasicSpawner::BasicSpawner() : m_leftWriter(5), m_rightWriter(7), m_start(true), m_firstHolePosition(Random::range(1, 5)), m_secondHolePosition(Random::range(m_firstHolePosition, 5)) {
+BasicSpawner::BasicSpawner() : m_leftWriter(5), m_rightWriter(7), m_start(true), m_holePosition(Random::range(1, 5)) {
 }
 
 BasicSpawner::BasicSpawner(sf::FloatRect lanes[5])
@@ -42,8 +42,7 @@ void BasicSpawner::update()
         {
             m_leftWriter = 5;
             m_rightWriter = 7;
-            m_firstHolePosition = Random::range(1, 5);
-            m_secondHolePosition = Random::range(m_firstHolePosition, 5);
+            m_holePosition = Random::range(1, 5);
         }
     }
     else
@@ -56,12 +55,11 @@ SpawnResult BasicSpawner::spawn(float speed)
     SpawnResult sr;
     if (m_start)
     {
-        if (m_leftWriter >= 1 && m_leftWriter <= 5 && m_firstHolePosition != m_leftWriter)
+        if (m_leftWriter >= 1 && m_leftWriter <= 5 && m_holePosition != m_leftWriter)
             sr.lanes[m_leftWriter - 1] = new SpaceShip(sf::Vector2f(LaneExplorer::getAbscissaFromLane(m_leftWriter), -400), "spacecraft2", speed);
-        if (m_rightWriter >= 1 && m_rightWriter <= 5 && m_secondHolePosition != m_rightWriter)
-            sr.lanes[m_leftWriter - 1] = new SpaceShip(sf::Vector2f(LaneExplorer::getAbscissaFromLane(m_leftWriter), -400), "spacecraft2", speed);        
+        if (m_rightWriter >= 1 && m_rightWriter <= 5 && m_holePosition != m_rightWriter)
+            sr.lanes[m_rightWriter - 1] = new SpaceShip(sf::Vector2f(LaneExplorer::getAbscissaFromLane(m_rightWriter), -400), "spacecraft2", speed);        
     }
-    
     update();
     
     return sr;
@@ -70,7 +68,7 @@ SpawnResult BasicSpawner::spawn(float speed)
 bool BasicSpawner::lanesCleared()
 {
     sf::FloatRect hitbox(0, -200, ContentManager::getInstance()->getTexture("spacecraft2").getSize().x,
-            ContentManager::getInstance()->getTexture("spacecraft2").getSize().y);
+                                  ContentManager::getInstance()->getTexture("spacecraft2").getSize().y);
     m_start = true;
     for (unsigned int i = 0; i < 5; i++)
     {
@@ -87,7 +85,7 @@ bool BasicSpawner::lanesCleared()
 
 float BasicSpawner::spawnInterval()
 {
-    return 0.4;
+    return 0.5;
 }
 
 BasicSpawner::~BasicSpawner() {

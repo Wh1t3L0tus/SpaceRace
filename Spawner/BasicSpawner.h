@@ -28,8 +28,7 @@ private:
     int m_leftWriter;
     int m_rightWriter;
     bool m_start;
-    int m_firstHolePosition;
-    int m_secondHolePosition;
+    int m_holePosition;
 };
 
 #endif	/* BASICSPAWNER_H */

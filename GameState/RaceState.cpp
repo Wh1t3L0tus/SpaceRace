@@ -54,7 +54,7 @@ bool RaceState::updateLoop(sf::RenderWindow& window)
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
         m_mobMgr.increaseSpeed(10);
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
-        m_mobMgr.increaseSpeed(-10);    
+        m_mobMgr.increaseSpeed(-10);   
     
     m_mobMgr.manageMobs(m_clock.restart().asSeconds(), m_player);
     
