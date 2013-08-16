@@ -24,8 +24,6 @@
       <logicalFolder name="f3" displayName="Entity" projectFiles="true">
         <itemPath>../SpaceRace/Entity/Entity.cpp</itemPath>
         <itemPath>../SpaceRace/Entity/Entity.h</itemPath>
-        <itemPath>../SpaceRace/Entity/Mob.cpp</itemPath>
-        <itemPath>../SpaceRace/Entity/Mob.h</itemPath>
         <itemPath>../SpaceRace/Entity/MobManager.cpp</itemPath>
         <itemPath>../SpaceRace/Entity/MobManager.h</itemPath>
         <itemPath>../SpaceRace/Entity/Player.cpp</itemPath>
@@ -46,6 +44,11 @@
         <itemPath>../SpaceRace/GameState/RaceState.cpp</itemPath>
         <itemPath>../SpaceRace/GameState/RaceState.h</itemPath>
       </logicalFolder>
+      <logicalFolder name="f5" displayName="Spawner" projectFiles="true">
+        <itemPath>../SpaceRace/Spawner/BasicSpawner.cpp</itemPath>
+        <itemPath>../SpaceRace/Spawner/BasicSpawner.h</itemPath>
+        <itemPath>../SpaceRace/Spawner/Spawner.h</itemPath>
+      </logicalFolder>
       <itemPath>../SpaceRace/Random.h</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
@@ -61,6 +64,7 @@
       <itemPath>Makefile</itemPath>
     </logicalFolder>
     <itemPath>../SpaceRace/LaneExplorer.h</itemPath>
+    <itemPath>../SpaceRace/Random.cpp</itemPath>
   </logicalFolder>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
@@ -80,6 +84,7 @@
             <pElem>Entity</pElem>
             <pElem>.</pElem>
             <pElem>Collider</pElem>
+            <pElem>Spawner</pElem>
           </incDir>
           <warningLevel>2</warningLevel>
         </ccTool>
@@ -114,10 +119,6 @@
       <item path="../SpaceRace/Entity/Entity.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="../SpaceRace/Entity/Entity.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../SpaceRace/Entity/Mob.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="../SpaceRace/Entity/Mob.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../SpaceRace/Entity/MobManager.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -179,7 +180,21 @@
       </item>
       <item path="../SpaceRace/LaneExplorer.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="../SpaceRace/Random.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="../SpaceRace/Random.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../SpaceRace/Spawner/BasicSpawner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../SpaceRace/Spawner/BasicSpawner.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../SpaceRace/Spawner/Spawner.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -204,6 +219,7 @@
             <pElem>Entity</pElem>
             <pElem>.</pElem>
             <pElem>Collider</pElem>
+            <pElem>Spawner</pElem>
           </incDir>
         </ccTool>
         <fortranCompilerTool>
@@ -244,10 +260,6 @@
       </item>
       <item path="../SpaceRace/Entity/Entity.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../SpaceRace/Entity/Mob.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="../SpaceRace/Entity/Mob.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="../SpaceRace/Entity/MobManager.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="../SpaceRace/Entity/MobManager.h" ex="false" tool="3" flavor2="0">
@@ -308,7 +320,21 @@
       </item>
       <item path="../SpaceRace/LaneExplorer.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="../SpaceRace/Random.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="../SpaceRace/Random.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../SpaceRace/Spawner/BasicSpawner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../SpaceRace/Spawner/BasicSpawner.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../SpaceRace/Spawner/Spawner.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>

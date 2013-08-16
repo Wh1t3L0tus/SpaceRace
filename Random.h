@@ -30,7 +30,5 @@ private:
     
 };
 
-bool Random::initialized = false;
-
 #endif	/* RANDOM_H */
 

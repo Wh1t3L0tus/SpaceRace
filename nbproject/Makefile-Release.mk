@@ -38,7 +38,6 @@ OBJECTFILES= \
 	${OBJECTDIR}/_ext/1535743739/Collider.o \
 	${OBJECTDIR}/_ext/1643742907/ContentManager.o \
 	${OBJECTDIR}/_ext/683866282/Entity.o \
-	${OBJECTDIR}/_ext/683866282/Mob.o \
 	${OBJECTDIR}/_ext/683866282/MobManager.o \
 	${OBJECTDIR}/_ext/683866282/Player.o \
 	${OBJECTDIR}/_ext/683866282/SpaceShip.o \
@@ -47,6 +46,8 @@ OBJECTFILES= \
 	${OBJECTDIR}/_ext/533720680/MenuState.o \
 	${OBJECTDIR}/_ext/533720680/PauseState.o \
 	${OBJECTDIR}/_ext/533720680/RaceState.o \
+	${OBJECTDIR}/_ext/991262536/Random.o \
+	${OBJECTDIR}/_ext/694709887/BasicSpawner.o \
 	${OBJECTDIR}/main.o
 
 
@@ -77,67 +78,72 @@ LDLIBSOPTIONS=-L../../SFML/lib -lsfml-graphics -lsfml-window -lsfml-system
 ${OBJECTDIR}/_ext/1535743739/Collider.o: ../SpaceRace/Collider/Collider.cpp 
 	${MKDIR} -p ${OBJECTDIR}/_ext/1535743739
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -I../../SFML/include -IContentManager -IGameState -IEntity -I. -ICollider -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1535743739/Collider.o ../SpaceRace/Collider/Collider.cpp
+	$(COMPILE.cc) -O2 -I../../SFML/include -IContentManager -IGameState -IEntity -I. -ICollider -ISpawner -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1535743739/Collider.o ../SpaceRace/Collider/Collider.cpp
 
 ${OBJECTDIR}/_ext/1643742907/ContentManager.o: ../SpaceRace/ContentManager/ContentManager.cpp 
 	${MKDIR} -p ${OBJECTDIR}/_ext/1643742907
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -I../../SFML/include -IContentManager -IGameState -IEntity -I. -ICollider -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1643742907/ContentManager.o ../SpaceRace/ContentManager/ContentManager.cpp
+	$(COMPILE.cc) -O2 -I../../SFML/include -IContentManager -IGameState -IEntity -I. -ICollider -ISpawner -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1643742907/ContentManager.o ../SpaceRace/ContentManager/ContentManager.cpp
 
 ${OBJECTDIR}/_ext/683866282/Entity.o: ../SpaceRace/Entity/Entity.cpp 
 	${MKDIR} -p ${OBJECTDIR}/_ext/683866282
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -I../../SFML/include -IContentManager -IGameState -IEntity -I. -ICollider -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/683866282/Entity.o ../SpaceRace/Entity/Entity.cpp
-
-${OBJECTDIR}/_ext/683866282/Mob.o: ../SpaceRace/Entity/Mob.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/683866282
-	${RM} $@.d
-	$(COMPILE.cc) -O2 -I../../SFML/include -IContentManager -IGameState -IEntity -I. -ICollider -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/683866282/Mob.o ../SpaceRace/Entity/Mob.cpp
+	$(COMPILE.cc) -O2 -I../../SFML/include -IContentManager -IGameState -IEntity -I. -ICollider -ISpawner -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/683866282/Entity.o ../SpaceRace/Entity/Entity.cpp
 
 ${OBJECTDIR}/_ext/683866282/MobManager.o: ../SpaceRace/Entity/MobManager.cpp 
 	${MKDIR} -p ${OBJECTDIR}/_ext/683866282
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -I../../SFML/include -IContentManager -IGameState -IEntity -I. -ICollider -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/683866282/MobManager.o ../SpaceRace/Entity/MobManager.cpp
+	$(COMPILE.cc) -O2 -I../../SFML/include -IContentManager -IGameState -IEntity -I. -ICollider -ISpawner -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/683866282/MobManager.o ../SpaceRace/Entity/MobManager.cpp
 
 ${OBJECTDIR}/_ext/683866282/Player.o: ../SpaceRace/Entity/Player.cpp 
 	${MKDIR} -p ${OBJECTDIR}/_ext/683866282
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -I../../SFML/include -IContentManager -IGameState -IEntity -I. -ICollider -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/683866282/Player.o ../SpaceRace/Entity/Player.cpp
+	$(COMPILE.cc) -O2 -I../../SFML/include -IContentManager -IGameState -IEntity -I. -ICollider -ISpawner -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/683866282/Player.o ../SpaceRace/Entity/Player.cpp
 
 ${OBJECTDIR}/_ext/683866282/SpaceShip.o: ../SpaceRace/Entity/SpaceShip.cpp 
 	${MKDIR} -p ${OBJECTDIR}/_ext/683866282
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -I../../SFML/include -IContentManager -IGameState -IEntity -I. -ICollider -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/683866282/SpaceShip.o ../SpaceRace/Entity/SpaceShip.cpp
+	$(COMPILE.cc) -O2 -I../../SFML/include -IContentManager -IGameState -IEntity -I. -ICollider -ISpawner -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/683866282/SpaceShip.o ../SpaceRace/Entity/SpaceShip.cpp
 
 ${OBJECTDIR}/_ext/533720680/GameOverState.o: ../SpaceRace/GameState/GameOverState.cpp 
 	${MKDIR} -p ${OBJECTDIR}/_ext/533720680
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -I../../SFML/include -IContentManager -IGameState -IEntity -I. -ICollider -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/533720680/GameOverState.o ../SpaceRace/GameState/GameOverState.cpp
+	$(COMPILE.cc) -O2 -I../../SFML/include -IContentManager -IGameState -IEntity -I. -ICollider -ISpawner -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/533720680/GameOverState.o ../SpaceRace/GameState/GameOverState.cpp
 
 ${OBJECTDIR}/_ext/533720680/IntroState.o: ../SpaceRace/GameState/IntroState.cpp 
 	${MKDIR} -p ${OBJECTDIR}/_ext/533720680
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -I../../SFML/include -IContentManager -IGameState -IEntity -I. -ICollider -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/533720680/IntroState.o ../SpaceRace/GameState/IntroState.cpp
+	$(COMPILE.cc) -O2 -I../../SFML/include -IContentManager -IGameState -IEntity -I. -ICollider -ISpawner -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/533720680/IntroState.o ../SpaceRace/GameState/IntroState.cpp
 
 ${OBJECTDIR}/_ext/533720680/MenuState.o: ../SpaceRace/GameState/MenuState.cpp 
 	${MKDIR} -p ${OBJECTDIR}/_ext/533720680
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -I../../SFML/include -IContentManager -IGameState -IEntity -I. -ICollider -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/533720680/MenuState.o ../SpaceRace/GameState/MenuState.cpp
+	$(COMPILE.cc) -O2 -I../../SFML/include -IContentManager -IGameState -IEntity -I. -ICollider -ISpawner -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/533720680/MenuState.o ../SpaceRace/GameState/MenuState.cpp
 
 ${OBJECTDIR}/_ext/533720680/PauseState.o: ../SpaceRace/GameState/PauseState.cpp 
 	${MKDIR} -p ${OBJECTDIR}/_ext/533720680
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -I../../SFML/include -IContentManager -IGameState -IEntity -I. -ICollider -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/533720680/PauseState.o ../SpaceRace/GameState/PauseState.cpp
+	$(COMPILE.cc) -O2 -I../../SFML/include -IContentManager -IGameState -IEntity -I. -ICollider -ISpawner -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/533720680/PauseState.o ../SpaceRace/GameState/PauseState.cpp
 
 ${OBJECTDIR}/_ext/533720680/RaceState.o: ../SpaceRace/GameState/RaceState.cpp 
 	${MKDIR} -p ${OBJECTDIR}/_ext/533720680
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -I../../SFML/include -IContentManager -IGameState -IEntity -I. -ICollider -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/533720680/RaceState.o ../SpaceRace/GameState/RaceState.cpp
+	$(COMPILE.cc) -O2 -I../../SFML/include -IContentManager -IGameState -IEntity -I. -ICollider -ISpawner -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/533720680/RaceState.o ../SpaceRace/GameState/RaceState.cpp
+
+${OBJECTDIR}/_ext/991262536/Random.o: ../SpaceRace/Random.cpp 
+	${MKDIR} -p ${OBJECTDIR}/_ext/991262536
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -I../../SFML/include -IContentManager -IGameState -IEntity -I. -ICollider -ISpawner -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/991262536/Random.o ../SpaceRace/Random.cpp
+
+${OBJECTDIR}/_ext/694709887/BasicSpawner.o: ../SpaceRace/Spawner/BasicSpawner.cpp 
+	${MKDIR} -p ${OBJECTDIR}/_ext/694709887
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -I../../SFML/include -IContentManager -IGameState -IEntity -I. -ICollider -ISpawner -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/694709887/BasicSpawner.o ../SpaceRace/Spawner/BasicSpawner.cpp
 
 ${OBJECTDIR}/main.o: main.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -I../../SFML/include -IContentManager -IGameState -IEntity -I. -ICollider -MMD -MP -MF $@.d -o ${OBJECTDIR}/main.o main.cpp
+	$(COMPILE.cc) -O2 -I../../SFML/include -IContentManager -IGameState -IEntity -I. -ICollider -ISpawner -MMD -MP -MF $@.d -o ${OBJECTDIR}/main.o main.cpp
 
 # Subprojects
 .build-subprojects:

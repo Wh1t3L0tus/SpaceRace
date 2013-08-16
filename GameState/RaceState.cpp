@@ -28,7 +28,6 @@ void RaceState::init()
 {
     GameState::init();
     m_clock.restart();
-    m_elapsedTime = 0.0;
     m_player.setPosition(LaneExplorer::getAbscissaFromLane(3), 600 - m_player.size().y);
 }
 
@@ -47,25 +46,17 @@ bool RaceState::updateLoop(sf::RenderWindow& window)
         m_pNextState = NULL;
     }
     
-    float elapsedTime = m_clock.getElapsedTime().asSeconds();
-    m_elapsedTime += elapsedTime;
-    m_clock.restart();
-    
 
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
         m_player.takeLane(RightLane);
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
         m_player.takeLane(LeftLane);
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
+        m_mobMgr.increaseSpeed(10);
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
+        m_mobMgr.increaseSpeed(-10);    
     
-    if (m_elapsedTime >= 0.05)
-    {
-        m_mobMgr.createMob();
-        m_elapsedTime = 0.0;
-    }
-
-    m_player.update(elapsedTime);
-    
-    m_mobMgr.manageMobs(elapsedTime, m_player);
+    m_mobMgr.manageMobs(m_clock.restart().asSeconds(), m_player);
     
     if (m_player.isAlive() == false)
     {
@@ -73,7 +64,7 @@ bool RaceState::updateLoop(sf::RenderWindow& window)
         m_pNextState = new GameOverState();
     }
     
-    window.clear();
+    window.clear(sf::Color(255, 255, 255));
     window.draw(m_player);
     window.draw(m_mobMgr);
     window.display();
@@ -82,9 +73,3 @@ bool RaceState::updateLoop(sf::RenderWindow& window)
 
     return m_loopAgain;
 }
-
-//GameState* RaceState::quit()
-//{
-//    //you may need to free a bunch of variables here
-//    return NULL;
-//}

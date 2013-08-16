@@ -20,12 +20,13 @@ sf::Texture* load(std::string str)
 }
 
 ContentManager::ContentManager() {
-    m_textureMap.add("spaceCraft", "../../etc/SpaceRace/ospacecraft.png");
+    m_textureMap.add("spaceCraft", "../../etc/SpaceRace/dspacecraft.png");
     m_textureMap.add("menu", "../../etc/SpaceRace/menu.png");
     m_textureMap.add("intro", "../../etc/SpaceRace/intro.png");
     m_textureMap.add("pause", "../../etc/SpaceRace/pause.png");
-    m_textureMap.add("spacecraft2", "../../etc/SpaceRace/ospacecraft2.png");
+    m_textureMap.add("spacecraft2", "../../etc/SpaceRace/dspacecraft2.png");
     m_textureMap.add("gameover", "../../etc/SpaceRace/gameover.png");
+    m_textureMap.add("spacecraft3", "../../etc/SpaceRace/dspacecraft3.png");
 }
 
 ContentManager::~ContentManager() {

@@ -24,7 +24,6 @@ private:
     MobManager m_mobMgr;    
     Player m_player;
     sf::Clock m_clock;
-    float m_elapsedTime;
 
 };
 

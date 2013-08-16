@@ -43,6 +43,11 @@ void SpaceShip::takeLane(Lane destination)
         m_abscissaGoal = LaneExplorer::getAbscissaFromLane(LaneExplorer::getLaneFromAbscissa(position().x) + 1);
 }
 
+bool SpaceShip::isJumpingLane()
+{
+    return position().x != m_abscissaGoal;
+}
+
 void SpaceShip::setPosition(sf::Vector2f pos)
 {
     SpaceShip::setPosition(pos.x, pos.y);   
