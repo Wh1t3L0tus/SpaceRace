@@ -9,19 +9,22 @@
 #define	PAUSESTATE_H
 
 #include "GameState.h"
+#include "RaceState.h"
 
 
 class PauseState : public GameState {
 public:
-    PauseState();
+    PauseState(RaceState pausedState);
     virtual ~PauseState();
     
     virtual void init();
-    virtual bool updateLoop(sf::RenderWindow &window);
+    virtual bool update(sf::RenderWindow &window);
+    virtual bool handleNotifiedEvents(sf::Event& event);
 //    virtual GameState* quit();
 private:
     sf::Texture m_texture;
     sf::Sprite m_sprite;
+    RaceState m_pausedGame;
 
 };
 

@@ -17,7 +17,8 @@ public:
     virtual ~GameOverState();
     
     virtual void init();
-    virtual bool updateLoop(sf::RenderWindow &window);
+    virtual bool update(sf::RenderWindow &window);
+    virtual bool handleNotifiedEvents(sf::Event& event);
 
 private:
     sf::Sprite m_sprite;

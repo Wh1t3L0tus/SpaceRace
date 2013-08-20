@@ -43,6 +43,11 @@ void SpaceShip::takeLane(Lane destination)
         m_abscissaGoal = LaneExplorer::getAbscissaFromLane(LaneExplorer::getLaneFromAbscissa(position().x) + 1);
 }
 
+int SpaceShip::actualLane()
+{
+    return LaneExplorer::getLaneFromAbscissa(position().x);
+}
+
 bool SpaceShip::isJumpingLane()
 {
     return position().x != m_abscissaGoal;

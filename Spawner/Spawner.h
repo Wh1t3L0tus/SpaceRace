@@ -10,6 +10,9 @@
 
 #include <SFML/Graphics.hpp>
 #include "SpaceShip.h"
+#include <iostream>
+
+using namespace std;
 
 /** Structure that describes the result of call to the spawn() method
  */
@@ -27,7 +30,7 @@ struct SpawnResult {
 
 class Spawner {
 public:
-    Spawner(){};
+    Spawner(float speed){adaptSpawnInterval(speed);}
     virtual ~Spawner(){};
     
 
@@ -46,13 +49,32 @@ public:
      * 
      * @return all the spaceships created in a SpawnResult
      */
-    virtual SpawnResult spawn(float speed) = 0;
+    virtual SpawnResult spawn(float speed)
+    {
+        if (m_spawnInterval != -1)
+            return spawnImplementation(speed);
+        else
+            return SpawnResult();
+    }
+    
+    virtual SpawnResult spawnImplementation(float speed) = 0;
     
     /** Get the time interval between two spawn
      * 
      * @return the interval in seconds
      */
     virtual float spawnInterval() = 0;
+    
+    virtual void adaptSpawnInterval(float speed)
+    {
+        if (speed != 0)
+            m_spawnInterval = -(0.5 / 400) * speed + 1.5;
+        else
+            m_spawnInterval = -1;
+    }
+    
+protected:
+    float m_spawnInterval;
 };
 
 #endif	/* SPAWNER_H */

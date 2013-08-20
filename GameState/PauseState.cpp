@@ -9,7 +9,7 @@
 #include "RaceState.h"
 #include "ContentManager.h"
 
-PauseState::PauseState() {
+PauseState::PauseState(RaceState pausedGame) : m_pausedGame(pausedGame) {
     m_sprite.setTexture(ContentManager::getInstance()->getTexture("pause"));
 }
 
@@ -18,20 +18,12 @@ PauseState::~PauseState() {
 
 void PauseState::init()
 {
-    GameState::init();
+    cout << "entering pause" << endl;
     m_sprite.setPosition(0, 0);
 }
 
-bool PauseState::updateLoop(sf::RenderWindow& window)
+bool PauseState::update(sf::RenderWindow& window)
 {
-    sf::err() << "PauseState::updateLoop\n";
-    if (!GameState::updateLoop(window))
-        return false;
-    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::F1))
-    {
-        m_loopAgain = false;
-        m_pNextState = new RaceState();
-    }
     window.clear(); 
     sf::sleep(sf::milliseconds(10));
     window.draw(m_sprite);
@@ -40,8 +32,15 @@ bool PauseState::updateLoop(sf::RenderWindow& window)
     return m_loopAgain;
 }
 
-//GameState* PauseState::quit()
-//{
-//    //nothing to do here before quitting
-//    return new RaceState();
-//}
+bool PauseState::handleNotifiedEvents(sf::Event& event)
+{
+    if (event.type == sf::Event::KeyPressed)
+    {
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::F1))
+        {
+            m_loopAgain = false;
+            m_pNextState = new RaceState(m_pausedGame);
+        }    
+    }
+    return m_loopAgain;
+}

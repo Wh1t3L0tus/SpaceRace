@@ -9,6 +9,9 @@
 #define	GAMESTATE_H
 
 #include <SFML/Graphics.hpp>
+#include <iostream>
+
+using namespace std;
 
 class GameState {
 public:
@@ -18,31 +21,67 @@ public:
     /** Init
      * Put here things to do before entering this state
      */
-    virtual void init() { 
+    virtual void init() {}
+    
+    void initState()
+    {
         m_loopAgain = true;
         m_pNextState = NULL;
+        init();
+        cout << "loop again " << m_loopAgain << endl;
     }
     
+    /** handleNotifiedEvents
+     * Put here codes to handle notified events such as key released or mouse wheel moved
+     * 
+     * @param event : the event to handle
+     */
+    virtual bool handleNotifiedEvents(sf::Event &event){return true;}
+    
     /** updateLoop
+     * Call update and the handleX methods which are defined by the user
+     * 
+     * @param window : the window on which to draw
+     * @return false when you have to change of state
+     */
+    bool updateLoop(sf::RenderWindow &window) {
+        sf::Event event;
+        bool loopAgain = true;
+        while (window.pollEvent(event))
+        {
+            if (event.type == sf::Event::Closed)
+            {
+                return handleCloseEvent(window);
+            }
+            else
+                loopAgain = handleNotifiedEvents(event);
+        }
+        
+        if (loopAgain)
+            return update(window);   
+        else
+            return false;
+    }
+    
+    /** update
      * Put here your game logic for this state
      * 
      * @param window : the window on which to draw
      * @return false when you have to change of state
      */
-    virtual bool updateLoop(sf::RenderWindow &window) {
-        sf::Event event;
-        while (window.pollEvent(event))
-        {
-            if (event.type == sf::Event::Closed)
-            {
-                sf::err() << "Closing the window" << std::endl;
-                window.close();
-                m_pNextState = NULL;
-                m_loopAgain = false;
-                return false;
-            }
-        }
-        return true;
+    virtual bool update(sf::RenderWindow &window) = 0;
+    
+    /** handleCloseEvent
+     * Put here what to do on "close window" requests
+     * @param window : the window to close
+     * @return false if the window is closed
+     */
+    virtual bool handleCloseEvent(sf::RenderWindow& window)
+    {
+        window.close();
+        m_pNextState = NULL;
+        m_loopAgain = false;
+        return false;
     }
     
     /** quit

@@ -18,14 +18,15 @@ using namespace std;
 
 int main(int argc, char** argv) {
     
-    GameState *gs = new RaceState();
+    GameState *gs = new IntroState();
     
     
     sf::RenderWindow window(sf::VideoMode(800, 600), "Space Race");
+    window.setVerticalSyncEnabled(true);
 
     while (window.isOpen() && gs != NULL)
     {
-        gs->init();
+        gs->initState();
         while (gs->updateLoop(window));
         GameState* freeThis = gs;
         gs = gs->quit();

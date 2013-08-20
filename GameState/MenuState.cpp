@@ -15,19 +15,11 @@ MenuState::MenuState() {
 
 void MenuState::init()
 {
-    GameState::init();
     m_sprite.setPosition(0, 0);
 }
 
-bool MenuState::updateLoop(sf::RenderWindow &window)
+bool MenuState::update(sf::RenderWindow &window)
 {
-    if (!GameState::updateLoop(window))
-        return false;
-    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Return))
-    {
-        m_loopAgain = false;
-        m_pNextState = new RaceState();
-    }
     window.clear();
     sf::sleep(sf::milliseconds(10));
     window.draw(m_sprite);
@@ -35,11 +27,19 @@ bool MenuState::updateLoop(sf::RenderWindow &window)
     return m_loopAgain;
 }
 
-//GameState* MenuState::quit()
-//{
-//    //nothing to do before quitting
-//    return m_pNextState;
-//}
+bool MenuState::handleNotifiedEvents(sf::Event& event)
+{
+    if (event.type == sf::Event::KeyPressed)
+    {
+        if (event.key.code == sf::Keyboard::Return)
+        {
+            m_loopAgain = false;
+            m_pNextState = new RaceState();
+        }
+    }
+    
+    return m_loopAgain;
+}
 
 MenuState::~MenuState() {
 }

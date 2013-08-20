@@ -21,6 +21,7 @@ public:
     
     void update(float elapsedSeconds);
     void takeLane(Lane destination);
+    int actualLane();
     bool isJumpingLane();
     void setPosition(sf::Vector2f pos);
     void setPosition(float x, float y);

@@ -12,13 +12,13 @@
 
 class BasicSpawner : public Spawner {
 public:
-    BasicSpawner();
-    BasicSpawner(sf::FloatRect lanes[5]);
+    BasicSpawner(float speed);
+    BasicSpawner(float speed, sf::FloatRect lanes[5]);
     virtual ~BasicSpawner();
     
     sf::FloatRect getLane(int i);
     void update();
-    SpawnResult spawn(float speed);
+    SpawnResult spawnImplementation(float speed);
     float spawnInterval();
     
     bool lanesCleared();

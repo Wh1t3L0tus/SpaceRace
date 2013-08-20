@@ -19,6 +19,8 @@ using namespace std;
 
 RaceState::RaceState() {
     m_pNextState = NULL;
+    m_player.setPosition(LaneExplorer::getAbscissaFromLane(3), 600 - m_player.size().y);
+    m_player.setSpeed(1000);
 }
 
 RaceState::~RaceState() {
@@ -26,35 +28,17 @@ RaceState::~RaceState() {
 
 void RaceState::init()
 {
-    GameState::init();
+    cout << "entering race" << endl;
     m_clock.restart();
-    m_player.setPosition(LaneExplorer::getAbscissaFromLane(3), 600 - m_player.size().y);
 }
 
-bool RaceState::updateLoop(sf::RenderWindow& window)
+bool RaceState::update(sf::RenderWindow& window)
 {
-    if (!GameState::updateLoop(window))
-        return false;
-    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::F1))
-    {
-        m_loopAgain = false;
-        m_pNextState = new PauseState();
-    }
-    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
     {
         m_loopAgain = false;
         m_pNextState = NULL;
     }
-    
-
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
-        m_player.takeLane(RightLane);
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
-        m_player.takeLane(LeftLane);
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
-        m_mobMgr.increaseSpeed(10);
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
-        m_mobMgr.increaseSpeed(-10);   
     
     m_mobMgr.manageMobs(m_clock.restart().asSeconds(), m_player);
     
@@ -71,5 +55,28 @@ bool RaceState::updateLoop(sf::RenderWindow& window)
     
     sf::sleep(sf::milliseconds(10));
 
+    return m_loopAgain;
+}
+
+bool RaceState::handleNotifiedEvents(sf::Event& event)
+{
+    if (event.type == sf::Event::KeyPressed)
+    {
+        if (event.key.code == sf::Keyboard::Left && m_player.actualLane() > 1)
+            m_player.takeLane(LeftLane);
+        else if (event.key.code == sf::Keyboard::Right && m_player.actualLane() < 5)
+            m_player.takeLane(RightLane);
+        else if (event.key.code == sf::Keyboard::Up)
+            m_mobMgr.increaseSpeed(10);
+        else if (event.key.code == sf::Keyboard::Down)
+            m_mobMgr.increaseSpeed(-10);
+        else if (event.key.code == sf::Keyboard::F1)
+        {
+            cout << "pause requested" << endl;
+            m_loopAgain = false;
+            m_pNextState = new PauseState(*this);
+        }
+    }
+    
     return m_loopAgain;
 }

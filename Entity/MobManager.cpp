@@ -10,6 +10,7 @@
 #include "Collider.h"
 #include "BasicSpawner.h"
 #include <iostream>
+#include <iomanip>
 #include <assert.h>
 #include <set>
 
@@ -30,7 +31,20 @@ void findAndErase(SpaceShip* m, std::vector<SpaceShip*> &v)
 }
 
 MobManager::MobManager() : m_pool(), m_speedDelta(0), m_mobsSpeed(500), m_elapsedTime(0.0) {
-    m_spawner = new BasicSpawner();
+    m_spawner = new BasicSpawner(m_mobsSpeed);
+}
+
+MobManager::MobManager(MobManager& orig) : 
+        m_speedDelta(orig.m_speedDelta),
+        m_mobsSpeed(orig.m_mobsSpeed),
+        m_elapsedTime(orig.m_elapsedTime)
+{
+    for (unsigned int i = 0; i < orig.m_pool.size(); i++)
+        m_pool.push_back(orig.m_pool[i]);
+    m_spawner = orig.m_spawner;
+    
+    orig.m_pool.clear();
+    orig.m_spawner = NULL;
 }
 
 MobManager::~MobManager() {
@@ -42,13 +56,6 @@ MobManager::~MobManager() {
 
 void MobManager::createMob()
 {
-//    string spaceShipName;
-//    if (Random::range(1, 20) <= 2)
-//        spaceShipName = "spacecraft3";
-//    else
-//        spaceShipName = "spacecraft2";
-//    int x = Random::range(1, 5) * 160 - 130;
-//    SpaceShip *m = new SpaceShip(sf::Vector2f(x, -400), spaceShipName, m_mobsSpeed + m_speedDelta);
     SpawnResult sp = m_spawner->spawn(m_mobsSpeed + m_speedDelta);
     for (unsigned int i = 0; i < 5; i++)
     {
@@ -58,7 +65,7 @@ void MobManager::createMob()
 }
 
 void MobManager::manageMobs(float elapsedTime, Player& player)
-{   
+{
     m_elapsedTime += elapsedTime;
     
     player.update(elapsedTime);
@@ -71,6 +78,7 @@ void MobManager::manageMobs(float elapsedTime, Player& player)
     
     for (unsigned int i = 0; i < m_pool.size(); i++)
     {
+        //if there is a speed delta, then set the new speed for all ships
         if (m_speedDelta != 0)
             m_pool[i]->setSpeed(m_pool[i]->getSpeed() + m_speedDelta);
 //        if (Random::range(1, 1000) == 1)
@@ -93,9 +101,8 @@ void MobManager::manageMobs(float elapsedTime, Player& player)
     {
         for (unsigned int j = 0; j < m_pool.size(); j++)
         {
-            if (/**m_pool[i] != m_pool[j]**/j > i && Collider::collide(*m_pool[i], *m_pool[j]))
+            if (j > i && Collider::collide(*m_pool[i], *m_pool[j]))
             {
-                cout << "crash" << endl;
                 mobToErase.insert(m_pool[i]);
                 mobToErase.insert(m_pool[j]);
             }
@@ -112,6 +119,9 @@ void MobManager::manageMobs(float elapsedTime, Player& player)
         }
     }
     
+    if (player.isAlive())
+        player.increaseMileageCounter(m_mobsSpeed * elapsedTime);
+    
     //cleaning
     for (std::set<SpaceShip*>::iterator it = mobToErase.begin(); it != mobToErase.end(); ++it)
         findAndErase(*it, m_pool);
@@ -119,8 +129,12 @@ void MobManager::manageMobs(float elapsedTime, Player& player)
 
 void MobManager::increaseSpeed(float delta)
 {
-    m_speedDelta = delta;
-    m_mobsSpeed += delta;
+    if (m_mobsSpeed + delta <= 1170 && m_mobsSpeed + delta >= 0)
+    {
+        m_speedDelta = delta;
+        m_mobsSpeed += delta;
+        m_spawner->adaptSpawnInterval(m_mobsSpeed);
+    }
 }
 
 void MobManager::draw(sf::RenderTarget& target, sf::RenderStates states) const

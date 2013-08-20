@@ -17,8 +17,7 @@ public:
     virtual ~IntroState();
     
     virtual void init();
-    virtual bool updateLoop(sf::RenderWindow &window);
-//    virtual GameState* quit();
+    virtual bool update(sf::RenderWindow &window);
     
 private:
     

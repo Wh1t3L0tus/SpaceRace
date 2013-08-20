@@ -22,15 +22,12 @@ IntroState::~IntroState() {
 
 void IntroState::init()
 {
-    GameState::init();
     m_sprite.setPosition(0, 0);
 }
 
-bool IntroState::updateLoop(sf::RenderWindow& window)
+bool IntroState::update(sf::RenderWindow& window)
 {
-    if (!GameState::updateLoop(window))
-        return false;
-    else if (m_clock.getElapsedTime().asSeconds() >= 2)
+    if (m_clock.getElapsedTime().asSeconds() >= 2)
     {
         m_loopAgain = false;
         m_pNextState = new MenuState();
@@ -43,8 +40,3 @@ bool IntroState::updateLoop(sf::RenderWindow& window)
     return m_loopAgain;
 }
 
-//GameState* IntroState::quit()
-//{
-//    //nothing to do before quitting
-//    return new MenuState();
-//}

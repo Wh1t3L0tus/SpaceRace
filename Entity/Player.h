@@ -19,14 +19,12 @@ public:
     
     bool isAlive();
     void destroy();
+    void increaseMileageCounter(float inc);
+    float getMileage();
     
-//    void update(float elapsedSeconds);
-//    void takeLane(Lane destination);
-//    void setPosition(sf::Vector2f pos);
-//    void setPosition(float x, float y);
 private:
     bool m_alive;
-//    float m_abscissaGoal;
+    float m_mileageCounter;
 };
 
 #endif	/* PLAYER_H */

@@ -17,29 +17,33 @@ GameOverState::~GameOverState() {
 
 void GameOverState::init()
 {
-    GameState::init();
     m_sprite.setPosition(0, 0);
 }
 
-bool GameOverState::updateLoop(sf::RenderWindow& window)
+bool GameOverState::update(sf::RenderWindow& window)
 {
-    if (!GameState::updateLoop(window))
-        return false;
-    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Return))
-    {
-        m_loopAgain = false;
-        m_pNextState = new RaceState();
-    }
-    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
-    {
-        m_loopAgain = false;
-        m_pNextState = NULL;
-    }
-    
         window.clear();
         window.draw(m_sprite);
         window.display();
         sf::sleep(sf::milliseconds(50));
     
+    return m_loopAgain;
+}
+
+bool GameOverState::handleNotifiedEvents(sf::Event& event)
+{
+    if (event.type == sf::Event::KeyPressed)
+    {
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Return))
+        {
+            m_loopAgain = false;
+            m_pNextState = new RaceState();
+        }
+        else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
+        {
+            m_loopAgain = false;
+            m_pNextState = NULL;
+        }
+    }
     return m_loopAgain;
 }
