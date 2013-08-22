@@ -49,6 +49,7 @@ bool RaceState::update(sf::RenderWindow& window)
     }
     
     window.clear(sf::Color(255, 255, 255));
+    window.draw(m_stars);
     window.draw(m_player);
     window.draw(m_mobMgr);
     window.display();

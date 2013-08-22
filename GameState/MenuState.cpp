@@ -8,6 +8,8 @@
 #include "MenuState.h"
 #include "RaceState.h"
 #include "ContentManager.h"
+#include "Random.h"
+#include "StarBackground.h"
 
 MenuState::MenuState() {
     m_sprite.setTexture(ContentManager::getInstance()->getTexture("menu"));

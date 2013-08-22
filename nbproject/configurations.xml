@@ -12,6 +12,14 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <logicalFolder name="f6" displayName="Background" projectFiles="true">
+        <itemPath>../SpaceRace/Background/Star.cpp</itemPath>
+        <itemPath>../SpaceRace/Background/Star.h</itemPath>
+        <itemPath>../SpaceRace/Background/StarBackground.cpp</itemPath>
+        <itemPath>../SpaceRace/Background/StarBackground.h</itemPath>
+        <itemPath>../SpaceRace/Background/StarField.cpp</itemPath>
+        <itemPath>../SpaceRace/Background/StarField.h</itemPath>
+      </logicalFolder>
       <logicalFolder name="f4" displayName="Collider" projectFiles="true">
         <itemPath>../SpaceRace/Collider/Collidable.h</itemPath>
         <itemPath>../SpaceRace/Collider/Collider.cpp</itemPath>
@@ -85,6 +93,7 @@
             <pElem>.</pElem>
             <pElem>Collider</pElem>
             <pElem>Spawner</pElem>
+            <pElem>Background</pElem>
           </incDir>
           <warningLevel>2</warningLevel>
         </ccTool>
@@ -100,6 +109,30 @@
           </linkerLibItems>
         </linkerTool>
       </compileType>
+      <item path="../SpaceRace/Background/Star.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../SpaceRace/Background/Star.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../SpaceRace/Background/StarBackground.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../SpaceRace/Background/StarBackground.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../SpaceRace/Background/StarField.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../SpaceRace/Background/StarField.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
       <item path="../SpaceRace/Collider/Collidable.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../SpaceRace/Collider/Collider.cpp" ex="false" tool="1" flavor2="0">
@@ -220,6 +253,7 @@
             <pElem>.</pElem>
             <pElem>Collider</pElem>
             <pElem>Spawner</pElem>
+            <pElem>Background</pElem>
           </incDir>
         </ccTool>
         <fortranCompilerTool>
@@ -240,6 +274,30 @@
           </linkerLibItems>
         </linkerTool>
       </compileType>
+      <item path="../SpaceRace/Background/Star.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../SpaceRace/Background/Star.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../SpaceRace/Background/StarBackground.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../SpaceRace/Background/StarBackground.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../SpaceRace/Background/StarField.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../SpaceRace/Background/StarField.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
       <item path="../SpaceRace/Collider/Collidable.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../SpaceRace/Collider/Collider.cpp" ex="false" tool="1" flavor2="0">

@@ -27,6 +27,8 @@ public:
     virtual float getSpeed();
     virtual sf::Vector2f position();
     virtual sf::Vector2f size();
+    virtual void setTexture(const sf::Texture &texture, sf::IntRect textureRect);
+    virtual void setTexture(const sf::Texture &texture);
     
 //    virtual sf::FloatRect hitbox();
     virtual ~Entity();

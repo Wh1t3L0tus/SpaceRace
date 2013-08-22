@@ -64,10 +64,16 @@ sf::Vector2f Entity::size()
     return m_size;
 }
 
-//sf::FloatRect Entity::hitbox()
-//{
-//    return sf::FloatRect(m_sprite.getPosition().x, m_sprite.getPosition().y, m_size.x, m_size.y);
-//}
+void Entity::setTexture(const sf::Texture& texture, sf::IntRect textureRect)
+{
+    m_sprite.setTexture(texture);
+    m_sprite.setTextureRect(textureRect);
+}
+
+void Entity::setTexture(const sf::Texture& texture)
+{
+    m_sprite.setTexture(texture);
+}
 
 void Entity::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {

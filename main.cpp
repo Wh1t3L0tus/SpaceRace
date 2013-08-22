@@ -18,7 +18,7 @@ using namespace std;
 
 int main(int argc, char** argv) {
     
-    GameState *gs = new IntroState();
+    GameState *gs = new MenuState();
     
     
     sf::RenderWindow window(sf::VideoMode(800, 600), "Space Race");
