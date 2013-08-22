@@ -25,8 +25,6 @@ private:
     
     sf::Texture m_texture;
     sf::Sprite m_sprite;
-    StarBackground back;
-    sf::Clock clock;
 
 };
 

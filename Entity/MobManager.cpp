@@ -137,6 +137,11 @@ void MobManager::increaseSpeed(float delta)
     }
 }
 
+float MobManager::speed()
+{
+    return m_mobsSpeed;
+}
+
 void MobManager::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
     for (std::vector<SpaceShip*>::const_iterator it = m_pool.begin(); it != m_pool.end(); ++it)

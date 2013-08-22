@@ -54,7 +54,7 @@ float Entity::getSpeed()
     return m_speed;
 }
 
-sf::Vector2f Entity::position()
+sf::Vector2f Entity::position() const
 {
     return m_sprite.getPosition();
 }
@@ -68,11 +68,13 @@ void Entity::setTexture(const sf::Texture& texture, sf::IntRect textureRect)
 {
     m_sprite.setTexture(texture);
     m_sprite.setTextureRect(textureRect);
+    m_size = sf::Vector2f(m_sprite.getTexture()->getSize().x, m_sprite.getTexture()->getSize().y);
 }
 
 void Entity::setTexture(const sf::Texture& texture)
 {
     m_sprite.setTexture(texture);
+    m_size = sf::Vector2f(m_sprite.getTexture()->getSize().x, m_sprite.getTexture()->getSize().y);
 }
 
 void Entity::draw(sf::RenderTarget& target, sf::RenderStates states) const

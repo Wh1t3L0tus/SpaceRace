@@ -41,6 +41,8 @@ public:
      * @param delta : the speed variation
      */
     void increaseSpeed(float delta);
+    
+    float speed();
     virtual ~MobManager();
     
     virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;

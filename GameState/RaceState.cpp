@@ -40,13 +40,18 @@ bool RaceState::update(sf::RenderWindow& window)
         m_pNextState = NULL;
     }
     
-    m_mobMgr.manageMobs(m_clock.restart().asSeconds(), m_player);
+    float elapsed = m_clock.restart().asSeconds();
+    
+    m_mobMgr.manageMobs(elapsed, m_player);
     
     if (m_player.isAlive() == false)
     {
         m_loopAgain = false;
         m_pNextState = new GameOverState();
     }
+    
+    m_stars.scroll(elapsed, m_mobMgr.speed() / 2.0);
+    
     
     window.clear(sf::Color(255, 255, 255));
     window.draw(m_stars);

@@ -44,6 +44,11 @@ void Star::setStar(sf::Vector2f pos, double radius, double intensity)
     }
 }
 
+void Star::setStar(const Star& s)
+{
+    setStar(s.m_position, s.m_radius, s.m_lightIntensity);
+}
+
 void Star::setPosition(sf::Vector2f pos)
 {
     m_circle[0].position = pos;

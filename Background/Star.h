@@ -16,6 +16,7 @@ public:
     Star(sf::Vector2f pos, double radius, double intensity);
     Star(const Star& s);
     void setStar(sf::Vector2f pos, double radius, double intensity);
+    void setStar(const Star& s);
     void setPosition(sf::Vector2f pos);
     void setRadius(double radius);
     void setIntensity(double intensity);
