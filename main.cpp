@@ -21,7 +21,7 @@ int main(int argc, char** argv) {
     GameState *gs = new MenuState();
     
     
-    sf::RenderWindow window(sf::VideoMode(800, 600), "Space Race");
+    sf::RenderWindow window(sf::VideoMode(900, 700), "Space Race");
     window.setVerticalSyncEnabled(true);
 
     while (window.isOpen() && gs != NULL)

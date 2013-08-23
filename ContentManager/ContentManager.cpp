@@ -7,11 +7,12 @@
 #include <iostream>
 #include "ContentManager.h"
 
-#define add(key, texture) insert(std::pair<std::string, sf::Texture*>(key, load(texture)))
+#define addTexture(key, texture) insert(std::pair<std::string, sf::Texture*>(key, loadTexture(texture)))
+#define addFont(key, font) insert(std::pair<std::string, sf::Font*>(key, loadFont(font)))
 
 ContentManager* ContentManager::m_pSingleton = NULL; 
 
-sf::Texture* load(std::string str)
+sf::Texture* loadTexture(std::string str)
 {
     sf::Texture *texture = new sf::Texture();
     if (texture->loadFromFile(str) == false)
@@ -19,15 +20,27 @@ sf::Texture* load(std::string str)
     return texture;
 }
 
+sf::Font* loadFont(std::string str)
+{
+    sf::Font* font = new sf::Font();
+    if (font->loadFromFile(str) == false)
+        exit(EXIT_FAILURE);
+    return font;
+}
+
 ContentManager::ContentManager() {
-    m_textureMap.add("spaceCraft", "../../etc/SpaceRace/ospacecraft.png");
-    m_textureMap.add("menu", "../../etc/SpaceRace/menu.png");
-    m_textureMap.add("intro", "../../etc/SpaceRace/intro.png");
-    m_textureMap.add("pause", "../../etc/SpaceRace/pause.png");
-    m_textureMap.add("spacecraft2", "../../etc/SpaceRace/ospacecraft2.png");
-    m_textureMap.add("gameover", "../../etc/SpaceRace/gameover.png");
-    m_textureMap.add("spacecraft3", "../../etc/SpaceRace/ospacecraft3.png");
-    m_textureMap.add("spacecraft4", "../../etc/SpaceRace/ospacecraft4.png");
+    //textures
+    m_textureMap.addTexture("spaceCraft", "../../etc/SpaceRace/ospacecraft.png");
+    m_textureMap.addTexture("menu", "../../etc/SpaceRace/menu.png");
+    m_textureMap.addTexture("intro", "../../etc/SpaceRace/intro.png");
+    m_textureMap.addTexture("pause", "../../etc/SpaceRace/pause.png");
+    m_textureMap.addTexture("spacecraft2", "../../etc/SpaceRace/ospacecraft2.png");
+    m_textureMap.addTexture("gameover", "../../etc/SpaceRace/gameover.png");
+    m_textureMap.addTexture("spacecraft3", "../../etc/SpaceRace/ospacecraft3.png");
+    m_textureMap.addTexture("spacecraft4", "../../etc/SpaceRace/ospacecraft4.png");
+    
+    //fonts
+    m_fontMap.addFont("arial", "../../etc/SpaceRace/fonts/arial.ttf");
 }
 
 ContentManager::~ContentManager() {
@@ -52,6 +65,13 @@ void ContentManager::deleteInstance()
 sf::Texture& ContentManager::getTexture(std::string str)
 {
     if (m_textureMap.find(str) == m_textureMap.end())
-        std::cout << str << " not found in content manager" << std::endl;
+        std::cout << str << " texture not found in content manager" << std::endl;
     return *m_textureMap.at(str);
+}
+
+sf::Font& ContentManager::getFont(std::string str)
+{
+    if (m_fontMap.find(str) == m_fontMap.end())
+        std::cout << str << " font not found in content manager" << std::endl;
+    return *m_fontMap.at(str);
 }

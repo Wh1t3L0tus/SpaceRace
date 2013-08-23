@@ -12,6 +12,8 @@
 #include "Player.h"
 #include "MobManager.h"
 #include "StarBackground.h"
+#include "RaceGui.h"
+
 
 class RaceState : public GameState {
 public:
@@ -27,6 +29,8 @@ private:
     Player m_player;
     sf::Clock m_clock;
     StarBackground m_stars;
+    sf::View m_raceArea;
+    RaceGui m_gui;
 
 };
 

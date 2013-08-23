@@ -14,6 +14,7 @@
 class ContentManager {
 public:
     sf::Texture& getTexture(std::string str);
+    sf::Font& getFont(std::string str);
     static ContentManager* getInstance();
     static void deleteInstance();
     virtual ~ContentManager();
@@ -21,6 +22,7 @@ private:
     ContentManager();
         
     std::map<std::string, sf::Texture*> m_textureMap;
+    std::map<std::string, sf::Font*> m_fontMap;
     static ContentManager* m_pSingleton; 
 };
 

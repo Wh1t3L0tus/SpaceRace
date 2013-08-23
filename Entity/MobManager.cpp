@@ -81,8 +81,8 @@ void MobManager::manageMobs(float elapsedTime, Player& player)
         //if there is a speed delta, then set the new speed for all ships
         if (m_speedDelta != 0)
             m_pool[i]->setSpeed(m_pool[i]->getSpeed() + m_speedDelta);
-//        if (Random::range(1, 1000) == 1)
-//            m_pool[i]->takeLane((Lane)Random::range(LeftLane, RightLane));
+        if (Random::range(1, 1000) <= 5)
+            m_pool[i]->takeLane((Lane)Random::range(LeftLane, RightLane));
         m_pool[i]->move(Down, elapsedTime);
         m_pool[i]->update(elapsedTime);    
         if (m_pool[i]->position().y > 900)

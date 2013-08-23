@@ -52,6 +52,10 @@
         <itemPath>../SpaceRace/GameState/RaceState.cpp</itemPath>
         <itemPath>../SpaceRace/GameState/RaceState.h</itemPath>
       </logicalFolder>
+      <logicalFolder name="f7" displayName="Gui" projectFiles="true">
+        <itemPath>../SpaceRace/Gui/RaceGui.cpp</itemPath>
+        <itemPath>../SpaceRace/Gui/RaceGui.h</itemPath>
+      </logicalFolder>
       <logicalFolder name="f5" displayName="Spawner" projectFiles="true">
         <itemPath>../SpaceRace/Spawner/BasicSpawner.cpp</itemPath>
         <itemPath>../SpaceRace/Spawner/BasicSpawner.h</itemPath>
@@ -94,6 +98,7 @@
             <pElem>Collider</pElem>
             <pElem>Spawner</pElem>
             <pElem>Background</pElem>
+            <pElem>Gui</pElem>
           </incDir>
           <warningLevel>2</warningLevel>
         </ccTool>
@@ -211,6 +216,10 @@
       </item>
       <item path="../SpaceRace/GameState/RaceState.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="../SpaceRace/Gui/RaceGui.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../SpaceRace/Gui/RaceGui.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="../SpaceRace/LaneExplorer.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../SpaceRace/Random.cpp" ex="false" tool="1" flavor2="0">
@@ -254,6 +263,7 @@
             <pElem>Collider</pElem>
             <pElem>Spawner</pElem>
             <pElem>Background</pElem>
+            <pElem>Gui</pElem>
           </incDir>
         </ccTool>
         <fortranCompilerTool>
@@ -375,6 +385,10 @@
             flavor2="0">
       </item>
       <item path="../SpaceRace/GameState/RaceState.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../SpaceRace/Gui/RaceGui.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../SpaceRace/Gui/RaceGui.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../SpaceRace/LaneExplorer.h" ex="false" tool="3" flavor2="0">
       </item>
