@@ -13,27 +13,13 @@
 
 using namespace std;
 
-BasicSpawner::BasicSpawner(float speed) : Spawner(speed), m_leftWriter(5), m_rightWriter(7), m_start(true), m_holePosition(Random::range(1, 5)) {
+BasicSpawner::BasicSpawner(float initSpeed, string spacecraftName) : Spawner(initSpeed), m_leftWriter(5), m_rightWriter(7), m_startCondition(1.0), m_elapsedTime(0.0), m_holePosition(Random::range(1, 5)), m_spacecraftName(spacecraftName) {
 }
 
-BasicSpawner::BasicSpawner(float speed, sf::FloatRect lanes[5]) : Spawner(speed), m_leftWriter(5), m_rightWriter(7), m_start(true), m_holePosition(Random::range(1, 5))
+void BasicSpawner::updateImplementation(float elapsedTime)
 {
-    //copying lanes into m_lanes
-    for (unsigned int i = 0; i < 5; i++)
-       m_lanes[i] = lanes[i]; 
-    
-    //checking wether the lanes are cleared or not
-    lanesCleared();
-}
-
-sf::FloatRect BasicSpawner::getLane(int i)
-{
-    return m_lanes[i];
-}
-
-void BasicSpawner::update()
-{
-    if (m_start)
+    m_elapsedTime += elapsedTime;
+    if (m_elapsedTime >= m_startCondition)
     {
         m_leftWriter--;
         m_rightWriter--;
@@ -44,45 +30,23 @@ void BasicSpawner::update()
             m_holePosition = Random::range(1, 5);
         }
     }
-    else
-        lanesCleared();
 }
 
 SpawnResult BasicSpawner::spawnImplementation(float speed)
 {
     SpawnResult sr;
-    if (m_start)
-    {
-        if (m_leftWriter >= 1 && m_leftWriter <= 5 && m_holePosition != m_leftWriter)
-            sr.lanes[m_leftWriter - 1] = new SpaceShip(sf::Vector2f(LaneExplorer::getAbscissaFromLane(m_leftWriter), -400), "spacecraft3", speed);
-        if (m_rightWriter >= 1 && m_rightWriter <= 5 && m_holePosition != m_rightWriter)
-            sr.lanes[m_rightWriter - 1] = new SpaceShip(sf::Vector2f(LaneExplorer::getAbscissaFromLane(m_rightWriter), -400), "spacecraft3", speed);        
-    }
-    update();
-    return sr;
-}
+    if (m_leftWriter >= 1 && m_leftWriter <= 5 && m_holePosition != m_leftWriter)
+        sr.lanes[m_leftWriter - 1] = new SpaceShip(sf::Vector2f(LaneExplorer::getAbscissaFromLane(m_leftWriter), -Spawner::spawnHeight()), m_spacecraftName, speed);
+    if (m_rightWriter >= 1 && m_rightWriter <= 5 && m_holePosition != m_rightWriter)
+        sr.lanes[m_rightWriter - 1] = new SpaceShip(sf::Vector2f(LaneExplorer::getAbscissaFromLane(m_rightWriter), -Spawner::spawnHeight()), m_spacecraftName, speed);        
 
-bool BasicSpawner::lanesCleared()
-{
-    sf::FloatRect hitbox(0, -200, ContentManager::getInstance()->getTexture("spacecraft2").getSize().x,
-                                  ContentManager::getInstance()->getTexture("spacecraft2").getSize().y);
-    m_start = true;
-    for (unsigned int i = 0; i < 5; i++)
+    if (sr.empty() == false)
     {
-        hitbox.left = LaneExplorer::getAbscissaFromLane(i + 1);
-        if (hitbox.intersects(m_lanes[i]))
-        {
-            m_start = false;
-            break;
-        }
+        m_spaceshipSpeed = speed;
+        m_traveledDistance = 0.0;
     }
     
-    return m_start;
-}
-
-float BasicSpawner::spawnInterval()
-{
-    return m_spawnInterval;
+    return sr;
 }
 
 BasicSpawner::~BasicSpawner() {

@@ -12,23 +12,21 @@
 
 class BasicSpawner : public Spawner {
 public:
-    BasicSpawner(float speed);
-    BasicSpawner(float speed, sf::FloatRect lanes[5]);
+    BasicSpawner(float initSpeed, string spacecraftName);
     virtual ~BasicSpawner();
     
-    sf::FloatRect getLane(int i);
-    void update();
+    void updateImplementation(float elapsedTime);
     SpawnResult spawnImplementation(float speed);
-    float spawnInterval();
     
-    bool lanesCleared();
+//    bool lanesCleared();
 private:
-    sf::FloatRect m_lanes[5];
     
     int m_leftWriter;
     int m_rightWriter;
-    bool m_start;
+    float m_startCondition;
+    float m_elapsedTime;
     int m_holePosition;
+    string m_spacecraftName;
 };
 
 #endif	/* BASICSPAWNER_H */

@@ -31,7 +31,7 @@ void findAndErase(SpaceShip* m, std::vector<SpaceShip*> &v)
 }
 
 MobManager::MobManager() : m_pool(), m_speedDelta(0), m_mobsSpeed(500), m_elapsedTime(0.0) {
-    m_spawner = new BasicSpawner(m_mobsSpeed);
+    m_spawner = new BasicSpawner(m_mobsSpeed, "spacecraft3");
 }
 
 MobManager::MobManager(MobManager& orig) : 
@@ -57,32 +57,33 @@ MobManager::~MobManager() {
 void MobManager::createMob()
 {
     SpawnResult sp = m_spawner->spawn(m_mobsSpeed + m_speedDelta);
-    for (unsigned int i = 0; i < 5; i++)
+    if (sp.empty() == false)
     {
-        if (sp.lanes[i] != NULL)
-            m_pool.push_back(sp.lanes[i]);
+        for (unsigned int i = 0; i < 5; i++)
+        {
+            if (sp.lanes[i] != NULL)
+                m_pool.push_back(sp.lanes[i]);
+        }        
     }
 }
 
 void MobManager::manageMobs(float elapsedTime, Player& player)
 {
-    m_elapsedTime += elapsedTime;
+//    m_elapsedTime += elapsedTime;
     
     player.update(elapsedTime);
-    
-    if (m_elapsedTime >= m_spawner->spawnInterval())
-    {
+    m_spawner->update(elapsedTime);
+    if (m_spawner->canSpawn())
         createMob();
-        m_elapsedTime = 0.0;
-    }
+
     
     for (unsigned int i = 0; i < m_pool.size(); i++)
     {
         //if there is a speed delta, then set the new speed for all ships
         if (m_speedDelta != 0)
             m_pool[i]->setSpeed(m_pool[i]->getSpeed() + m_speedDelta);
-        if (Random::range(1, 1000) <= 5)
-            m_pool[i]->takeLane((Lane)Random::range(LeftLane, RightLane));
+//        if (Random::range(1, 1000) <= 5)
+//            m_pool[i]->takeLane((Lane)Random::range(LeftLane, RightLane));
         m_pool[i]->move(Down, elapsedTime);
         m_pool[i]->update(elapsedTime);    
         if (m_pool[i]->position().y > 900)
@@ -105,6 +106,7 @@ void MobManager::manageMobs(float elapsedTime, Player& player)
             {
                 mobToErase.insert(m_pool[i]);
                 mobToErase.insert(m_pool[j]);
+                cout << "destroy : " << (void*)m_pool[i] << (void*)m_pool[j] << endl;
             }
         }
     }
@@ -129,11 +131,11 @@ void MobManager::manageMobs(float elapsedTime, Player& player)
 
 void MobManager::increaseSpeed(float delta)
 {
-    if (m_mobsSpeed + delta <= 1170 && m_mobsSpeed + delta >= 0)
+    if (m_mobsSpeed + delta <= 1060 && m_mobsSpeed + delta >= 0)
     {
         m_speedDelta = delta;
         m_mobsSpeed += delta;
-        m_spawner->adaptSpawnInterval(m_mobsSpeed);
+//        m_spawner->adaptSpawnInterval(m_mobsSpeed);
     }
 }
 

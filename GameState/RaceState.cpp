@@ -21,7 +21,7 @@ using namespace std;
 RaceState::RaceState() : m_raceArea(sf::FloatRect(0, 0, 800, 600)) {
     m_pNextState = NULL;
     m_player.setPosition(LaneExplorer::getAbscissaFromLane(3), 600 - m_player.size().y);
-    m_player.setSpeed(1000);
+    m_player.setSpeed(2000);
     m_raceArea.setViewport(sf::FloatRect((1.0 - (800.0 / 900.0)) / 2.0, 0.01, 800.0 / 900.0, 600.0 / 700.0));
 }
 
@@ -52,7 +52,7 @@ bool RaceState::update(sf::RenderWindow& window)
         m_pNextState = new GameOverState();
     }
     
-    m_stars.scroll(elapsed, m_mobMgr.speed() / 2.0);
+    m_stars.scroll(elapsed, (m_mobMgr.speed() / 2.0) + 100.0);
     m_gui.update(m_mobMgr.speed(), m_player.getMileage());
     
     

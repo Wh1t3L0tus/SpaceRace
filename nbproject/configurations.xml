@@ -59,8 +59,13 @@
       <logicalFolder name="f5" displayName="Spawner" projectFiles="true">
         <itemPath>../SpaceRace/Spawner/BasicSpawner.cpp</itemPath>
         <itemPath>../SpaceRace/Spawner/BasicSpawner.h</itemPath>
+        <itemPath>../SpaceRace/Spawner/Spawner.cpp</itemPath>
         <itemPath>../SpaceRace/Spawner/Spawner.h</itemPath>
+        <itemPath>../SpaceRace/Spawner/XSpawner.cpp</itemPath>
+        <itemPath>../SpaceRace/Spawner/XSpawner.h</itemPath>
       </logicalFolder>
+      <itemPath>../SpaceRace/LaneExplorer.h</itemPath>
+      <itemPath>../SpaceRace/Random.cpp</itemPath>
       <itemPath>../SpaceRace/Random.h</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
@@ -75,8 +80,6 @@
                    kind="IMPORTANT_FILES_FOLDER">
       <itemPath>Makefile</itemPath>
     </logicalFolder>
-    <itemPath>../SpaceRace/LaneExplorer.h</itemPath>
-    <itemPath>../SpaceRace/Random.cpp</itemPath>
   </logicalFolder>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
@@ -236,7 +239,13 @@
             tool="3"
             flavor2="0">
       </item>
+      <item path="../SpaceRace/Spawner/Spawner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="../SpaceRace/Spawner/Spawner.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../SpaceRace/Spawner/XSpawner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../SpaceRace/Spawner/XSpawner.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -406,7 +415,13 @@
             tool="3"
             flavor2="0">
       </item>
+      <item path="../SpaceRace/Spawner/Spawner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="../SpaceRace/Spawner/Spawner.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../SpaceRace/Spawner/XSpawner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../SpaceRace/Spawner/XSpawner.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>

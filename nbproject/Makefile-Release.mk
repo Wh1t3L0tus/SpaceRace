@@ -52,6 +52,8 @@ OBJECTFILES= \
 	${OBJECTDIR}/_ext/965675476/RaceGui.o \
 	${OBJECTDIR}/_ext/991262536/Random.o \
 	${OBJECTDIR}/_ext/694709887/BasicSpawner.o \
+	${OBJECTDIR}/_ext/694709887/Spawner.o \
+	${OBJECTDIR}/_ext/694709887/XSpawner.o \
 	${OBJECTDIR}/main.o
 
 
@@ -163,6 +165,16 @@ ${OBJECTDIR}/_ext/694709887/BasicSpawner.o: ../SpaceRace/Spawner/BasicSpawner.cp
 	${MKDIR} -p ${OBJECTDIR}/_ext/694709887
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -I../../SFML/include -IContentManager -IGameState -IEntity -I. -ICollider -ISpawner -IBackground -IGui -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/694709887/BasicSpawner.o ../SpaceRace/Spawner/BasicSpawner.cpp
+
+${OBJECTDIR}/_ext/694709887/Spawner.o: ../SpaceRace/Spawner/Spawner.cpp 
+	${MKDIR} -p ${OBJECTDIR}/_ext/694709887
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -I../../SFML/include -IContentManager -IGameState -IEntity -I. -ICollider -ISpawner -IBackground -IGui -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/694709887/Spawner.o ../SpaceRace/Spawner/Spawner.cpp
+
+${OBJECTDIR}/_ext/694709887/XSpawner.o: ../SpaceRace/Spawner/XSpawner.cpp 
+	${MKDIR} -p ${OBJECTDIR}/_ext/694709887
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -I../../SFML/include -IContentManager -IGameState -IEntity -I. -ICollider -ISpawner -IBackground -IGui -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/694709887/XSpawner.o ../SpaceRace/Spawner/XSpawner.cpp
 
 ${OBJECTDIR}/main.o: main.cpp 
 	${MKDIR} -p ${OBJECTDIR}

@@ -11,6 +11,8 @@
 #include <SFML/Graphics.hpp>
 #include "SpaceShip.h"
 #include <iostream>
+#include <vector>
+#include <set>
 
 using namespace std;
 
@@ -25,56 +27,75 @@ struct SpawnResult {
         lanes[3] = NULL;
         lanes[4] = NULL;
     }
+    
+    bool empty()
+    {
+        return lanes[0] == NULL && lanes[1] == NULL && lanes[2] == NULL && lanes[3] == NULL && lanes[4] == NULL ;
+    }
+    
     SpaceShip* lanes[5];
 };
 
 class Spawner {
 public:
-    Spawner(float speed){adaptSpawnInterval(speed);}
-    virtual ~Spawner(){};
-    
-
-    /** Know the position of last object in a lane
-     * 
-     * @param i : lane number
-     * @return the hitbox of the last object entered in this lane
-     */
-    virtual sf::FloatRect getLane(int i) = 0;
+    Spawner(float initSpeed, float spaceBetweenSpaceships = 400.0);
+    virtual ~Spawner();
 
     /** Update your random spaceship generation algorithm
      */
-    virtual void update() = 0;
+    virtual void update(float elapsedTime);
+    
+    /** Implementation of the update method
+      * @param elapsedTime : elapsed time since the last frame
+     */
+    virtual void updateImplementation(float elapsedTime) = 0;
+    
+    /** Tell whether conditions are statisfied to spawn or noy
+     * 
+     * @return true if it's ok to spawn
+     */
+    virtual bool canSpawn();
+    
+    /** Get the spawn density
+     * 
+     * @return the spawn density
+     */
+    virtual float getSpawnDensity();
+    
+    /** Increase the spawn density
+     * 
+     * @param inc : spawn density increment
+     */
+    virtual void increaseSpawnDensity(float inc);
     
     /** Randomly create a spaceship
      * 
      * @return all the spaceships created in a SpawnResult
      */
-    virtual SpawnResult spawn(float speed)
-    {
-        if (m_spawnInterval != -1)
-            return spawnImplementation(speed);
-        else
-            return SpawnResult();
-    }
+    virtual SpawnResult spawn(float speed);
     
-    virtual SpawnResult spawnImplementation(float speed) = 0;
-    
-    /** Get the time interval between two spawn
+    /** Implementation of the spawn method
      * 
-     * @return the interval in seconds
+     * @param speed : speed of the spaceships to create
+     * @return the spaceships created in a SpawnResult structure
      */
-    virtual float spawnInterval() = 0;
-    
-    virtual void adaptSpawnInterval(float speed)
+    virtual SpawnResult spawnImplementation(float speed) = 0;
+
+    /** Get the spawn height
+     * 
+     * @return the spawn height
+     */
+    static int spawnHeight()
     {
-        if (speed != 0)
-            m_spawnInterval = -(0.5 / 400) * speed + 1.5;
-        else
-            m_spawnInterval = -1;
+        return 400;
     }
+    
     
 protected:
-    float m_spawnInterval;
+    SpaceShip* m_lanes[5];      //array where each SpaceShip pointer points to the first SpaceShip of each lane
+    float m_spawnDensity;         //the lower it is, closer are the spaceships to each other
+    float m_traveledDistance;     //theorical distance traveled by the last spawned spaceship (based on its speed at birth)
+    float m_spaceshipSpeed;       //speed of the last spawned spaceship
 };
 
 #endif	/* SPAWNER_H */

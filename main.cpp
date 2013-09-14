@@ -22,7 +22,8 @@ int main(int argc, char** argv) {
     
     
     sf::RenderWindow window(sf::VideoMode(900, 700), "Space Race");
-    window.setVerticalSyncEnabled(true);
+//    window.setVerticalSyncEnabled(false);
+//    window.setFramerateLimit(60);
 
     while (window.isOpen() && gs != NULL)
     {

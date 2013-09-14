@@ -14,6 +14,7 @@ class Collider {
 public:
     
     static bool collide(Collidable& e1, Collidable& e2);
+    static bool collide(Collidable& e1, sf::FloatRect& e2);
 
 
 };

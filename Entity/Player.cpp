@@ -29,7 +29,7 @@ bool Player::isAlive()
 
 void Player::destroy()
 {
-    m_alive = false;
+//    m_alive = false;
 }
 
 void Player::increaseMileageCounter(float inc)

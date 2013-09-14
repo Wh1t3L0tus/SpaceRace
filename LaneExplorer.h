@@ -11,14 +11,24 @@
 class LaneExplorer
 {
 public:
-    static float getAbscissaFromLane(float x)
+    inline static float getAbscissaFromLane(float x)
     {
         return x * 160.0 - 130.0;
     }
     
-    static int getLaneFromAbscissa(float x)
+    inline static int getLaneFromAbscissa(float x)
     {
         return (x + 130.0) / 160.0;
+    }
+    
+    inline static int laneNumber()
+    {
+        return 5;
+    }
+    
+    inline static int laneWidth()
+    {
+        return 100;
     }
 };
 
