@@ -11,6 +11,8 @@
 #include <SFML/Graphics.hpp>
 #include <map>
 
+#include <SpawnerNode.h>
+
 class ContentManager {
 public:
     sf::Texture& getTexture(std::string str);
@@ -21,6 +23,7 @@ public:
 private:
     ContentManager();
         
+//    SpawnerNode m_xmlWaves;
     std::map<std::string, sf::Texture*> m_textureMap;
     std::map<std::string, sf::Font*> m_fontMap;
     static ContentManager* m_pSingleton; 

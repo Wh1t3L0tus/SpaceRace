@@ -135,7 +135,6 @@ void MobManager::increaseSpeed(float delta)
     {
         m_speedDelta = delta;
         m_mobsSpeed += delta;
-//        m_spawner->adaptSpawnInterval(m_mobsSpeed);
     }
 }
 

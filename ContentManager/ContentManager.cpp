@@ -28,7 +28,7 @@ sf::Font* loadFont(std::string str)
     return font;
 }
 
-ContentManager::ContentManager() {
+ContentManager::ContentManager() /**: m_xmlWaves("../../etc/SpaceRace/scripts/spawner.ini")**/ {
     //textures
     m_textureMap.addTexture("spaceCraft", "../../etc/SpaceRace/ospacecraft.png");
     m_textureMap.addTexture("menu", "../../etc/SpaceRace/menu.png");
@@ -40,7 +40,7 @@ ContentManager::ContentManager() {
     m_textureMap.addTexture("spacecraft4", "../../etc/SpaceRace/ospacecraft4.png");
     
     //fonts
-    m_fontMap.addFont("arial", "../../etc/SpaceRace/fonts/arial.ttf");
+    m_fontMap.addFont("arial", "../../etc/SpaceRace/fonts/arial.ttf");    
 }
 
 ContentManager::~ContentManager() {

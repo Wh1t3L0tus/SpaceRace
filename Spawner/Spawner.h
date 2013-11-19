@@ -38,7 +38,7 @@ struct SpawnResult {
 
 class Spawner {
 public:
-    Spawner(float initSpeed, float spaceBetweenSpaceships = 400.0);
+    Spawner(float initSpeed, float spaceBetweenSpaceships = 800.0);
     virtual ~Spawner();
 
     /** Update your random spaceship generation algorithm
