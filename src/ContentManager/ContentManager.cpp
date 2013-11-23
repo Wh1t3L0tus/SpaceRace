@@ -30,17 +30,17 @@ sf::Font* loadFont(std::string str)
 
 ContentManager::ContentManager() /**: m_xmlWaves("../../etc/SpaceRace/scripts/spawner.ini")**/ {
     //textures
-    m_textureMap.addTexture("spaceCraft", "../../etc/SpaceRace/ospacecraft.png");
-    m_textureMap.addTexture("menu", "../../etc/SpaceRace/menu.png");
-    m_textureMap.addTexture("intro", "../../etc/SpaceRace/intro.png");
-    m_textureMap.addTexture("pause", "../../etc/SpaceRace/pause.png");
-    m_textureMap.addTexture("spacecraft2", "../../etc/SpaceRace/ospacecraft2.png");
-    m_textureMap.addTexture("gameover", "../../etc/SpaceRace/gameover.png");
-    m_textureMap.addTexture("spacecraft3", "../../etc/SpaceRace/ospacecraft3.png");
-    m_textureMap.addTexture("spacecraft4", "../../etc/SpaceRace/ospacecraft4.png");
+    m_textureMap.addTexture("spaceCraft", "etc/ospacecraft.png");
+    m_textureMap.addTexture("menu", "etc/menu.png");
+    m_textureMap.addTexture("intro", "etc/intro.png");
+    m_textureMap.addTexture("pause", "etc/pause.png");
+    m_textureMap.addTexture("spacecraft2", "etc/ospacecraft2.png");
+    m_textureMap.addTexture("gameover", "etc/gameover.png");
+    m_textureMap.addTexture("spacecraft3", "etc/ospacecraft3.png");
+    m_textureMap.addTexture("spacecraft4", "etc/ospacecraft4.png");
     
     //fonts
-    m_fontMap.addFont("arial", "../../etc/SpaceRace/fonts/arial.ttf");    
+    m_fontMap.addFont("arial", "etc/fonts/arial.ttf");    
 }
 
 ContentManager::~ContentManager() {

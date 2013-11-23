@@ -11,8 +11,6 @@
 #include <SFML/Graphics.hpp>
 #include <map>
 
-#include <SpawnerNode.h>
-
 class ContentManager {
 public:
     sf::Texture& getTexture(std::string str);

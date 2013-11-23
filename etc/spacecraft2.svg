@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="744.09448819"
+   height="1052.3622047"
+   id="svg2985"
+   version="1.1"
+   inkscape:version="0.48.1 "
+   sodipodi:docname="spacecraft2.svg"
+   inkscape:export-filename="C:\Users\Théo\Desktop\SpaceRace\spacecraft2.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90">
+  <defs
+     id="defs2987" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#ffffff"
+     borderopacity="0.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="0"
+     inkscape:zoom="0.35"
+     inkscape:cx="1631.1716"
+     inkscape:cy="30.273966"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1600"
+     inkscape:window-height="838"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata2990">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g3089">
+      <g
+         transform="translate(1342.8571,360)"
+         id="g3047">
+        <path
+           style="fill:#483e37;fill-opacity:1"
+           d="m -1019.8785,-299.32959 c 115.15739,494.97475 1000.000021,0 1000.000021,0 0,0 -452.548341,894.94414 0,1000 0,0 -1010.101621,321.22849 -1048.487421,76.77157 -274.1684,-94.97066 48.4874,-1076.77157 48.4874,-1076.77157 z"
+           id="rect2993"
+           inkscape:connector-curvature="0"
+           sodipodi:nodetypes="ccccc"
+           transform="matrix(0.70710678,-0.70710678,0.70710678,0.70710678,0,0)" />
+        <path
+           style="fill:#483e37;fill-opacity:1"
+           d="m -840.00002,678.0764 1214.28576,0 -368.5714319,642.8571 -472.2857581,-2.8571 z"
+           id="rect2996"
+           inkscape:connector-curvature="0"
+           sodipodi:nodetypes="ccccc" />
+      </g>
+      <g
+         transform="matrix(0.36396805,0,0,0.36396805,369.57181,856.52036)"
+         id="g3041">
+        <path
+           style="fill:#6c5353;fill-opacity:1"
+           d="m 1725.7142,-213.75268 c 291.4286,-732.90168 354.2857,-733.30437 651.4286,-8.45656 57.1429,554.28571 40,1383.14294 0,1691.71434 -234.2857,188.5714 -411.4286,217.1429 -651.4286,0 -34.2857,-285.7143 -68.5714,-1128.97207 0,-1683.25778 z"
+           id="rect2999"
+           inkscape:connector-curvature="0"
+           sodipodi:nodetypes="ccccc" />
+        <path
+           style="fill:#00ffff;fill-opacity:1"
+           d="m 1854.4689,-34.919404 c 177.0101,-595.768406 215.1888,-596.095746 395.6697,-6.874249 34.7079,450.573233 24.2955,1124.343053 0,1375.177653 -142.3022,153.2878 -249.8967,176.5133 -395.6697,0 -20.8247,-232.2543 -41.6494,-917.73013 0,-1368.303404 z"
+           id="rect2999-6"
+           inkscape:connector-curvature="0"
+           sodipodi:nodetypes="ccccc" />
+        <path
+           style="fill:#6c5353;fill-opacity:1"
+           d="m 1897.1429,-210.4949 62.8572,-154.28571 c 20,1240 228.5714,862.85714 -40,1794.28571 l -85.7143,0 c 325.7142,-462.85714 137.1428,-911.42857 62.8571,-1640 z"
+           id="rect3020"
+           inkscape:connector-curvature="0"
+           sodipodi:nodetypes="ccccc" />
+        <path
+           style="fill:#6c5353;fill-opacity:1"
+           d="m 2222.5798,-232.78067 -62.8572,-154.28571 c -20,1240 -228.5714,862.85714 40,1794.28568 l 85.7143,0 C 1959.7227,944.36222 2148.2941,495.79076 2222.5798,-232.78067 z"
+           id="rect3020-5"
+           inkscape:connector-curvature="0"
+           sodipodi:nodetypes="ccccc" />
+      </g>
+      <rect
+         y="1580.9336"
+         x="920"
+         height="151.42857"
+         width="77.14286"
+         id="rect3051"
+         style="fill:#483e37;fill-opacity:1" />
+      <rect
+         y="1613.7906"
+         x="1042.5714"
+         height="151.42857"
+         width="111.42857"
+         id="rect3051-5"
+         style="fill:#483e37;fill-opacity:1" />
+      <rect
+         y="1581.7906"
+         x="1210"
+         height="151.42857"
+         width="77.14286"
+         id="rect3051-9"
+         style="fill:#483e37;fill-opacity:1" />
+    </g>
+  </g>
+</svg>
