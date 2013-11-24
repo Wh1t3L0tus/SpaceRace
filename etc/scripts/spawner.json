@@ -1,0 +1,92 @@
+{
+    "waves": [
+	      {
+		      "spacing": 1000,
+		      "lines": [
+			    {
+				"spacing": 100,
+				"pattern": "X_X_X"
+			    },
+			    {
+				"spacing": 100,
+				"pattern" : "X_X_X"
+			    },
+			    {
+				"spacing": 100,
+				"pattern": "X_X_X"
+			    }
+		      ],
+		      "linesOrders": [
+			    [1, 2, 3],
+			    [2, 3, 1]
+		      ]
+	      },
+	      {
+		      "spacing": 1000,
+		      "lines": [
+			    {
+				"spacing": 100,
+				"pattern": "XX_XX"
+			    },
+			    {
+				"spacing": 100,
+				"pattern" : "___XX"
+			    },
+			    {
+				"spacing": 100,
+				"pattern": "XX__X"
+			    }
+		      ],
+		      "linesOrders": [
+			    [1, 2, 3],
+			    [2, 3, 1]
+		      ]
+	      },
+	      {
+		      "spacing": 1000,
+		      "lines": [
+			    {
+				"spacing": 100,
+				"pattern": "__X__"
+			    },
+			    {
+				"spacing": 100,
+				"pattern" : "XXX_X"
+			    },
+			    {
+				"spacing": 100,
+				"pattern": "XXX__"
+			    }
+		      ],
+		      "linesOrders": [
+			    [1, 2, 3],
+			    [2, 3, 1]
+		      ]
+	      },
+	      {
+		      "spacing": 1000,
+		      "lines": [
+			    {
+				"spacing": 100,
+				"pattern": "_XXX_"
+			    },
+			    {
+				"spacing": 100,
+				"pattern" : "__X__"
+			    },
+			    {
+				"spacing": 100,
+				"pattern": "_XX_X"
+			    }
+		      ],
+		      "linesOrders": [
+			    [1, 2, 3],
+			    [2, 3, 1]
+		      ]
+	      }
+    ],
+    "waveOrders": [
+	[3, 2, 1],
+	[2, 3, 1]
+    ]
+}
