@@ -54,3 +54,12 @@ list<int> Wave::getLineOrder(int index) {
 int Wave::getLineOrderCount() {
     return m_lineOrders.size();
 }
+
+string Wave::toString() {
+    string toRet;
+    for (list<pair<int, string> *>::iterator i = m_lines.begin(); i != m_lines.end(); i++) {
+        pair<int, string> tmp = **i;
+        toRet += tmp.second + "\n";
+    }
+    return toRet;
+}

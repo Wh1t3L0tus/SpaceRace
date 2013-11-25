@@ -49,6 +49,7 @@ void ScriptedSpawner::nextWave() {
     m_currentWaveOrder.pop_front();
     m_currentLineOrder = m_currentWave->getLineOrder(Random::range(0, m_currentWave->getLineOrderCount()));
     nextLine();
+    cout << "===current wave===\n" << m_currentWave->toString() << endl;
 }
 
 void ScriptedSpawner::generateNewWaves() {
@@ -59,10 +60,10 @@ void ScriptedSpawner::generateNewWaves() {
 void ScriptedSpawner::interpretPattern(SpawnResult& result, string pattern, float speed) {
     for (int i = 0; i < pattern.size(); i++) {
         if (pattern[i] == 'X') {
-            result.lanes[i] = new SpaceShip(sf::Vector2f(LaneExplorer::getAbscissaFromLane(i), -Spawner::spawnHeight()), "spacecraft2", speed);
+            result.lanes[i] = new SpaceShip(sf::Vector2f(LaneExplorer::getAbscissaFromLane(i + 1), -Spawner::spawnHeight()), "spacecraft2", speed);
         }
         else if (pattern[i] == 'Y') {
-            result.lanes[i] = new SpaceShip(sf::Vector2f(LaneExplorer::getAbscissaFromLane(i), -Spawner::spawnHeight()), "spacecraft3", speed);            
+            result.lanes[i] = new SpaceShip(sf::Vector2f(LaneExplorer::getAbscissaFromLane(i + 1), -Spawner::spawnHeight()), "spacecraft3", speed);            
         }
     }
 }

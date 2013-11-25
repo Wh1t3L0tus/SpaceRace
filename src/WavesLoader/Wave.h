@@ -28,6 +28,8 @@ public:
     list<int> getLineOrder(int index);
     int getLineOrderCount();
     
+    string toString();
+    
 private:
 
     int                                 m_spacing;
