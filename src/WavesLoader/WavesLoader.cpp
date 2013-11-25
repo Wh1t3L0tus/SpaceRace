@@ -13,8 +13,7 @@
 
 using namespace std;
 
-WavesLoader::WavesLoader() {
-    string filename = "etc/scripts/spawner.json";
+WavesLoader::WavesLoader(string filename) {
     
     ifstream file(filename.c_str());
     Json::Reader jsonReader;
@@ -26,7 +25,7 @@ WavesLoader::WavesLoader() {
         
         // Read the waves orders
         for (int i = 0; i < m_jsonRoot["waveOrders"].size(); i++) {
-            vector<int> *waveOrder = new vector<int>();
+            list<int> *waveOrder = new list<int>();
             for (int j = 0; j < m_jsonRoot["waveOrders"][i].size(); j++) {
                 waveOrder->push_back(m_jsonRoot["waveOrders"][i][j].asInt());
             }
@@ -40,27 +39,31 @@ WavesLoader::WavesLoader() {
 }
 
 WavesLoader::~WavesLoader() {
-    for (int i = 0; i < m_wavesOrders.size(); i++)
-        delete m_wavesOrders[i];
+    while (!m_wavesOrders.empty()) {
+        delete m_wavesOrders.front();
+        m_wavesOrders.pop_front();
+    }
     
-    for (int i = 0; i < m_waves.size(); i++)
-        delete m_waves[i];
+    while (!m_wavesOrders.empty()) {
+        delete m_waves.back();
+        m_waves.pop_back();
+    }
 }
 
 bool WavesLoader::isOk() {
     return m_isOk;
 }
 
-Wave& WavesLoader::getWave(int index) {
-    return *m_waves[index];
+Wave* WavesLoader::getWave(int index) {
+    return m_waves[index];
 }
 
 int WavesLoader::getWaveCount() {
     return m_waves.size();
 }
 
-vector<int>& WavesLoader::getWaveOrder(int index) {
-    return *m_wavesOrders[index];
+list<int>& WavesLoader::getWaveOrder(int index) {
+    return *(*(m_wavesOrders.begin().operator ++(index)));
 }
 
 int WavesLoader::getWaveOrderCount() {

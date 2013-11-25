@@ -8,7 +8,7 @@
 #ifndef WAVE_H
 #define	WAVE_H
 
-#include <vector>
+#include <list>
 #include <utility>
 
 #include <json/json.h>
@@ -25,14 +25,14 @@ public:
     pair<int, string>& getLine(int index);
     int getLineCount();
     
-    vector<int> getLineOrder(int index);
+    list<int> getLineOrder(int index);
     int getLineOrderCount();
     
 private:
 
     int                                 m_spacing;
-    vector<pair<int, string>* >         m_lines;
-    vector<vector<int>* >               m_lineOrders;
+    list<pair<int, string>* >           m_lines;
+    list<list<int>* >                   m_lineOrders;
 };
 
 #endif	/* WAVE_H */

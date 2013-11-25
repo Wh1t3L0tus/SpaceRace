@@ -8,7 +8,7 @@
 #ifndef WAVESLOADER_H
 #define	WAVESLOADER_H
 
-#include <vector>
+#include <list>
 #include <json/json.h>
 
 #include "Wave.h"
@@ -18,15 +18,15 @@ using namespace std;
 
 class WavesLoader {
 public:
-    WavesLoader();
+    WavesLoader(string filename);
     virtual ~WavesLoader();
     
     bool isOk();
     
-    Wave& getWave(int index);
+    Wave* getWave(int index);
     int getWaveCount();
     
-    vector<int>& getWaveOrder(int index);
+    list<int>& getWaveOrder(int index);
     int getWaveOrderCount();
     
 private:
@@ -34,7 +34,7 @@ private:
     Json::Value                  m_jsonRoot;
     bool                         m_isOk;
     
-    vector<vector<int>* >        m_wavesOrders;
+    list<list<int>* >            m_wavesOrders;
     vector<Wave*>                m_waves;
     
 };

@@ -9,6 +9,7 @@
 #include "Random.h"
 #include "Collider.h"
 #include "BasicSpawner.h"
+#include "ScriptedSpawner.h"
 #include <iostream>
 #include <iomanip>
 #include <assert.h>
@@ -31,7 +32,8 @@ void findAndErase(SpaceShip* m, std::vector<SpaceShip*> &v)
 }
 
 MobManager::MobManager() : m_pool(), m_speedDelta(0), m_mobsSpeed(500), m_elapsedTime(0.0) {
-    m_spawner = new BasicSpawner(m_mobsSpeed, "spacecraft3");
+//    m_spawner = new BasicSpawner(m_mobsSpeed, "spacecraft3");
+    m_spawner = new ScriptedSpawner(m_mobsSpeed, 100, "./etc/scripts/spawner.json");
 }
 
 MobManager::MobManager(MobManager& orig) : 
