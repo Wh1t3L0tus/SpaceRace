@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configurationDescriptor version="89">
+<configurationDescriptor version="90">
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
@@ -8,66 +8,105 @@
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
                    projectFiles="true">
+      <logicalFolder name="etc" displayName="etc" projectFiles="true">
+        <logicalFolder name="fonts" displayName="fonts" projectFiles="true">
+          <itemPath>etc/fonts/arial.ttf</itemPath>
+        </logicalFolder>
+        <logicalFolder name="scripts" displayName="scripts" projectFiles="true">
+          <itemPath>etc/scripts/spawner.ini</itemPath>
+          <itemPath>etc/scripts/spawner.json</itemPath>
+        </logicalFolder>
+        <itemPath>etc/README</itemPath>
+        <itemPath>etc/dspacecraft.png</itemPath>
+        <itemPath>etc/dspacecraft2.png</itemPath>
+        <itemPath>etc/dspacecraft3.png</itemPath>
+        <itemPath>etc/dspacecraft4.png</itemPath>
+        <itemPath>etc/game.png</itemPath>
+        <itemPath>etc/gameover.png</itemPath>
+        <itemPath>etc/intro.png</itemPath>
+        <itemPath>etc/menu.png</itemPath>
+        <itemPath>etc/ospacecraft.png</itemPath>
+        <itemPath>etc/ospacecraft2.png</itemPath>
+        <itemPath>etc/ospacecraft3.png</itemPath>
+        <itemPath>etc/ospacecraft4.png</itemPath>
+        <itemPath>etc/pause.png</itemPath>
+        <itemPath>etc/spacecraft.png</itemPath>
+        <itemPath>etc/spacecraft.svg</itemPath>
+        <itemPath>etc/spacecraft2.png</itemPath>
+        <itemPath>etc/spacecraft2.svg</itemPath>
+        <itemPath>etc/spacecraft3.png</itemPath>
+        <itemPath>etc/spacecraft3.svg</itemPath>
+        <itemPath>etc/spacecraft4.png</itemPath>
+        <itemPath>etc/spacecraft4.svg</itemPath>
+      </logicalFolder>
     </logicalFolder>
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
-      <logicalFolder name="f6" displayName="Background" projectFiles="true">
-        <itemPath>../SpaceRace/Background/Star.cpp</itemPath>
-        <itemPath>../SpaceRace/Background/Star.h</itemPath>
-        <itemPath>../SpaceRace/Background/StarBackground.cpp</itemPath>
-        <itemPath>../SpaceRace/Background/StarBackground.h</itemPath>
-        <itemPath>../SpaceRace/Background/StarField.cpp</itemPath>
-        <itemPath>../SpaceRace/Background/StarField.h</itemPath>
+      <logicalFolder name="Background" displayName="Background" projectFiles="true">
+        <itemPath>src/Background/Star.cpp</itemPath>
+        <itemPath>src/Background/Star.h</itemPath>
+        <itemPath>src/Background/StarBackground.cpp</itemPath>
+        <itemPath>src/Background/StarBackground.h</itemPath>
+        <itemPath>src/Background/StarField.cpp</itemPath>
+        <itemPath>src/Background/StarField.h</itemPath>
       </logicalFolder>
-      <logicalFolder name="f4" displayName="Collider" projectFiles="true">
-        <itemPath>../SpaceRace/Collider/Collidable.h</itemPath>
-        <itemPath>../SpaceRace/Collider/Collider.cpp</itemPath>
-        <itemPath>../SpaceRace/Collider/Collider.h</itemPath>
+      <logicalFolder name="Collider" displayName="Collider" projectFiles="true">
+        <itemPath>src/Collider/Collidable.h</itemPath>
+        <itemPath>src/Collider/Collider.cpp</itemPath>
+        <itemPath>src/Collider/Collider.h</itemPath>
       </logicalFolder>
-      <logicalFolder name="f2" displayName="ContentManager" projectFiles="true">
-        <itemPath>../SpaceRace/ContentManager/ContentManager.cpp</itemPath>
-        <itemPath>../SpaceRace/ContentManager/ContentManager.h</itemPath>
+      <logicalFolder name="ContentManager"
+                     displayName="ContentManager"
+                     projectFiles="true">
+        <itemPath>src/ContentManager/ContentManager.cpp</itemPath>
+        <itemPath>src/ContentManager/ContentManager.h</itemPath>
       </logicalFolder>
-      <logicalFolder name="f3" displayName="Entity" projectFiles="true">
-        <itemPath>../SpaceRace/Entity/Entity.cpp</itemPath>
-        <itemPath>../SpaceRace/Entity/Entity.h</itemPath>
-        <itemPath>../SpaceRace/Entity/MobManager.cpp</itemPath>
-        <itemPath>../SpaceRace/Entity/MobManager.h</itemPath>
-        <itemPath>../SpaceRace/Entity/Player.cpp</itemPath>
-        <itemPath>../SpaceRace/Entity/Player.h</itemPath>
-        <itemPath>../SpaceRace/Entity/SpaceShip.cpp</itemPath>
-        <itemPath>../SpaceRace/Entity/SpaceShip.h</itemPath>
+      <logicalFolder name="Entity" displayName="Entity" projectFiles="true">
+        <itemPath>src/Entity/Entity.cpp</itemPath>
+        <itemPath>src/Entity/Entity.h</itemPath>
+        <itemPath>src/Entity/MobManager.cpp</itemPath>
+        <itemPath>src/Entity/MobManager.h</itemPath>
+        <itemPath>src/Entity/Player.cpp</itemPath>
+        <itemPath>src/Entity/Player.h</itemPath>
+        <itemPath>src/Entity/SpaceShip.cpp</itemPath>
+        <itemPath>src/Entity/SpaceShip.h</itemPath>
       </logicalFolder>
-      <logicalFolder name="f1" displayName="GameState" projectFiles="true">
-        <itemPath>../SpaceRace/GameState/GameOverState.cpp</itemPath>
-        <itemPath>../SpaceRace/GameState/GameOverState.h</itemPath>
-        <itemPath>../SpaceRace/GameState/GameState.h</itemPath>
-        <itemPath>../SpaceRace/GameState/IntroState.cpp</itemPath>
-        <itemPath>../SpaceRace/GameState/IntroState.h</itemPath>
-        <itemPath>../SpaceRace/GameState/MenuState.cpp</itemPath>
-        <itemPath>../SpaceRace/GameState/MenuState.h</itemPath>
-        <itemPath>../SpaceRace/GameState/PauseState.cpp</itemPath>
-        <itemPath>../SpaceRace/GameState/PauseState.h</itemPath>
-        <itemPath>../SpaceRace/GameState/RaceState.cpp</itemPath>
-        <itemPath>../SpaceRace/GameState/RaceState.h</itemPath>
+      <logicalFolder name="GameState" displayName="GameState" projectFiles="true">
+        <itemPath>src/GameState/GameOverState.cpp</itemPath>
+        <itemPath>src/GameState/GameOverState.h</itemPath>
+        <itemPath>src/GameState/GameState.h</itemPath>
+        <itemPath>src/GameState/IntroState.cpp</itemPath>
+        <itemPath>src/GameState/IntroState.h</itemPath>
+        <itemPath>src/GameState/MenuState.cpp</itemPath>
+        <itemPath>src/GameState/MenuState.h</itemPath>
+        <itemPath>src/GameState/PauseState.cpp</itemPath>
+        <itemPath>src/GameState/PauseState.h</itemPath>
+        <itemPath>src/GameState/RaceState.cpp</itemPath>
+        <itemPath>src/GameState/RaceState.h</itemPath>
       </logicalFolder>
-      <logicalFolder name="f7" displayName="Gui" projectFiles="true">
-        <itemPath>../SpaceRace/Gui/RaceGui.cpp</itemPath>
-        <itemPath>../SpaceRace/Gui/RaceGui.h</itemPath>
+      <logicalFolder name="Gui" displayName="Gui" projectFiles="true">
+        <itemPath>src/Gui/RaceGui.cpp</itemPath>
+        <itemPath>src/Gui/RaceGui.h</itemPath>
       </logicalFolder>
-      <logicalFolder name="f5" displayName="Spawner" projectFiles="true">
-        <itemPath>../SpaceRace/Spawner/BasicSpawner.cpp</itemPath>
-        <itemPath>../SpaceRace/Spawner/BasicSpawner.h</itemPath>
-        <itemPath>../SpaceRace/Spawner/ScriptedSpawner.cpp</itemPath>
-        <itemPath>../SpaceRace/Spawner/ScriptedSpawner.h</itemPath>
-        <itemPath>../SpaceRace/Spawner/Spawner.cpp</itemPath>
-        <itemPath>../SpaceRace/Spawner/Spawner.h</itemPath>
+      <logicalFolder name="Spawner" displayName="Spawner" projectFiles="true">
+        <itemPath>src/Spawner/BasicSpawner.cpp</itemPath>
+        <itemPath>src/Spawner/BasicSpawner.h</itemPath>
+        <itemPath>src/Spawner/ScriptedSpawner.cpp</itemPath>
+        <itemPath>src/Spawner/ScriptedSpawner.h</itemPath>
+        <itemPath>src/Spawner/Spawner.cpp</itemPath>
+        <itemPath>src/Spawner/Spawner.h</itemPath>
       </logicalFolder>
-      <itemPath>../SpaceRace/LaneExplorer.h</itemPath>
-      <itemPath>../SpaceRace/Random.cpp</itemPath>
-      <itemPath>../SpaceRace/Random.h</itemPath>
-      <itemPath>main.cpp</itemPath>
+      <logicalFolder name="f1" displayName="WavesLoader" projectFiles="true">
+        <itemPath>src/WavesLoader/Wave.cpp</itemPath>
+        <itemPath>src/WavesLoader/Wave.h</itemPath>
+        <itemPath>src/WavesLoader/WavesLoader.cpp</itemPath>
+        <itemPath>src/WavesLoader/WavesLoader.h</itemPath>
+      </logicalFolder>
+      <itemPath>src/LaneExplorer.h</itemPath>
+      <itemPath>src/Random.cpp</itemPath>
+      <itemPath>src/Random.h</itemPath>
+      <itemPath>src/main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
                    displayName="Test Files"
@@ -82,13 +121,27 @@
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
-    <Elem>../../tinyxml2-master</Elem>
+    <Elem>Background</Elem>
+    <Elem>Collider</Elem>
+    <Elem>ContentManager</Elem>
+    <Elem>Entity</Elem>
+    <Elem>GameState</Elem>
+    <Elem>Gui</Elem>
+    <Elem>Spawner</Elem>
+    <Elem>WavesLoader</Elem>
+    <Elem>src/Background</Elem>
+    <Elem>src/Collider</Elem>
+    <Elem>src/ContentManager</Elem>
+    <Elem>src/Entity</Elem>
+    <Elem>src/GameState</Elem>
+    <Elem>src/Gui</Elem>
+    <Elem>src/Spawner</Elem>
+    <Elem>etc</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
     <conf name="Debug" type="1">
       <toolsSet>
-        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
         <compilerSet>default</compilerSet>
         <dependencyChecking>true</dependencyChecking>
         <rebuildPropChanged>false</rebuildPropChanged>
@@ -96,174 +149,183 @@
       <compileType>
         <ccTool>
           <incDir>
-            <pElem>../../SFML/include</pElem>
-            <pElem>ContentManager</pElem>
-            <pElem>GameState</pElem>
-            <pElem>Entity</pElem>
-            <pElem>.</pElem>
-            <pElem>Collider</pElem>
-            <pElem>Spawner</pElem>
-            <pElem>Background</pElem>
-            <pElem>Gui</pElem>
-            <pElem>WavesLoader</pElem>
-            <pElem>../../tinyxml2-master</pElem>
+            <pElem>../lib/SFML-2.1/include</pElem>
+            <pElem>src/Background</pElem>
+            <pElem>src/Collider</pElem>
+            <pElem>src/ContentManager</pElem>
+            <pElem>src/Entity</pElem>
+            <pElem>src/GameState</pElem>
+            <pElem>src/Gui</pElem>
+            <pElem>src/Spawner</pElem>
+            <pElem>src</pElem>
+            <pElem>src/WavesLoader</pElem>
+            <pElem>../lib/jsoncpp-src-0.5.0/include</pElem>
           </incDir>
           <warningLevel>2</warningLevel>
         </ccTool>
         <linkerTool>
-          <output>../../bin/${CND_CONF}/SpaceRace</output>
           <linkerAddLib>
-            <pElem>../../SFML/lib</pElem>
+            <pElem>../lib/jsoncpp-src-0.5.0/libs/linux-gcc-4.7</pElem>
           </linkerAddLib>
           <linkerLibItems>
-            <linkerLibLibItem>sfml-graphics-d</linkerLibLibItem>
-            <linkerLibLibItem>sfml-window-d</linkerLibLibItem>
-            <linkerLibLibItem>sfml-system-d</linkerLibLibItem>
+            <linkerLibLibItem>sfml-graphics</linkerLibLibItem>
+            <linkerLibLibItem>sfml-window</linkerLibLibItem>
+            <linkerLibLibItem>sfml-system</linkerLibLibItem>
+            <linkerLibFileItem>../lib/jsoncpp-src-0.5.0/libs/linux-gcc-4.7/libjson_linux-gcc-4.7_libmt.a</linkerLibFileItem>
           </linkerLibItems>
         </linkerTool>
       </compileType>
-      <item path="../SpaceRace/Background/Star.cpp" ex="false" tool="1" flavor2="0">
+      <item path="etc/README" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../SpaceRace/Background/Star.h" ex="false" tool="3" flavor2="0">
+      <item path="etc/dspacecraft.png" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../SpaceRace/Background/StarBackground.cpp"
+      <item path="etc/dspacecraft2.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="etc/dspacecraft3.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="etc/dspacecraft4.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="etc/fonts/arial.ttf" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="etc/game.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="etc/gameover.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="etc/intro.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="etc/menu.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="etc/ospacecraft.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="etc/ospacecraft2.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="etc/ospacecraft3.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="etc/ospacecraft4.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="etc/pause.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="etc/scripts/spawner.ini" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="etc/scripts/spawner.json" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="etc/spacecraft.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="etc/spacecraft.svg" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="etc/spacecraft2.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="etc/spacecraft2.svg" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="etc/spacecraft3.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="etc/spacecraft3.svg" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="etc/spacecraft4.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="etc/spacecraft4.svg" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Background/Star.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Background/Star.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Background/StarBackground.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Background/StarBackground.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Background/StarField.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Background/StarField.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Collider/Collidable.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Collider/Collider.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Collider/Collider.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/ContentManager/ContentManager.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="../SpaceRace/Background/StarBackground.h"
+      <item path="src/ContentManager/ContentManager.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="../SpaceRace/Background/StarField.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="src/Entity/Entity.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="../SpaceRace/Background/StarField.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="src/Entity/Entity.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../SpaceRace/Collider/Collidable.h" ex="false" tool="3" flavor2="0">
+      <item path="src/Entity/MobManager.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="../SpaceRace/Collider/Collider.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/Entity/MobManager.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../SpaceRace/Collider/Collider.h" ex="false" tool="3" flavor2="0">
+      <item path="src/Entity/Player.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="../SpaceRace/ContentManager/ContentManager.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="src/Entity/Player.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../SpaceRace/ContentManager/ContentManager.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="src/Entity/SpaceShip.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="../SpaceRace/Entity/Entity.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/Entity/SpaceShip.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../SpaceRace/Entity/Entity.h" ex="false" tool="3" flavor2="0">
+      <item path="src/GameState/GameOverState.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="../SpaceRace/Entity/MobManager.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/GameState/GameOverState.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../SpaceRace/Entity/MobManager.h" ex="false" tool="3" flavor2="0">
+      <item path="src/GameState/GameState.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../SpaceRace/Entity/Player.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/GameState/IntroState.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="../SpaceRace/Entity/Player.h" ex="false" tool="3" flavor2="0">
+      <item path="src/GameState/IntroState.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../SpaceRace/Entity/SpaceShip.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/GameState/MenuState.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="../SpaceRace/Entity/SpaceShip.h" ex="false" tool="3" flavor2="0">
+      <item path="src/GameState/MenuState.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../SpaceRace/GameState/GameOverState.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="src/GameState/PauseState.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="../SpaceRace/GameState/GameOverState.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="src/GameState/PauseState.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../SpaceRace/GameState/GameState.h" ex="false" tool="3" flavor2="0">
+      <item path="src/GameState/RaceState.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="../SpaceRace/GameState/IntroState.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="src/GameState/RaceState.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../SpaceRace/GameState/IntroState.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="src/Gui/RaceGui.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="../SpaceRace/GameState/MenuState.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="src/Gui/RaceGui.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../SpaceRace/GameState/MenuState.h" ex="false" tool="3" flavor2="0">
+      <item path="src/LaneExplorer.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../SpaceRace/GameState/PauseState.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="src/Random.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="../SpaceRace/GameState/PauseState.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="src/Random.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../SpaceRace/GameState/RaceState.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="src/Spawner/BasicSpawner.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="../SpaceRace/GameState/RaceState.h" ex="false" tool="3" flavor2="0">
+      <item path="src/Spawner/BasicSpawner.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../SpaceRace/Gui/RaceGui.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/Spawner/ScriptedSpawner.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="../SpaceRace/Gui/RaceGui.h" ex="false" tool="3" flavor2="0">
+      <item path="src/Spawner/ScriptedSpawner.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../SpaceRace/LaneExplorer.h" ex="false" tool="3" flavor2="0">
+      <item path="src/Spawner/Spawner.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="../SpaceRace/Random.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/Spawner/Spawner.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../SpaceRace/Random.h" ex="false" tool="3" flavor2="0">
+      <item path="src/WavesLoader/Wave.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="../SpaceRace/Spawner/BasicSpawner.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="src/WavesLoader/Wave.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../SpaceRace/Spawner/BasicSpawner.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="src/WavesLoader/WavesLoader.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="../SpaceRace/Spawner/ScriptedSpawner.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="src/WavesLoader/WavesLoader.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../SpaceRace/Spawner/ScriptedSpawner.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../SpaceRace/Spawner/Spawner.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="../SpaceRace/Spawner/Spawner.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/main.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
     <conf name="Release" type="1">
       <toolsSet>
-        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
         <compilerSet>default</compilerSet>
         <dependencyChecking>true</dependencyChecking>
         <rebuildPropChanged>false</rebuildPropChanged>
@@ -275,17 +337,17 @@
         <ccTool>
           <developmentMode>5</developmentMode>
           <incDir>
-            <pElem>../../SFML/include</pElem>
-            <pElem>ContentManager</pElem>
-            <pElem>GameState</pElem>
-            <pElem>Entity</pElem>
-            <pElem>.</pElem>
-            <pElem>Collider</pElem>
-            <pElem>Spawner</pElem>
-            <pElem>Background</pElem>
-            <pElem>Gui</pElem>
-            <pElem>WavesLoader</pElem>
-            <pElem>../../tinyxml2-master</pElem>
+            <pElem>../lib/SFML-2.1/include</pElem>
+            <pElem>src/Background</pElem>
+            <pElem>src/Collider</pElem>
+            <pElem>src/ContentManager</pElem>
+            <pElem>src/Entity</pElem>
+            <pElem>src/GameState</pElem>
+            <pElem>src/Gui</pElem>
+            <pElem>src/Spawner</pElem>
+            <pElem>src</pElem>
+            <pElem>src/WavesLoader</pElem>
+            <pElem>../lib/jsoncpp-src-0.5.0/include</pElem>
           </incDir>
         </ccTool>
         <fortranCompilerTool>
@@ -295,154 +357,164 @@
           <developmentMode>5</developmentMode>
         </asmTool>
         <linkerTool>
-          <output>../../bin/${CND_CONF}/SpaceRace</output>
           <linkerAddLib>
-            <pElem>../../SFML/lib</pElem>
+            <pElem>../lib/jsoncpp-src-0.5.0/libs/linux-gcc-4.7</pElem>
           </linkerAddLib>
           <linkerLibItems>
             <linkerLibLibItem>sfml-graphics</linkerLibLibItem>
             <linkerLibLibItem>sfml-window</linkerLibLibItem>
             <linkerLibLibItem>sfml-system</linkerLibLibItem>
+            <linkerLibFileItem>../lib/jsoncpp-src-0.5.0/libs/linux-gcc-4.7/libjson_linux-gcc-4.7_libmt.a</linkerLibFileItem>
           </linkerLibItems>
         </linkerTool>
       </compileType>
-      <item path="../SpaceRace/Background/Star.cpp" ex="false" tool="1" flavor2="0">
+      <item path="etc/README" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../SpaceRace/Background/Star.h" ex="false" tool="3" flavor2="0">
+      <item path="etc/dspacecraft.png" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../SpaceRace/Background/StarBackground.cpp"
+      <item path="etc/dspacecraft2.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="etc/dspacecraft3.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="etc/dspacecraft4.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="etc/fonts/arial.ttf" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="etc/game.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="etc/gameover.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="etc/intro.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="etc/menu.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="etc/ospacecraft.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="etc/ospacecraft2.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="etc/ospacecraft3.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="etc/ospacecraft4.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="etc/pause.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="etc/scripts/spawner.ini" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="etc/scripts/spawner.json" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="etc/spacecraft.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="etc/spacecraft.svg" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="etc/spacecraft2.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="etc/spacecraft2.svg" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="etc/spacecraft3.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="etc/spacecraft3.svg" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="etc/spacecraft4.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="etc/spacecraft4.svg" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Background/Star.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Background/Star.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Background/StarBackground.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Background/StarBackground.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Background/StarField.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Background/StarField.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Collider/Collidable.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Collider/Collider.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Collider/Collider.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/ContentManager/ContentManager.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="../SpaceRace/Background/StarBackground.h"
+      <item path="src/ContentManager/ContentManager.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="../SpaceRace/Background/StarField.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="src/Entity/Entity.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="../SpaceRace/Background/StarField.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="src/Entity/Entity.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../SpaceRace/Collider/Collidable.h" ex="false" tool="3" flavor2="0">
+      <item path="src/Entity/MobManager.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="../SpaceRace/Collider/Collider.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/Entity/MobManager.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../SpaceRace/Collider/Collider.h" ex="false" tool="3" flavor2="0">
+      <item path="src/Entity/Player.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="../SpaceRace/ContentManager/ContentManager.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="src/Entity/Player.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../SpaceRace/ContentManager/ContentManager.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="src/Entity/SpaceShip.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="../SpaceRace/Entity/Entity.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/Entity/SpaceShip.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../SpaceRace/Entity/Entity.h" ex="false" tool="3" flavor2="0">
+      <item path="src/GameState/GameOverState.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="../SpaceRace/Entity/MobManager.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/GameState/GameOverState.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../SpaceRace/Entity/MobManager.h" ex="false" tool="3" flavor2="0">
+      <item path="src/GameState/GameState.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../SpaceRace/Entity/Player.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/GameState/IntroState.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="../SpaceRace/Entity/Player.h" ex="false" tool="3" flavor2="0">
+      <item path="src/GameState/IntroState.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../SpaceRace/Entity/SpaceShip.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/GameState/MenuState.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="../SpaceRace/Entity/SpaceShip.h" ex="false" tool="3" flavor2="0">
+      <item path="src/GameState/MenuState.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../SpaceRace/GameState/GameOverState.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="src/GameState/PauseState.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="../SpaceRace/GameState/GameOverState.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="src/GameState/PauseState.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../SpaceRace/GameState/GameState.h" ex="false" tool="3" flavor2="0">
+      <item path="src/GameState/RaceState.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="../SpaceRace/GameState/IntroState.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="src/GameState/RaceState.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../SpaceRace/GameState/IntroState.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="src/Gui/RaceGui.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="../SpaceRace/GameState/MenuState.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="src/Gui/RaceGui.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../SpaceRace/GameState/MenuState.h" ex="false" tool="3" flavor2="0">
+      <item path="src/LaneExplorer.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../SpaceRace/GameState/PauseState.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="src/Random.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="../SpaceRace/GameState/PauseState.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="src/Random.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../SpaceRace/GameState/RaceState.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="src/Spawner/BasicSpawner.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="../SpaceRace/GameState/RaceState.h" ex="false" tool="3" flavor2="0">
+      <item path="src/Spawner/BasicSpawner.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../SpaceRace/Gui/RaceGui.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/Spawner/ScriptedSpawner.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="../SpaceRace/Gui/RaceGui.h" ex="false" tool="3" flavor2="0">
+      <item path="src/Spawner/ScriptedSpawner.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../SpaceRace/LaneExplorer.h" ex="false" tool="3" flavor2="0">
+      <item path="src/Spawner/Spawner.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="../SpaceRace/Random.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/Spawner/Spawner.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../SpaceRace/Random.h" ex="false" tool="3" flavor2="0">
+      <item path="src/WavesLoader/Wave.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="../SpaceRace/Spawner/BasicSpawner.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="src/WavesLoader/Wave.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../SpaceRace/Spawner/BasicSpawner.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="src/WavesLoader/WavesLoader.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="../SpaceRace/Spawner/ScriptedSpawner.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="src/WavesLoader/WavesLoader.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../SpaceRace/Spawner/ScriptedSpawner.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../SpaceRace/Spawner/Spawner.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="../SpaceRace/Spawner/Spawner.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/main.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
   </confs>

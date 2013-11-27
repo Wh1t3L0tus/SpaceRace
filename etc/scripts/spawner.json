@@ -4,16 +4,16 @@
 		      "spacing": 1000,
 		      "lines": [
 			    {
-				"spacing": 400,
-				"pattern": "X_X_X"
+				"spacing": 100,
+				"pattern": "XXXXX"
 			    },
 			    {
-				"spacing": 400,
-				"pattern" : "X_Y_X"
+				"spacing": 100,
+				"pattern" : "XXXXX"
 			    },
 			    {
-				"spacing": 400,
-				"pattern": "X_X_X"
+				"spacing": 100,
+				"pattern": "XXXXX"
 			    }
 		      ],
 		      "linesOrders": [
@@ -86,7 +86,8 @@
 	      }
     ],
     "waveOrders": [
-	[2, 1, 0],
-	[1, 2, 0]
+	[0, 1, 2, 3],
+        [3, 2, 1, 0],
+        [2, 3, 0, 1]
     ]
 }

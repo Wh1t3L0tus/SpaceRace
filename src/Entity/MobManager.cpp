@@ -108,7 +108,7 @@ void MobManager::manageMobs(float elapsedTime, Player& player)
             {
                 mobToErase.insert(m_pool[i]);
                 mobToErase.insert(m_pool[j]);
-                cout << "destroy : " << (void*)m_pool[i] << (void*)m_pool[j] << endl;
+//                cout << "destroy : " << (void*)m_pool[i] << (void*)m_pool[j] << endl;
             }
         }
     }

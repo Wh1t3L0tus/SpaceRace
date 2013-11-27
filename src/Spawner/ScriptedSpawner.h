@@ -35,10 +35,12 @@ private:
     
     Wave*               m_currentWave;
     
+    int                 m_currentWaveSpacing;
     int                 m_currentSpacing;
     list<int>           m_currentLineOrder;
     list<int>           m_currentWaveOrder;
     string              m_currentPattern;
+    bool                waveEnding;
 
 };
 

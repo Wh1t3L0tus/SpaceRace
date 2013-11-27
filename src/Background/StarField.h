@@ -13,6 +13,8 @@
 #include "Entity.h"
 #include "Star.h"
 
+#define STARS_COUNT 100
+
 class StarField : public Entity {
 public:
     StarField();
@@ -24,7 +26,7 @@ public:
     
 private:
     sf::RenderTexture m_fieldTexture;
-    Star m_stars[100];
+    Star m_stars[STARS_COUNT];
 };
 
 #endif	/* STARFIELD_H */

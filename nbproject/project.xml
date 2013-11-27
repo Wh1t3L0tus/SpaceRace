@@ -10,7 +10,22 @@
             <sourceEncoding>UTF-8</sourceEncoding>
             <make-dep-projects/>
             <sourceRootList>
-                <sourceRootElem>../../tinyxml2-master</sourceRootElem>
+                <sourceRootElem>Background</sourceRootElem>
+                <sourceRootElem>Collider</sourceRootElem>
+                <sourceRootElem>ContentManager</sourceRootElem>
+                <sourceRootElem>Entity</sourceRootElem>
+                <sourceRootElem>GameState</sourceRootElem>
+                <sourceRootElem>Gui</sourceRootElem>
+                <sourceRootElem>Spawner</sourceRootElem>
+                <sourceRootElem>WavesLoader</sourceRootElem>
+                <sourceRootElem>src/Background</sourceRootElem>
+                <sourceRootElem>src/Collider</sourceRootElem>
+                <sourceRootElem>src/ContentManager</sourceRootElem>
+                <sourceRootElem>src/Entity</sourceRootElem>
+                <sourceRootElem>src/GameState</sourceRootElem>
+                <sourceRootElem>src/Gui</sourceRootElem>
+                <sourceRootElem>src/Spawner</sourceRootElem>
+                <sourceRootElem>etc</sourceRootElem>
             </sourceRootList>
             <confList>
                 <confElem>
@@ -22,6 +37,9 @@
                     <type>1</type>
                 </confElem>
             </confList>
+            <formatting>
+                <project-formatting-style>false</project-formatting-style>
+            </formatting>
         </data>
     </configuration>
 </project>

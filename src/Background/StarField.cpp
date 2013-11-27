@@ -38,7 +38,7 @@ void StarField::generate(sf::Vector2f size, sf::Vector2f pos)
         exit(EXIT_FAILURE);
     
     m_fieldTexture.clear(sf::Color(0, 0, 0));
-    for (unsigned int i = 0; i < 100; i++)
+    for (unsigned int i = 0; i < STARS_COUNT; i++)
     {
         m_stars[i].setStar(sf::Vector2f(Random::range(0, 800), Random::range(0, 600)), Random::range(1, 5), Random::range(0, 255));
         m_fieldTexture.draw(m_stars[i]);
@@ -54,7 +54,7 @@ const StarField& StarField::operator=(const StarField& orig)
         exit(EXIT_FAILURE);
     
     m_fieldTexture.clear();
-    for (unsigned int i = 0; i < 100; i++)
+    for (unsigned int i = 0; i < STARS_COUNT; i++)
     {
         m_stars[i].setStar(orig.m_stars[i]);
         m_fieldTexture.draw(m_stars[i]);

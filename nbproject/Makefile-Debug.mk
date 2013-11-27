@@ -21,8 +21,8 @@ FC=gfortran
 AS=as
 
 # Macros
-CND_PLATFORM=MinGW_Qt-Windows
-CND_DLIB_EXT=dll
+CND_PLATFORM=GNU-Linux-x86
+CND_DLIB_EXT=so
 CND_CONF=Debug
 CND_DISTDIR=dist
 CND_BUILDDIR=build
@@ -35,26 +35,28 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/_ext/1324896651/Star.o \
-	${OBJECTDIR}/_ext/1324896651/StarBackground.o \
-	${OBJECTDIR}/_ext/1324896651/StarField.o \
-	${OBJECTDIR}/_ext/1535743739/Collider.o \
-	${OBJECTDIR}/_ext/1643742907/ContentManager.o \
-	${OBJECTDIR}/_ext/683866282/Entity.o \
-	${OBJECTDIR}/_ext/683866282/MobManager.o \
-	${OBJECTDIR}/_ext/683866282/Player.o \
-	${OBJECTDIR}/_ext/683866282/SpaceShip.o \
-	${OBJECTDIR}/_ext/533720680/GameOverState.o \
-	${OBJECTDIR}/_ext/533720680/IntroState.o \
-	${OBJECTDIR}/_ext/533720680/MenuState.o \
-	${OBJECTDIR}/_ext/533720680/PauseState.o \
-	${OBJECTDIR}/_ext/533720680/RaceState.o \
-	${OBJECTDIR}/_ext/965675476/RaceGui.o \
-	${OBJECTDIR}/_ext/991262536/Random.o \
-	${OBJECTDIR}/_ext/694709887/BasicSpawner.o \
-	${OBJECTDIR}/_ext/694709887/ScriptedSpawner.o \
-	${OBJECTDIR}/_ext/694709887/Spawner.o \
-	${OBJECTDIR}/main.o
+	${OBJECTDIR}/src/Background/Star.o \
+	${OBJECTDIR}/src/Background/StarBackground.o \
+	${OBJECTDIR}/src/Background/StarField.o \
+	${OBJECTDIR}/src/Collider/Collider.o \
+	${OBJECTDIR}/src/ContentManager/ContentManager.o \
+	${OBJECTDIR}/src/Entity/Entity.o \
+	${OBJECTDIR}/src/Entity/MobManager.o \
+	${OBJECTDIR}/src/Entity/Player.o \
+	${OBJECTDIR}/src/Entity/SpaceShip.o \
+	${OBJECTDIR}/src/GameState/GameOverState.o \
+	${OBJECTDIR}/src/GameState/IntroState.o \
+	${OBJECTDIR}/src/GameState/MenuState.o \
+	${OBJECTDIR}/src/GameState/PauseState.o \
+	${OBJECTDIR}/src/GameState/RaceState.o \
+	${OBJECTDIR}/src/Gui/RaceGui.o \
+	${OBJECTDIR}/src/Random.o \
+	${OBJECTDIR}/src/Spawner/BasicSpawner.o \
+	${OBJECTDIR}/src/Spawner/ScriptedSpawner.o \
+	${OBJECTDIR}/src/Spawner/Spawner.o \
+	${OBJECTDIR}/src/WavesLoader/Wave.o \
+	${OBJECTDIR}/src/WavesLoader/WavesLoader.o \
+	${OBJECTDIR}/src/main.o
 
 
 # C Compiler Flags
@@ -71,115 +73,127 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=-L../../SFML/lib -lsfml-graphics-d -lsfml-window-d -lsfml-system-d
+LDLIBSOPTIONS=-L../lib/jsoncpp-src-0.5.0/libs/linux-gcc-4.7 -lsfml-graphics -lsfml-window -lsfml-system ../lib/jsoncpp-src-0.5.0/libs/linux-gcc-4.7/libjson_linux-gcc-4.7_libmt.a
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
-	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ../../bin/${CND_CONF}/SpaceRace.exe
+	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/spacerace
 
-../../bin/${CND_CONF}/SpaceRace.exe: ${OBJECTFILES}
-	${MKDIR} -p ../../bin/${CND_CONF}
-	${LINK.cc} -o ../../bin/${CND_CONF}/SpaceRace ${OBJECTFILES} ${LDLIBSOPTIONS}
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/spacerace: ../lib/jsoncpp-src-0.5.0/libs/linux-gcc-4.7/libjson_linux-gcc-4.7_libmt.a
 
-${OBJECTDIR}/_ext/1324896651/Star.o: ../SpaceRace/Background/Star.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/1324896651
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/spacerace: ${OBJECTFILES}
+	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
+	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/spacerace ${OBJECTFILES} ${LDLIBSOPTIONS}
+
+${OBJECTDIR}/src/Background/Star.o: src/Background/Star.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/Background
 	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -I../../SFML/include -IContentManager -IGameState -IEntity -I. -ICollider -ISpawner -IBackground -IGui -IWavesLoader -I../../tinyxml2-master -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1324896651/Star.o ../SpaceRace/Background/Star.cpp
+	$(COMPILE.cc) -g -Wall -I../lib/SFML-2.1/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -I../lib/jsoncpp-src-0.5.0/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/Background/Star.o src/Background/Star.cpp
 
-${OBJECTDIR}/_ext/1324896651/StarBackground.o: ../SpaceRace/Background/StarBackground.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/1324896651
+${OBJECTDIR}/src/Background/StarBackground.o: src/Background/StarBackground.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/Background
 	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -I../../SFML/include -IContentManager -IGameState -IEntity -I. -ICollider -ISpawner -IBackground -IGui -IWavesLoader -I../../tinyxml2-master -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1324896651/StarBackground.o ../SpaceRace/Background/StarBackground.cpp
+	$(COMPILE.cc) -g -Wall -I../lib/SFML-2.1/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -I../lib/jsoncpp-src-0.5.0/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/Background/StarBackground.o src/Background/StarBackground.cpp
 
-${OBJECTDIR}/_ext/1324896651/StarField.o: ../SpaceRace/Background/StarField.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/1324896651
+${OBJECTDIR}/src/Background/StarField.o: src/Background/StarField.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/Background
 	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -I../../SFML/include -IContentManager -IGameState -IEntity -I. -ICollider -ISpawner -IBackground -IGui -IWavesLoader -I../../tinyxml2-master -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1324896651/StarField.o ../SpaceRace/Background/StarField.cpp
+	$(COMPILE.cc) -g -Wall -I../lib/SFML-2.1/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -I../lib/jsoncpp-src-0.5.0/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/Background/StarField.o src/Background/StarField.cpp
 
-${OBJECTDIR}/_ext/1535743739/Collider.o: ../SpaceRace/Collider/Collider.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/1535743739
+${OBJECTDIR}/src/Collider/Collider.o: src/Collider/Collider.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/Collider
 	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -I../../SFML/include -IContentManager -IGameState -IEntity -I. -ICollider -ISpawner -IBackground -IGui -IWavesLoader -I../../tinyxml2-master -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1535743739/Collider.o ../SpaceRace/Collider/Collider.cpp
+	$(COMPILE.cc) -g -Wall -I../lib/SFML-2.1/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -I../lib/jsoncpp-src-0.5.0/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/Collider/Collider.o src/Collider/Collider.cpp
 
-${OBJECTDIR}/_ext/1643742907/ContentManager.o: ../SpaceRace/ContentManager/ContentManager.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/1643742907
+${OBJECTDIR}/src/ContentManager/ContentManager.o: src/ContentManager/ContentManager.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/ContentManager
 	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -I../../SFML/include -IContentManager -IGameState -IEntity -I. -ICollider -ISpawner -IBackground -IGui -IWavesLoader -I../../tinyxml2-master -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1643742907/ContentManager.o ../SpaceRace/ContentManager/ContentManager.cpp
+	$(COMPILE.cc) -g -Wall -I../lib/SFML-2.1/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -I../lib/jsoncpp-src-0.5.0/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/ContentManager/ContentManager.o src/ContentManager/ContentManager.cpp
 
-${OBJECTDIR}/_ext/683866282/Entity.o: ../SpaceRace/Entity/Entity.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/683866282
+${OBJECTDIR}/src/Entity/Entity.o: src/Entity/Entity.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/Entity
 	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -I../../SFML/include -IContentManager -IGameState -IEntity -I. -ICollider -ISpawner -IBackground -IGui -IWavesLoader -I../../tinyxml2-master -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/683866282/Entity.o ../SpaceRace/Entity/Entity.cpp
+	$(COMPILE.cc) -g -Wall -I../lib/SFML-2.1/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -I../lib/jsoncpp-src-0.5.0/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/Entity/Entity.o src/Entity/Entity.cpp
 
-${OBJECTDIR}/_ext/683866282/MobManager.o: ../SpaceRace/Entity/MobManager.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/683866282
+${OBJECTDIR}/src/Entity/MobManager.o: src/Entity/MobManager.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/Entity
 	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -I../../SFML/include -IContentManager -IGameState -IEntity -I. -ICollider -ISpawner -IBackground -IGui -IWavesLoader -I../../tinyxml2-master -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/683866282/MobManager.o ../SpaceRace/Entity/MobManager.cpp
+	$(COMPILE.cc) -g -Wall -I../lib/SFML-2.1/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -I../lib/jsoncpp-src-0.5.0/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/Entity/MobManager.o src/Entity/MobManager.cpp
 
-${OBJECTDIR}/_ext/683866282/Player.o: ../SpaceRace/Entity/Player.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/683866282
+${OBJECTDIR}/src/Entity/Player.o: src/Entity/Player.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/Entity
 	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -I../../SFML/include -IContentManager -IGameState -IEntity -I. -ICollider -ISpawner -IBackground -IGui -IWavesLoader -I../../tinyxml2-master -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/683866282/Player.o ../SpaceRace/Entity/Player.cpp
+	$(COMPILE.cc) -g -Wall -I../lib/SFML-2.1/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -I../lib/jsoncpp-src-0.5.0/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/Entity/Player.o src/Entity/Player.cpp
 
-${OBJECTDIR}/_ext/683866282/SpaceShip.o: ../SpaceRace/Entity/SpaceShip.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/683866282
+${OBJECTDIR}/src/Entity/SpaceShip.o: src/Entity/SpaceShip.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/Entity
 	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -I../../SFML/include -IContentManager -IGameState -IEntity -I. -ICollider -ISpawner -IBackground -IGui -IWavesLoader -I../../tinyxml2-master -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/683866282/SpaceShip.o ../SpaceRace/Entity/SpaceShip.cpp
+	$(COMPILE.cc) -g -Wall -I../lib/SFML-2.1/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -I../lib/jsoncpp-src-0.5.0/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/Entity/SpaceShip.o src/Entity/SpaceShip.cpp
 
-${OBJECTDIR}/_ext/533720680/GameOverState.o: ../SpaceRace/GameState/GameOverState.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/533720680
+${OBJECTDIR}/src/GameState/GameOverState.o: src/GameState/GameOverState.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/GameState
 	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -I../../SFML/include -IContentManager -IGameState -IEntity -I. -ICollider -ISpawner -IBackground -IGui -IWavesLoader -I../../tinyxml2-master -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/533720680/GameOverState.o ../SpaceRace/GameState/GameOverState.cpp
+	$(COMPILE.cc) -g -Wall -I../lib/SFML-2.1/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -I../lib/jsoncpp-src-0.5.0/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/GameState/GameOverState.o src/GameState/GameOverState.cpp
 
-${OBJECTDIR}/_ext/533720680/IntroState.o: ../SpaceRace/GameState/IntroState.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/533720680
+${OBJECTDIR}/src/GameState/IntroState.o: src/GameState/IntroState.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/GameState
 	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -I../../SFML/include -IContentManager -IGameState -IEntity -I. -ICollider -ISpawner -IBackground -IGui -IWavesLoader -I../../tinyxml2-master -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/533720680/IntroState.o ../SpaceRace/GameState/IntroState.cpp
+	$(COMPILE.cc) -g -Wall -I../lib/SFML-2.1/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -I../lib/jsoncpp-src-0.5.0/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/GameState/IntroState.o src/GameState/IntroState.cpp
 
-${OBJECTDIR}/_ext/533720680/MenuState.o: ../SpaceRace/GameState/MenuState.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/533720680
+${OBJECTDIR}/src/GameState/MenuState.o: src/GameState/MenuState.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/GameState
 	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -I../../SFML/include -IContentManager -IGameState -IEntity -I. -ICollider -ISpawner -IBackground -IGui -IWavesLoader -I../../tinyxml2-master -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/533720680/MenuState.o ../SpaceRace/GameState/MenuState.cpp
+	$(COMPILE.cc) -g -Wall -I../lib/SFML-2.1/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -I../lib/jsoncpp-src-0.5.0/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/GameState/MenuState.o src/GameState/MenuState.cpp
 
-${OBJECTDIR}/_ext/533720680/PauseState.o: ../SpaceRace/GameState/PauseState.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/533720680
+${OBJECTDIR}/src/GameState/PauseState.o: src/GameState/PauseState.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/GameState
 	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -I../../SFML/include -IContentManager -IGameState -IEntity -I. -ICollider -ISpawner -IBackground -IGui -IWavesLoader -I../../tinyxml2-master -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/533720680/PauseState.o ../SpaceRace/GameState/PauseState.cpp
+	$(COMPILE.cc) -g -Wall -I../lib/SFML-2.1/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -I../lib/jsoncpp-src-0.5.0/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/GameState/PauseState.o src/GameState/PauseState.cpp
 
-${OBJECTDIR}/_ext/533720680/RaceState.o: ../SpaceRace/GameState/RaceState.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/533720680
+${OBJECTDIR}/src/GameState/RaceState.o: src/GameState/RaceState.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/GameState
 	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -I../../SFML/include -IContentManager -IGameState -IEntity -I. -ICollider -ISpawner -IBackground -IGui -IWavesLoader -I../../tinyxml2-master -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/533720680/RaceState.o ../SpaceRace/GameState/RaceState.cpp
+	$(COMPILE.cc) -g -Wall -I../lib/SFML-2.1/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -I../lib/jsoncpp-src-0.5.0/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/GameState/RaceState.o src/GameState/RaceState.cpp
 
-${OBJECTDIR}/_ext/965675476/RaceGui.o: ../SpaceRace/Gui/RaceGui.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/965675476
+${OBJECTDIR}/src/Gui/RaceGui.o: src/Gui/RaceGui.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/Gui
 	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -I../../SFML/include -IContentManager -IGameState -IEntity -I. -ICollider -ISpawner -IBackground -IGui -IWavesLoader -I../../tinyxml2-master -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/965675476/RaceGui.o ../SpaceRace/Gui/RaceGui.cpp
+	$(COMPILE.cc) -g -Wall -I../lib/SFML-2.1/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -I../lib/jsoncpp-src-0.5.0/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/Gui/RaceGui.o src/Gui/RaceGui.cpp
 
-${OBJECTDIR}/_ext/991262536/Random.o: ../SpaceRace/Random.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/991262536
+${OBJECTDIR}/src/Random.o: src/Random.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -I../../SFML/include -IContentManager -IGameState -IEntity -I. -ICollider -ISpawner -IBackground -IGui -IWavesLoader -I../../tinyxml2-master -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/991262536/Random.o ../SpaceRace/Random.cpp
+	$(COMPILE.cc) -g -Wall -I../lib/SFML-2.1/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -I../lib/jsoncpp-src-0.5.0/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/Random.o src/Random.cpp
 
-${OBJECTDIR}/_ext/694709887/BasicSpawner.o: ../SpaceRace/Spawner/BasicSpawner.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/694709887
+${OBJECTDIR}/src/Spawner/BasicSpawner.o: src/Spawner/BasicSpawner.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/Spawner
 	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -I../../SFML/include -IContentManager -IGameState -IEntity -I. -ICollider -ISpawner -IBackground -IGui -IWavesLoader -I../../tinyxml2-master -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/694709887/BasicSpawner.o ../SpaceRace/Spawner/BasicSpawner.cpp
+	$(COMPILE.cc) -g -Wall -I../lib/SFML-2.1/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -I../lib/jsoncpp-src-0.5.0/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/Spawner/BasicSpawner.o src/Spawner/BasicSpawner.cpp
 
-${OBJECTDIR}/_ext/694709887/ScriptedSpawner.o: ../SpaceRace/Spawner/ScriptedSpawner.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/694709887
+${OBJECTDIR}/src/Spawner/ScriptedSpawner.o: src/Spawner/ScriptedSpawner.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/Spawner
 	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -I../../SFML/include -IContentManager -IGameState -IEntity -I. -ICollider -ISpawner -IBackground -IGui -IWavesLoader -I../../tinyxml2-master -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/694709887/ScriptedSpawner.o ../SpaceRace/Spawner/ScriptedSpawner.cpp
+	$(COMPILE.cc) -g -Wall -I../lib/SFML-2.1/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -I../lib/jsoncpp-src-0.5.0/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/Spawner/ScriptedSpawner.o src/Spawner/ScriptedSpawner.cpp
 
-${OBJECTDIR}/_ext/694709887/Spawner.o: ../SpaceRace/Spawner/Spawner.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/694709887
+${OBJECTDIR}/src/Spawner/Spawner.o: src/Spawner/Spawner.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/Spawner
 	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -I../../SFML/include -IContentManager -IGameState -IEntity -I. -ICollider -ISpawner -IBackground -IGui -IWavesLoader -I../../tinyxml2-master -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/694709887/Spawner.o ../SpaceRace/Spawner/Spawner.cpp
+	$(COMPILE.cc) -g -Wall -I../lib/SFML-2.1/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -I../lib/jsoncpp-src-0.5.0/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/Spawner/Spawner.o src/Spawner/Spawner.cpp
 
-${OBJECTDIR}/main.o: main.cpp 
-	${MKDIR} -p ${OBJECTDIR}
+${OBJECTDIR}/src/WavesLoader/Wave.o: src/WavesLoader/Wave.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/WavesLoader
 	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -I../../SFML/include -IContentManager -IGameState -IEntity -I. -ICollider -ISpawner -IBackground -IGui -IWavesLoader -I../../tinyxml2-master -MMD -MP -MF $@.d -o ${OBJECTDIR}/main.o main.cpp
+	$(COMPILE.cc) -g -Wall -I../lib/SFML-2.1/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -I../lib/jsoncpp-src-0.5.0/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/WavesLoader/Wave.o src/WavesLoader/Wave.cpp
+
+${OBJECTDIR}/src/WavesLoader/WavesLoader.o: src/WavesLoader/WavesLoader.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/WavesLoader
+	${RM} $@.d
+	$(COMPILE.cc) -g -Wall -I../lib/SFML-2.1/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -I../lib/jsoncpp-src-0.5.0/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/WavesLoader/WavesLoader.o src/WavesLoader/WavesLoader.cpp
+
+${OBJECTDIR}/src/main.o: src/main.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} $@.d
+	$(COMPILE.cc) -g -Wall -I../lib/SFML-2.1/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -I../lib/jsoncpp-src-0.5.0/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/main.o src/main.cpp
 
 # Subprojects
 .build-subprojects:
@@ -187,7 +201,7 @@ ${OBJECTDIR}/main.o: main.cpp
 # Clean Targets
 .clean-conf: ${CLEAN_SUBPROJECTS}
 	${RM} -r ${CND_BUILDDIR}/${CND_CONF}
-	${RM} ../../bin/${CND_CONF}/SpaceRace.exe
+	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/spacerace
 
 # Subprojects
 .clean-subprojects:

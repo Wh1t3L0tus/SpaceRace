@@ -12,6 +12,7 @@
 
 ScriptedSpawner::ScriptedSpawner(float initSpeed, float spaceBetweenSpaceships, string filename) : Spawner(initSpeed, spaceBetweenSpaceships), m_wavesLoader(filename) {
     generateNewWaves();
+    waveEnding = false;
 }
 
 ScriptedSpawner::~ScriptedSpawner() {
@@ -25,16 +26,28 @@ void ScriptedSpawner::updateImplementation(float elapsedTime)
 SpawnResult ScriptedSpawner::spawnImplementation(float speed)
 {
     SpawnResult result;
-    if (m_traveledDistance >= m_currentSpacing) {
-        m_traveledDistance = 0;
-        interpretPattern(result, m_currentPattern, speed);
-        if (m_currentLineOrder.size() > 0)
-            nextLine();
-        else if (m_currentWaveOrder.size() > 0)
+    if (waveEnding) {
+        if (m_traveledDistance >= m_currentWaveSpacing) {
+            m_traveledDistance = 0;
+            waveEnding = false;
             nextWave();
-        else
-            generateNewWaves();
+        }
     }
+    else {
+        if (m_traveledDistance >= m_currentSpacing) {
+            m_traveledDistance = 0;
+            interpretPattern(result, m_currentPattern, speed);
+            if (m_currentLineOrder.size() > 0) {
+                nextLine();
+            }
+            else if (m_currentWaveOrder.size() > 0) {
+                waveEnding = true;
+            }
+            else
+                generateNewWaves();
+        }
+    }
+    
     return result;
 }
 
@@ -46,10 +59,10 @@ void ScriptedSpawner::nextLine() {
 
 void ScriptedSpawner::nextWave() {
     m_currentWave = m_wavesLoader.getWave(m_currentWaveOrder.front());
+    m_currentWaveSpacing = m_currentWave->getSpacing();
     m_currentWaveOrder.pop_front();
     m_currentLineOrder = m_currentWave->getLineOrder(Random::range(0, m_currentWave->getLineOrderCount()));
     nextLine();
-    cout << "===current wave===\n" << m_currentWave->toString() << endl;
 }
 
 void ScriptedSpawner::generateNewWaves() {
