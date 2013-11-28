@@ -1,93 +1,47 @@
 {
     "waves": [
 	      {
-		      "spacing": 1000,
+		      "spacing": 200,
 		      "lines": [
 			    {
-				"spacing": 100,
-				"pattern": "XXXXX"
-			    },
-			    {
-				"spacing": 100,
-				"pattern" : "XXXXX"
-			    },
-			    {
-				"spacing": 100,
-				"pattern": "XXXXX"
-			    }
-		      ],
-		      "linesOrders": [
-			    [0, 1, 2],
-			    [1, 2, 0]
-		      ]
-	      },
-	      {
-		      "spacing": 1000,
-		      "lines": [
-			    {
-				"spacing": 100,
-				"pattern": "XX_XX"
-			    },
-			    {
-				"spacing": 100,
-				"pattern" : "___XX"
-			    },
-			    {
-				"spacing": 100,
-				"pattern": "XX__X"
-			    }
-		      ],
-		      "linesOrders": [
-			    [0, 1, 2],
-			    [1, 2, 0]
-		      ]
-	      },
-	      {
-		      "spacing": 1000,
-		      "lines": [
-			    {
-				"spacing": 100,
+				"spacing": 120,
 				"pattern": "__X__"
 			    },
 			    {
-				"spacing": 100,
-				"pattern" : "XXX_X"
-			    },
-			    {
-				"spacing": 100,
-				"pattern": "XXX__"
-			    }
-		      ],
-		      "linesOrders": [
-			    [0, 1, 2],
-			    [1, 2, 0]
-		      ]
-	      },
-	      {
-		      "spacing": 1000,
-		      "lines": [
-			    {
-				"spacing": 100,
-				"pattern": "_XXX_"
-			    },
-			    {
-				"spacing": 100,
+				"spacing": 120,
 				"pattern" : "__X__"
 			    },
 			    {
-				"spacing": 100,
-				"pattern": "_XX_X"
+				"spacing": 120,
+				"pattern": "__X__"
 			    }
 		      ],
 		      "linesOrders": [
-			    [0, 1, 2],
-			    [1, 2, 0]
+			    [0, 1, 2]
+		      ]
+	      },
+	      {
+		      "spacing": 200,
+		      "lines": [
+			    {
+				"spacing": 120,
+				"pattern": "__X__"
+			    },
+			    {
+				"spacing": 120,
+				"pattern" : "__X__"
+			    },
+			    {
+				"spacing": 120,
+				"pattern": "__X__"
+			    }
+		      ],
+		      "linesOrders": [
+			    [0, 1, 2]
 		      ]
 	      }
     ],
     "waveOrders": [
-	[0, 1, 2, 3],
-        [3, 2, 1, 0],
-        [2, 3, 0, 1]
+	[0, 1]
     ]
 }

@@ -51,7 +51,6 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/GameState/RaceState.o \
 	${OBJECTDIR}/src/Gui/RaceGui.o \
 	${OBJECTDIR}/src/Random.o \
-	${OBJECTDIR}/src/Spawner/BasicSpawner.o \
 	${OBJECTDIR}/src/Spawner/ScriptedSpawner.o \
 	${OBJECTDIR}/src/Spawner/Spawner.o \
 	${OBJECTDIR}/src/WavesLoader/Wave.o \
@@ -164,11 +163,6 @@ ${OBJECTDIR}/src/Random.o: src/Random.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
 	$(COMPILE.cc) -g -Wall -I../lib/SFML-2.1/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -I../lib/jsoncpp-src-0.5.0/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/Random.o src/Random.cpp
-
-${OBJECTDIR}/src/Spawner/BasicSpawner.o: src/Spawner/BasicSpawner.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/Spawner
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -I../lib/SFML-2.1/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -I../lib/jsoncpp-src-0.5.0/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/Spawner/BasicSpawner.o src/Spawner/BasicSpawner.cpp
 
 ${OBJECTDIR}/src/Spawner/ScriptedSpawner.o: src/Spawner/ScriptedSpawner.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/Spawner

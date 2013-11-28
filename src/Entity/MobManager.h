@@ -48,7 +48,7 @@ public:
     virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 private:
     std::vector<SpaceShip*> m_pool;
-    int m_speedDelta;
+//    float m_speedDelta;
     float m_mobsSpeed;
     float m_elapsedTime;
     Spawner* m_spawner;

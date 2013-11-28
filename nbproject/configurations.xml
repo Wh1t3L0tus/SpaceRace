@@ -90,8 +90,6 @@
         <itemPath>src/Gui/RaceGui.h</itemPath>
       </logicalFolder>
       <logicalFolder name="Spawner" displayName="Spawner" projectFiles="true">
-        <itemPath>src/Spawner/BasicSpawner.cpp</itemPath>
-        <itemPath>src/Spawner/BasicSpawner.h</itemPath>
         <itemPath>src/Spawner/ScriptedSpawner.cpp</itemPath>
         <itemPath>src/Spawner/ScriptedSpawner.h</itemPath>
         <itemPath>src/Spawner/Spawner.cpp</itemPath>
@@ -301,10 +299,6 @@
       </item>
       <item path="src/Random.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/Spawner/BasicSpawner.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/Spawner/BasicSpawner.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="src/Spawner/ScriptedSpawner.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/Spawner/ScriptedSpawner.h" ex="false" tool="3" flavor2="0">
@@ -493,10 +487,6 @@
       <item path="src/Random.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/Random.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="src/Spawner/BasicSpawner.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/Spawner/BasicSpawner.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/Spawner/ScriptedSpawner.cpp" ex="false" tool="1" flavor2="0">
       </item>

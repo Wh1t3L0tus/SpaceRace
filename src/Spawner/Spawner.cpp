@@ -2,29 +2,14 @@
 #include "LaneExplorer.h"
 #include "Collider.h"
 
-Spawner::Spawner(float initSpeed, float spaceBetweenSpaceships) : m_spawnDensity(spaceBetweenSpaceships), m_traveledDistance(0.0), m_spaceshipSpeed(initSpeed)
+Spawner::Spawner() : m_traveledDistance(0.0)
 {
 }
 
-void Spawner::update(float elapsedTime)
+void Spawner::update(float elapsedTime, float speed)
 {
-    m_traveledDistance += (elapsedTime * m_spaceshipSpeed);
+    m_traveledDistance += (elapsedTime * speed);
     updateImplementation(elapsedTime);
-}
-
-bool Spawner::canSpawn()
-{
-    return m_traveledDistance >= m_spawnDensity;
-}
-
-float Spawner::getSpawnDensity()
-{
-    return m_spawnDensity;
-}
-
-void Spawner::increaseSpawnDensity(float inc)
-{
-    m_spawnDensity += inc;
 }
 
 SpawnResult Spawner::spawn(float speed)

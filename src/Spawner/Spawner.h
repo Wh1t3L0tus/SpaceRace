@@ -38,35 +38,17 @@ struct SpawnResult {
 
 class Spawner {
 public:
-    Spawner(float initSpeed, float spaceBetweenSpaceships = 800.0);
+    Spawner();
     virtual ~Spawner();
 
     /** Update your random spaceship generation algorithm
      */
-    virtual void update(float elapsedTime);
+    virtual void update(float elapsedTime, float speed);
     
     /** Implementation of the update method
       * @param elapsedTime : elapsed time since the last frame
      */
     virtual void updateImplementation(float elapsedTime) = 0;
-    
-    /** Tell whether conditions are statisfied to spawn or noy
-     * 
-     * @return true if it's ok to spawn
-     */
-    virtual bool canSpawn();
-    
-    /** Get the spawn density
-     * 
-     * @return the spawn density
-     */
-    virtual float getSpawnDensity();
-    
-    /** Increase the spawn density
-     * 
-     * @param inc : spawn density increment
-     */
-    virtual void increaseSpawnDensity(float inc);
     
     /** Randomly create a spaceship
      * 
@@ -93,9 +75,7 @@ public:
     
 protected:
     SpaceShip* m_lanes[5];      //array where each SpaceShip pointer points to the first SpaceShip of each lane
-    float m_spawnDensity;         //the lower it is, closer are the spaceships to each other
-    float m_traveledDistance;     //theorical distance traveled by the last spawned spaceship (based on its speed at birth)
-    float m_spaceshipSpeed;       //speed of the last spawned spaceship
+    float m_traveledDistance;     //theorical distance traveled by the last spawned spaceship
 };
 
 #endif	/* SPAWNER_H */

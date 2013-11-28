@@ -10,7 +10,7 @@
 #include "LaneExplorer.h"
 #include "ContentManager.h"
 
-ScriptedSpawner::ScriptedSpawner(float initSpeed, float spaceBetweenSpaceships, string filename) : Spawner(initSpeed, spaceBetweenSpaceships), m_wavesLoader(filename) {
+ScriptedSpawner::ScriptedSpawner(string filename) : Spawner(), m_wavesLoader(filename) {
     generateNewWaves();
     waveEnding = false;
 }
@@ -71,10 +71,10 @@ void ScriptedSpawner::generateNewWaves() {
 }
 
 void ScriptedSpawner::interpretPattern(SpawnResult& result, string pattern, float speed) {
-    for (int i = 0; i < pattern.size(); i++) {
+    for (unsigned int i = 0; i < pattern.size(); i++) {
         if (pattern[i] == 'X') {
             result.lanes[i] = new SpaceShip(sf::Vector2f(LaneExplorer::getAbscissaFromLane(i + 1), -Spawner::spawnHeight()), "spacecraft2", speed);
-        }
+        } 
         else if (pattern[i] == 'Y') {
             result.lanes[i] = new SpaceShip(sf::Vector2f(LaneExplorer::getAbscissaFromLane(i + 1), -Spawner::spawnHeight()), "spacecraft3", speed);            
         }

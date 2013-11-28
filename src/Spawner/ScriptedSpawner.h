@@ -18,7 +18,7 @@ using namespace std;
 
 class ScriptedSpawner : public Spawner {
 public:
-    ScriptedSpawner(float initSpeed, float spaceBetweenSpaceships, string filename);
+    ScriptedSpawner(string filename);
     virtual ~ScriptedSpawner();
     
     void updateImplementation(float elapsedTime);
