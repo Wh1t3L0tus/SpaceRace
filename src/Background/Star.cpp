@@ -62,6 +62,14 @@ void Star::setPosition(sf::Vector2f pos)
     m_position = pos;
 }
 
+const sf::Vector2f& Star::getPosition() const {
+    return m_position;
+}
+
+void Star::move(sf::Vector2f movement) {
+    setPosition(m_position + movement);
+}
+
 void Star::setRadius(double radius)
 {
     setStar(m_position, radius, m_lightIntensity);

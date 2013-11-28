@@ -13,9 +13,7 @@
 
 using namespace std;
 
-StarField::StarField(){}
-
-StarField::StarField(sf::Vector2f size, sf::Vector2f pos) {
+StarField::StarField(sf::Vector2f size, sf::Vector2f pos) : m_textureSize(size) {
     generate(size, pos);
 }
 
@@ -40,7 +38,7 @@ void StarField::generate(sf::Vector2f size, sf::Vector2f pos)
     m_fieldTexture.clear(sf::Color(0, 0, 0));
     for (unsigned int i = 0; i < STARS_COUNT; i++)
     {
-        m_stars[i].setStar(sf::Vector2f(Random::range(0, 800), Random::range(0, 600)), Random::range(1, 5), Random::range(0, 255));
+        m_stars[i].setStar(sf::Vector2f(Random::range(0, 800), Random::range(0, size.y)), Random::range(1, 5), Random::range(0, 255));
         m_fieldTexture.draw(m_stars[i]);
     }
     m_fieldTexture.display();
@@ -63,5 +61,18 @@ const StarField& StarField::operator=(const StarField& orig)
     setTexture(m_fieldTexture.getTexture());
     
     return *this;
+}
+
+void StarField::scroll(float speed) {
+    m_fieldTexture.clear(sf::Color(0, 0, 0));
+    for (int i = 0; i < STARS_COUNT; i++) {
+        m_stars[i].move(sf::Vector2f(0, speed));
+        if (m_stars[i].getPosition().y > m_textureSize.y) {
+            m_stars[i].setStar(sf::Vector2f(Random::range(0, 800), 0), Random::range(1, 5), Random::range(0, 255));
+        }
+        m_fieldTexture.draw(m_stars[i]);
+    }
+    m_fieldTexture.display();
+    setTexture(m_fieldTexture.getTexture());
 }
 

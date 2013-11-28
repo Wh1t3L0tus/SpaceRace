@@ -18,6 +18,8 @@ public:
     void setStar(sf::Vector2f pos, double radius, double intensity);
     void setStar(const Star& s);
     void setPosition(sf::Vector2f pos);
+    const sf::Vector2f& getPosition() const;
+    void move(sf::Vector2f movement);
     void setRadius(double radius);
     void setIntensity(double intensity);
     virtual ~Star();

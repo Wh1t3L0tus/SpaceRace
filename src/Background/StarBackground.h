@@ -19,7 +19,7 @@ public:
     
     void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 private:
-    StarField m_starfields[3];
+    StarField m_starfield;
     
 };
 
