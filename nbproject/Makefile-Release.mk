@@ -86,108 +86,108 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/spacerace: ${OBJECTFILES}
 
 ${OBJECTDIR}/src/Background/Star.o: src/Background/Star.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/Background
-	${RM} $@.d
-	$(COMPILE.cc) -O2 -I../lib/SFML-2.1/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -I../lib/jsoncpp-src-0.5.0/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/Background/Star.o src/Background/Star.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -I../lib/SFML-2.1/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -I../lib/jsoncpp-src-0.5.0/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Background/Star.o src/Background/Star.cpp
 
 ${OBJECTDIR}/src/Background/StarBackground.o: src/Background/StarBackground.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/Background
-	${RM} $@.d
-	$(COMPILE.cc) -O2 -I../lib/SFML-2.1/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -I../lib/jsoncpp-src-0.5.0/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/Background/StarBackground.o src/Background/StarBackground.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -I../lib/SFML-2.1/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -I../lib/jsoncpp-src-0.5.0/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Background/StarBackground.o src/Background/StarBackground.cpp
 
 ${OBJECTDIR}/src/Background/StarField.o: src/Background/StarField.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/Background
-	${RM} $@.d
-	$(COMPILE.cc) -O2 -I../lib/SFML-2.1/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -I../lib/jsoncpp-src-0.5.0/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/Background/StarField.o src/Background/StarField.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -I../lib/SFML-2.1/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -I../lib/jsoncpp-src-0.5.0/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Background/StarField.o src/Background/StarField.cpp
 
 ${OBJECTDIR}/src/Collider/Collider.o: src/Collider/Collider.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/Collider
-	${RM} $@.d
-	$(COMPILE.cc) -O2 -I../lib/SFML-2.1/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -I../lib/jsoncpp-src-0.5.0/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/Collider/Collider.o src/Collider/Collider.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -I../lib/SFML-2.1/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -I../lib/jsoncpp-src-0.5.0/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Collider/Collider.o src/Collider/Collider.cpp
 
 ${OBJECTDIR}/src/ContentManager/ContentManager.o: src/ContentManager/ContentManager.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/ContentManager
-	${RM} $@.d
-	$(COMPILE.cc) -O2 -I../lib/SFML-2.1/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -I../lib/jsoncpp-src-0.5.0/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/ContentManager/ContentManager.o src/ContentManager/ContentManager.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -I../lib/SFML-2.1/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -I../lib/jsoncpp-src-0.5.0/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/ContentManager/ContentManager.o src/ContentManager/ContentManager.cpp
 
 ${OBJECTDIR}/src/Entity/Entity.o: src/Entity/Entity.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/Entity
-	${RM} $@.d
-	$(COMPILE.cc) -O2 -I../lib/SFML-2.1/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -I../lib/jsoncpp-src-0.5.0/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/Entity/Entity.o src/Entity/Entity.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -I../lib/SFML-2.1/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -I../lib/jsoncpp-src-0.5.0/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Entity/Entity.o src/Entity/Entity.cpp
 
 ${OBJECTDIR}/src/Entity/MobManager.o: src/Entity/MobManager.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/Entity
-	${RM} $@.d
-	$(COMPILE.cc) -O2 -I../lib/SFML-2.1/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -I../lib/jsoncpp-src-0.5.0/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/Entity/MobManager.o src/Entity/MobManager.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -I../lib/SFML-2.1/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -I../lib/jsoncpp-src-0.5.0/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Entity/MobManager.o src/Entity/MobManager.cpp
 
 ${OBJECTDIR}/src/Entity/Player.o: src/Entity/Player.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/Entity
-	${RM} $@.d
-	$(COMPILE.cc) -O2 -I../lib/SFML-2.1/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -I../lib/jsoncpp-src-0.5.0/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/Entity/Player.o src/Entity/Player.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -I../lib/SFML-2.1/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -I../lib/jsoncpp-src-0.5.0/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Entity/Player.o src/Entity/Player.cpp
 
 ${OBJECTDIR}/src/Entity/SpaceShip.o: src/Entity/SpaceShip.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/Entity
-	${RM} $@.d
-	$(COMPILE.cc) -O2 -I../lib/SFML-2.1/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -I../lib/jsoncpp-src-0.5.0/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/Entity/SpaceShip.o src/Entity/SpaceShip.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -I../lib/SFML-2.1/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -I../lib/jsoncpp-src-0.5.0/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Entity/SpaceShip.o src/Entity/SpaceShip.cpp
 
 ${OBJECTDIR}/src/GameState/GameOverState.o: src/GameState/GameOverState.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/GameState
-	${RM} $@.d
-	$(COMPILE.cc) -O2 -I../lib/SFML-2.1/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -I../lib/jsoncpp-src-0.5.0/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/GameState/GameOverState.o src/GameState/GameOverState.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -I../lib/SFML-2.1/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -I../lib/jsoncpp-src-0.5.0/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/GameState/GameOverState.o src/GameState/GameOverState.cpp
 
 ${OBJECTDIR}/src/GameState/IntroState.o: src/GameState/IntroState.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/GameState
-	${RM} $@.d
-	$(COMPILE.cc) -O2 -I../lib/SFML-2.1/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -I../lib/jsoncpp-src-0.5.0/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/GameState/IntroState.o src/GameState/IntroState.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -I../lib/SFML-2.1/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -I../lib/jsoncpp-src-0.5.0/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/GameState/IntroState.o src/GameState/IntroState.cpp
 
 ${OBJECTDIR}/src/GameState/MenuState.o: src/GameState/MenuState.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/GameState
-	${RM} $@.d
-	$(COMPILE.cc) -O2 -I../lib/SFML-2.1/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -I../lib/jsoncpp-src-0.5.0/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/GameState/MenuState.o src/GameState/MenuState.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -I../lib/SFML-2.1/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -I../lib/jsoncpp-src-0.5.0/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/GameState/MenuState.o src/GameState/MenuState.cpp
 
 ${OBJECTDIR}/src/GameState/PauseState.o: src/GameState/PauseState.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/GameState
-	${RM} $@.d
-	$(COMPILE.cc) -O2 -I../lib/SFML-2.1/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -I../lib/jsoncpp-src-0.5.0/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/GameState/PauseState.o src/GameState/PauseState.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -I../lib/SFML-2.1/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -I../lib/jsoncpp-src-0.5.0/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/GameState/PauseState.o src/GameState/PauseState.cpp
 
 ${OBJECTDIR}/src/GameState/RaceState.o: src/GameState/RaceState.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/GameState
-	${RM} $@.d
-	$(COMPILE.cc) -O2 -I../lib/SFML-2.1/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -I../lib/jsoncpp-src-0.5.0/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/GameState/RaceState.o src/GameState/RaceState.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -I../lib/SFML-2.1/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -I../lib/jsoncpp-src-0.5.0/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/GameState/RaceState.o src/GameState/RaceState.cpp
 
 ${OBJECTDIR}/src/Gui/RaceGui.o: src/Gui/RaceGui.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/Gui
-	${RM} $@.d
-	$(COMPILE.cc) -O2 -I../lib/SFML-2.1/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -I../lib/jsoncpp-src-0.5.0/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/Gui/RaceGui.o src/Gui/RaceGui.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -I../lib/SFML-2.1/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -I../lib/jsoncpp-src-0.5.0/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Gui/RaceGui.o src/Gui/RaceGui.cpp
 
 ${OBJECTDIR}/src/Random.o: src/Random.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
-	${RM} $@.d
-	$(COMPILE.cc) -O2 -I../lib/SFML-2.1/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -I../lib/jsoncpp-src-0.5.0/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/Random.o src/Random.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -I../lib/SFML-2.1/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -I../lib/jsoncpp-src-0.5.0/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Random.o src/Random.cpp
 
 ${OBJECTDIR}/src/Spawner/ScriptedSpawner.o: src/Spawner/ScriptedSpawner.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/Spawner
-	${RM} $@.d
-	$(COMPILE.cc) -O2 -I../lib/SFML-2.1/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -I../lib/jsoncpp-src-0.5.0/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/Spawner/ScriptedSpawner.o src/Spawner/ScriptedSpawner.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -I../lib/SFML-2.1/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -I../lib/jsoncpp-src-0.5.0/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Spawner/ScriptedSpawner.o src/Spawner/ScriptedSpawner.cpp
 
 ${OBJECTDIR}/src/Spawner/Spawner.o: src/Spawner/Spawner.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/Spawner
-	${RM} $@.d
-	$(COMPILE.cc) -O2 -I../lib/SFML-2.1/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -I../lib/jsoncpp-src-0.5.0/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/Spawner/Spawner.o src/Spawner/Spawner.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -I../lib/SFML-2.1/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -I../lib/jsoncpp-src-0.5.0/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Spawner/Spawner.o src/Spawner/Spawner.cpp
 
 ${OBJECTDIR}/src/WavesLoader/Wave.o: src/WavesLoader/Wave.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/WavesLoader
-	${RM} $@.d
-	$(COMPILE.cc) -O2 -I../lib/SFML-2.1/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -I../lib/jsoncpp-src-0.5.0/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/WavesLoader/Wave.o src/WavesLoader/Wave.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -I../lib/SFML-2.1/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -I../lib/jsoncpp-src-0.5.0/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/WavesLoader/Wave.o src/WavesLoader/Wave.cpp
 
 ${OBJECTDIR}/src/WavesLoader/WavesLoader.o: src/WavesLoader/WavesLoader.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/WavesLoader
-	${RM} $@.d
-	$(COMPILE.cc) -O2 -I../lib/SFML-2.1/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -I../lib/jsoncpp-src-0.5.0/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/WavesLoader/WavesLoader.o src/WavesLoader/WavesLoader.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -I../lib/SFML-2.1/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -I../lib/jsoncpp-src-0.5.0/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/WavesLoader/WavesLoader.o src/WavesLoader/WavesLoader.cpp
 
 ${OBJECTDIR}/src/main.o: src/main.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
-	${RM} $@.d
-	$(COMPILE.cc) -O2 -I../lib/SFML-2.1/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -I../lib/jsoncpp-src-0.5.0/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/main.o src/main.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -I../lib/SFML-2.1/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -I../lib/jsoncpp-src-0.5.0/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/main.o src/main.cpp
 
 # Subprojects
 .build-subprojects:

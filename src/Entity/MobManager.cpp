@@ -72,8 +72,8 @@ void MobManager::manageMobs(float elapsedTime, Player& player)
     
     for (unsigned int i = 0; i < m_pool.size(); i++)
     {
-        if (Random::range(1, 1000) <= 5)
-            m_pool[i]->takeLane((Lane)Random::range(LeftLane, RightLane));
+//        if (Random::range(1, 1000) <= 5)
+//            m_pool[i]->takeLane((Lane)Random::range(LeftLane, RightLane));
         m_pool[i]->setSpeed(m_mobsSpeed);
         m_pool[i]->move(Down, elapsedTime);
         m_pool[i]->update(elapsedTime);

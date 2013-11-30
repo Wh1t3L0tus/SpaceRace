@@ -24,16 +24,16 @@ WavesLoader::WavesLoader(string filename) {
         m_isOk = true;
         
         // Read the waves orders
-        for (int i = 0; i < m_jsonRoot["waveOrders"].size(); i++) {
+        for (Json::UInt i = 0; i < m_jsonRoot["waveOrders"].size(); i++) {
             list<int> *waveOrder = new list<int>();
-            for (int j = 0; j < m_jsonRoot["waveOrders"][i].size(); j++) {
+            for (Json::UInt j = 0; j < m_jsonRoot["waveOrders"][i].size(); j++) {
                 waveOrder->push_back(m_jsonRoot["waveOrders"][i][j].asInt());
             }
             m_wavesOrders.push_back(waveOrder);
         }
         
         // Read the waves
-        for (int i = 0; i < m_jsonRoot["waves"].size(); i++)
+        for (Json::UInt i = 0; i < m_jsonRoot["waves"].size(); i++)
             m_waves.push_back(new Wave(m_jsonRoot["waves"][i]));
     }
 }

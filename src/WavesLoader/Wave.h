@@ -22,7 +22,7 @@ public:
     
     int getSpacing();
     
-    pair<int, string>& getLine(int index);
+    pair<int, string> getLine(int index);
     int getLineCount();
     
     list<int> getLineOrder(int index);

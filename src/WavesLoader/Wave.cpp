@@ -13,12 +13,13 @@ Wave::Wave(Json::Value wave) {
     // Read the lines
     for (Json::UInt i = 0; i < wave["lines"].size(); i++)
         m_lines.push_back(new pair<int, string>(wave["lines"][i]["spacing"].asInt(), wave["lines"][i]["pattern"].asString()));
-    
+        
     // Read the line orders
     for (Json::UInt i = 0; i < wave["linesOrders"].size(); i++) {
         list<int> *lineOrder = new list<int>();
         for (Json::UInt j = 0; j < wave["linesOrders"][i].size(); j++)
-            lineOrder->push_back(wave["lineOrders"][j][i].asInt());
+            lineOrder->push_back(wave["linesOrders"][i][j].asInt());
+            
         m_lineOrders.push_back(lineOrder);
     }
 }
@@ -39,8 +40,15 @@ int Wave::getSpacing() {
     return m_spacing;
 }
 
-pair<int, string>& Wave::getLine(int index) {
-    return *(*(m_lines.begin().operator ++(index)));
+pair<int, string> Wave::getLine(int index) {
+    int counter = 0;
+    pair<int, string> toReturn;
+    for (list<pair<int,string>* >::iterator i = m_lines.begin(); i != m_lines.end(); i++) {
+        if (counter == index)
+            toReturn = **i;
+        counter++;
+    }
+    return toReturn;
 }
 
 int Wave::getLineCount() {
