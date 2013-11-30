@@ -19,11 +19,22 @@ StarField::StarField(sf::Vector2f size, sf::Vector2f pos) : m_textureSize(size) 
 
 StarField::StarField(StarField& orig)
 {
+    // Set the starfield at the same position than orig
     setPosition(orig.position());
-    m_fieldTexture.create(orig.m_fieldTexture.getSize().x, orig.m_fieldTexture.getSize().y);
-    m_fieldTexture.clear();
-    m_fieldTexture.draw(orig);
+    
+    // Create a texture of the same size than the orig one
+    m_textureSize = orig.m_textureSize;
+    if (m_fieldTexture.create(orig.m_fieldTexture.getSize().x, orig.m_fieldTexture.getSize().y) == false)
+        exit(EXIT_FAILURE);
+    m_fieldTexture.clear(sf::Color(0, 0, 0));
+    
+    // Copy stars
+    for (unsigned int i = 0; i < STARS_COUNT; i++) {
+        m_stars[i] = orig.m_stars[i];
+        m_fieldTexture.draw(m_stars[i]);
+    }
     m_fieldTexture.display();
+    setTexture(m_fieldTexture.getTexture());
 }
 
 StarField::~StarField() {
