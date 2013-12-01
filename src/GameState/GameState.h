@@ -34,16 +34,18 @@ public:
      * Put here codes to handle notified events such as key released or mouse wheel moved
      * 
      * @param event : the event to handle
+     * @param elapsedTime : the time elapsed since the last frame
      */
-    virtual bool handleNotifiedEvents(sf::Event &event){return true;}
+    virtual bool handleNotifiedEvents(sf::Event &event, float elapsedTime){return true;}
     
     /** updateLoop
      * Call update and the handleX methods which are defined by the user
      * 
      * @param window : the window on which to draw
+     * @param elapsedTime : the time elapsed since the last frame
      * @return false when you have to change of state
      */
-    bool updateLoop(sf::RenderWindow &window) {
+    bool updateLoop(sf::RenderWindow &window, float elapsedTime) {
         sf::Event event;
         bool loopAgain = true;
         while (window.pollEvent(event))
@@ -53,11 +55,11 @@ public:
                 return handleCloseEvent(window);
             }
             else
-                loopAgain = handleNotifiedEvents(event);
+                loopAgain = handleNotifiedEvents(event, elapsedTime);
         }
         
         if (loopAgain)
-            return update(window);   
+            return update(window, elapsedTime);   
         else
             return false;
     }
@@ -66,9 +68,10 @@ public:
      * Put here your game logic for this state
      * 
      * @param window : the window on which to draw
+     * @param elapsedTime : the time elapsed since the last frame
      * @return false when you have to change of state
      */
-    virtual bool update(sf::RenderWindow &window) = 0;
+    virtual bool update(sf::RenderWindow &window, float elapsedTime) = 0;
     
     /** handleCloseEvent
      * Put here what to do on "close window" requests

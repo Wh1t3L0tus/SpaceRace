@@ -21,7 +21,7 @@ void GameOverState::init()
     m_sprite.setPosition(0, 0);
 }
 
-bool GameOverState::update(sf::RenderWindow& window)
+bool GameOverState::update(sf::RenderWindow& window, float elapsedTime)
 {
         window.clear();
         window.draw(m_sprite);
@@ -31,7 +31,7 @@ bool GameOverState::update(sf::RenderWindow& window)
     return m_loopAgain;
 }
 
-bool GameOverState::handleNotifiedEvents(sf::Event& event)
+bool GameOverState::handleNotifiedEvents(sf::Event& event, float elapsedTime)
 {
     if (event.type == sf::Event::KeyPressed)
     {

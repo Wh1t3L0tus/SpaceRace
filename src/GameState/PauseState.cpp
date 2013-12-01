@@ -22,7 +22,7 @@ void PauseState::init()
     m_sprite.setPosition(0, 0);
 }
 
-bool PauseState::update(sf::RenderWindow& window)
+bool PauseState::update(sf::RenderWindow& window, float elapsedTime)
 {
     window.clear(); 
     sf::sleep(sf::milliseconds(10));
@@ -32,7 +32,7 @@ bool PauseState::update(sf::RenderWindow& window)
     return m_loopAgain;
 }
 
-bool PauseState::handleNotifiedEvents(sf::Event& event)
+bool PauseState::handleNotifiedEvents(sf::Event& event, float elapsedTime)
 {
     if (event.type == sf::Event::KeyPressed)
     {

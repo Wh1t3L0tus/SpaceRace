@@ -30,6 +30,7 @@ private:
     
     
     map<string, GameState*> m_statesMap;
+    sf::Clock               m_clock;
     
     static StateManager* m_pSingleton;
 };

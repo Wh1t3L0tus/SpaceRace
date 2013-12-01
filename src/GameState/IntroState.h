@@ -17,7 +17,7 @@ public:
     virtual ~IntroState();
     
     virtual void init();
-    virtual bool update(sf::RenderWindow &window);
+    virtual bool update(sf::RenderWindow &window, float elapsedTime);
     
 private:
     

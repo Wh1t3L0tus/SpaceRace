@@ -21,13 +21,12 @@ public:
     virtual ~RaceState();
     
     virtual void init();
-    virtual bool update(sf::RenderWindow &window);
-    virtual bool handleNotifiedEvents(sf::Event &event);
+    virtual bool update(sf::RenderWindow &window, float elapsedTime);
+    virtual bool handleNotifiedEvents(sf::Event &event, float elapsedTime);
 //    virtual GameState* quit();
 private:
     MobManager m_mobMgr;    
     Player m_player;
-    sf::Clock m_clock;
     StarBackground m_stars;
     sf::View m_raceArea;
     RaceGui m_gui;

@@ -36,10 +36,11 @@ void StateManager::run(string stateName, sf::RenderWindow& window) {
     if (keyExists(stateName, getInstance()->m_statesMap))
         toRun = getInstance()->m_statesMap.at(stateName);
     
+    getInstance()->m_clock.restart();
     while (window.isOpen() && toRun != NULL)
     {
         toRun->initState();
-        while (toRun->updateLoop(window));
+        while (toRun->updateLoop(window, getInstance()->m_clock.restart().asSeconds()));
         toRun = toRun->quit();
     }
     

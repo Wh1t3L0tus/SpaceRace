@@ -35,13 +35,12 @@ void RaceState::init()
         m_player.setPosition(LaneExplorer::getAbscissaFromLane(3), 600 - m_player.size().y);
         m_player.setSpeed(2000);
         m_stars.init();
-        m_clock.restart();
     }
     else
         m_isPaused = false;
 }
 
-bool RaceState::update(sf::RenderWindow& window)
+bool RaceState::update(sf::RenderWindow& window, float elapsedTime)
 {
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
     {
@@ -49,9 +48,7 @@ bool RaceState::update(sf::RenderWindow& window)
         m_pNextState = NULL;
     }
     
-    float elapsed = m_clock.restart().asSeconds();
-    
-    m_mobMgr.manageMobs(elapsed, m_player);
+    m_mobMgr.manageMobs(elapsedTime, m_player);
     
     if (m_player.isAlive() == false)
     {
@@ -59,7 +56,7 @@ bool RaceState::update(sf::RenderWindow& window)
         m_pNextState = StateManager::getState("gameOver");
     }
     
-    m_stars.scroll(elapsed, (m_mobMgr.speed() / 2.0) + 100.0);
+    m_stars.scroll(elapsedTime, (m_mobMgr.speed() / 2.0) + 100.0);
     m_gui.update(m_mobMgr.speed(), m_player.getMileage());
     
     
@@ -77,7 +74,7 @@ bool RaceState::update(sf::RenderWindow& window)
     return m_loopAgain;
 }
 
-bool RaceState::handleNotifiedEvents(sf::Event& event)
+bool RaceState::handleNotifiedEvents(sf::Event& event, float elapsedTime)
 {
     if (event.type == sf::Event::KeyPressed)
     {
