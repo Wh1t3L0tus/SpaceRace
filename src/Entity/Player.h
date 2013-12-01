@@ -16,7 +16,8 @@ class Player : public SpaceShip {
 public:
     Player();
     virtual ~Player();
-    
+
+    void init();
     bool isAlive();
     void destroy();
     void increaseMileageCounter(float inc);

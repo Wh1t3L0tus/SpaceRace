@@ -22,6 +22,11 @@ Player::Player() :
 Player::~Player() {
 }
 
+void Player::init() {
+    m_alive = true;
+    m_mileageCounter = 0;
+}
+
 bool Player::isAlive()
 {
     return m_alive;
@@ -29,7 +34,7 @@ bool Player::isAlive()
 
 void Player::destroy()
 {
-//    m_alive = false;
+    m_alive = false;
 }
 
 void Player::increaseMileageCounter(float inc)

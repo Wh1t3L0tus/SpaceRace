@@ -11,6 +11,7 @@
 #include "GameState.h"
 #include "MenuState.h"
 #include "ContentManager.h"
+#include "StateManager.h"
 
 IntroState::IntroState() {
 
@@ -30,7 +31,7 @@ bool IntroState::update(sf::RenderWindow& window)
     if (m_clock.getElapsedTime().asSeconds() >= 2)
     {
         m_loopAgain = false;
-        m_pNextState = new MenuState();
+        m_pNextState = StateManager::getState("intro");
     }
     window.clear();
     sf::sleep(sf::milliseconds(10));

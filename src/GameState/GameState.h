@@ -28,7 +28,6 @@ public:
         m_loopAgain = true;
         m_pNextState = NULL;
         init();
-        cout << "loop again " << m_loopAgain << endl;
     }
     
     /** handleNotifiedEvents

@@ -13,8 +13,13 @@
 
 using namespace std;
 
+WavesLoader::WavesLoader() : m_isOk(false) {}
+
 WavesLoader::WavesLoader(string filename) {
-    
+    load(filename);
+}
+
+bool WavesLoader::load(string filename) {
     ifstream file(filename.c_str());
     Json::Reader jsonReader;
     
@@ -36,18 +41,11 @@ WavesLoader::WavesLoader(string filename) {
         for (Json::UInt i = 0; i < m_jsonRoot["waves"].size(); i++)
             m_waves.push_back(new Wave(m_jsonRoot["waves"][i]));
     }
+    return m_isOk;
 }
 
 WavesLoader::~WavesLoader() {
-    while (!m_wavesOrders.empty()) {
-        delete m_wavesOrders.front();
-        m_wavesOrders.pop_front();
-    }
-    
-    while (!m_wavesOrders.empty()) {
-        delete m_waves.back();
-        m_waves.pop_back();
-    }
+    clean();
 }
 
 bool WavesLoader::isOk() {
@@ -68,5 +66,17 @@ list<int>& WavesLoader::getWaveOrder(int index) {
 
 int WavesLoader::getWaveOrderCount() {
     return m_wavesOrders.size();
+}
+
+void WavesLoader::clean() {
+    while (!m_wavesOrders.empty()) {
+        delete m_wavesOrders.front();
+        m_wavesOrders.pop_front();
+    }
+    
+    while (!m_wavesOrders.empty()) {
+        delete m_waves.back();
+        m_waves.pop_back();
+    }
 }
 

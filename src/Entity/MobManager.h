@@ -12,7 +12,7 @@
 #include <SFML/Graphics.hpp>
 #include "SpaceShip.h"
 #include "Player.h"
-#include "Spawner.h"
+#include "ScriptedSpawner.h"
 
 class MobManager : public sf::Drawable {
 public:
@@ -23,6 +23,12 @@ public:
      * @param orig : the manager from which you make the copy
      */
     MobManager(MobManager& orig);
+    
+    /**
+     * Initialize this mob manager
+     * call this to reset the game
+     */
+    void init();
     
     /** Create spaceships with the current spawner
      */
@@ -47,11 +53,13 @@ public:
     
     virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 private:
+    
+    void clean();
+    
     std::vector<SpaceShip*> m_pool;
-//    float m_speedDelta;
     float m_mobsSpeed;
     float m_elapsedTime;
-    Spawner* m_spawner;
+    ScriptedSpawner m_spawner;
 };
 
 #endif	/* MOBMANAGER_H */

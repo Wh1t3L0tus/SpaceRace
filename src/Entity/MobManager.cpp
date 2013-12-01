@@ -31,31 +31,39 @@ void findAndErase(SpaceShip* m, std::vector<SpaceShip*> &v)
 }
 
 MobManager::MobManager() : m_pool(), m_mobsSpeed(500), m_elapsedTime(0.0) {
-    m_spawner = new ScriptedSpawner("./etc/scripts/spawner.json");
 }
 
 MobManager::MobManager(MobManager& orig) : 
         m_mobsSpeed(orig.m_mobsSpeed),
-        m_elapsedTime(orig.m_elapsedTime)
+        m_elapsedTime(orig.m_elapsedTime), m_spawner(orig.m_spawner)
 {
     for (unsigned int i = 0; i < orig.m_pool.size(); i++)
         m_pool.push_back(orig.m_pool[i]);
-    m_spawner = orig.m_spawner;
     
     orig.m_pool.clear();
-    orig.m_spawner = NULL;
+}
+
+void MobManager::init() 
+{
+    clean();
+    m_mobsSpeed = 500;
+    m_elapsedTime = 0.0;
+    m_spawner.loadScript("./etc/scripts/spawner.json");
+}
+
+void MobManager::clean() {
+    for (std::vector<SpaceShip*>::iterator it = m_pool.begin(); it != m_pool.end(); ++it)
+        delete *it;
+    m_pool.clear();
 }
 
 MobManager::~MobManager() {
-    if (m_spawner != NULL)
-        delete m_spawner;
-    for (std::vector<SpaceShip*>::iterator it = m_pool.begin(); it != m_pool.end(); ++it)
-        delete *it;
+    clean();
 }
 
 void MobManager::createMob()
 {
-    SpawnResult sp = m_spawner->spawn(m_mobsSpeed);
+    SpawnResult sp = m_spawner.spawn(m_mobsSpeed);
     if (sp.empty() == false)
     {
         for (unsigned int i = 0; i < 5; i++)
@@ -118,7 +126,7 @@ void MobManager::manageMobs(float elapsedTime, Player& player)
     for (std::set<SpaceShip*>::iterator it = mobToErase.begin(); it != mobToErase.end(); ++it)
         findAndErase(*it, m_pool);
     
-    m_spawner->update(elapsedTime, m_mobsSpeed);
+    m_spawner.update(elapsedTime, m_mobsSpeed);
     createMob();
 }
 

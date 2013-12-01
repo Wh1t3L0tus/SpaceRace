@@ -10,12 +10,16 @@
 #include "LaneExplorer.h"
 #include "ContentManager.h"
 
-ScriptedSpawner::ScriptedSpawner(string filename) : Spawner(), m_wavesLoader(filename) {
-    generateNewWaves();
-    waveEnding = false;
-}
+ScriptedSpawner::ScriptedSpawner() : Spawner() {}
 
 ScriptedSpawner::~ScriptedSpawner() {
+}
+
+bool ScriptedSpawner::loadScript(string filename) {
+    bool toReturn = m_wavesLoader.load(filename);
+    generateNewWaves();
+    waveEnding = false;
+    return toReturn;
 }
 
 void ScriptedSpawner::updateImplementation(float elapsedTime)

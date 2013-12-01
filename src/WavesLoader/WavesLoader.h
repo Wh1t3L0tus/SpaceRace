@@ -18,9 +18,11 @@ using namespace std;
 
 class WavesLoader {
 public:
+    WavesLoader();
     WavesLoader(string filename);
     virtual ~WavesLoader();
     
+    bool load(string filename);
     bool isOk();
     
     Wave* getWave(int index);
@@ -30,6 +32,8 @@ public:
     int getWaveOrderCount();
     
 private:
+    
+    void clean();
 
     Json::Value                  m_jsonRoot;
     bool                         m_isOk;

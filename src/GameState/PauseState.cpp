@@ -8,8 +8,9 @@
 #include "PauseState.h"
 #include "RaceState.h"
 #include "ContentManager.h"
+#include "StateManager.h"
 
-PauseState::PauseState(RaceState pausedGame) : m_pausedGame(pausedGame) {
+PauseState::PauseState() {
     m_sprite.setTexture(ContentManager::getInstance()->getTexture("pause"));
 }
 
@@ -18,7 +19,6 @@ PauseState::~PauseState() {
 
 void PauseState::init()
 {
-    cout << "entering pause" << endl;
     m_sprite.setPosition(0, 0);
 }
 
@@ -39,7 +39,7 @@ bool PauseState::handleNotifiedEvents(sf::Event& event)
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::F1))
         {
             m_loopAgain = false;
-            m_pNextState = new RaceState(m_pausedGame);
+            m_pNextState = StateManager::getState("race");
         }    
     }
     return m_loopAgain;

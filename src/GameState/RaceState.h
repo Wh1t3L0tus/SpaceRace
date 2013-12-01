@@ -31,6 +31,7 @@ private:
     StarBackground m_stars;
     sf::View m_raceArea;
     RaceGui m_gui;
+    bool m_isPaused;
 
 };
 

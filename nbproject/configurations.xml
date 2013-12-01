@@ -84,6 +84,8 @@
         <itemPath>src/GameState/PauseState.h</itemPath>
         <itemPath>src/GameState/RaceState.cpp</itemPath>
         <itemPath>src/GameState/RaceState.h</itemPath>
+        <itemPath>src/GameState/StateManager.cpp</itemPath>
+        <itemPath>src/GameState/StateManager.h</itemPath>
       </logicalFolder>
       <logicalFolder name="Gui" displayName="Gui" projectFiles="true">
         <itemPath>src/Gui/RaceGui.cpp</itemPath>
@@ -289,6 +291,10 @@
       </item>
       <item path="src/GameState/RaceState.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="src/GameState/StateManager.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/GameState/StateManager.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/Gui/RaceGui.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/Gui/RaceGui.h" ex="false" tool="3" flavor2="0">
@@ -477,6 +483,10 @@
       <item path="src/GameState/RaceState.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/GameState/RaceState.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/GameState/StateManager.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/GameState/StateManager.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/Gui/RaceGui.cpp" ex="false" tool="1" flavor2="0">
       </item>

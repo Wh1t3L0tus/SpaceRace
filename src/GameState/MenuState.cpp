@@ -10,6 +10,7 @@
 #include "ContentManager.h"
 #include "Random.h"
 #include "StarBackground.h"
+#include "StateManager.h"
 
 MenuState::MenuState() {
     m_sprite.setTexture(ContentManager::getInstance()->getTexture("menu"));
@@ -36,7 +37,7 @@ bool MenuState::handleNotifiedEvents(sf::Event& event)
         if (event.key.code == sf::Keyboard::Return)
         {
             m_loopAgain = false;
-            m_pNextState = new RaceState();
+            m_pNextState = StateManager::getState("race");
         }
     }
     

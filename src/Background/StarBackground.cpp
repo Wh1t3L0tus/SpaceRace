@@ -21,6 +21,10 @@ StarBackground::StarBackground(StarBackground& orig) : m_starfield(orig.m_starfi
 StarBackground::~StarBackground() {
 }
 
+void StarBackground::init() {
+    m_starfield.generate(sf::Vector2f(800, 900), sf::Vector2f(0, -300));
+}
+
 void StarBackground::scroll(float elapsedTime, float speed)
 {
     m_starfield.scroll(elapsedTime * speed);

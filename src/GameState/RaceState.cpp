@@ -13,15 +13,14 @@
 #include "GameOverState.h"
 #include "LaneExplorer.h"
 #include "Gui/RaceGui.h"
+#include "StateManager.h"
 
 #include <iostream>
 
 using namespace std;
 
-RaceState::RaceState() : m_raceArea(sf::FloatRect(0, 0, 800, 600)) {
+RaceState::RaceState() : m_raceArea(sf::FloatRect(0, 0, 800, 600)), m_isPaused(false) {
     m_pNextState = NULL;
-    m_player.setPosition(LaneExplorer::getAbscissaFromLane(3), 600 - m_player.size().y);
-    m_player.setSpeed(2000);
     m_raceArea.setViewport(sf::FloatRect((1.0 - (800.0 / 900.0)) / 2.0, 0.01, 800.0 / 900.0, 600.0 / 700.0));
 }
 
@@ -30,8 +29,16 @@ RaceState::~RaceState() {
 
 void RaceState::init()
 {
-    cout << "entering race" << endl;
-    m_clock.restart();
+    if (!m_isPaused) {
+        m_mobMgr.init();
+        m_player.init();
+        m_player.setPosition(LaneExplorer::getAbscissaFromLane(3), 600 - m_player.size().y);
+        m_player.setSpeed(2000);
+        m_stars.init();
+        m_clock.restart();
+    }
+    else
+        m_isPaused = false;
 }
 
 bool RaceState::update(sf::RenderWindow& window)
@@ -49,7 +56,7 @@ bool RaceState::update(sf::RenderWindow& window)
     if (m_player.isAlive() == false)
     {
         m_loopAgain = false;
-        m_pNextState = new GameOverState();
+        m_pNextState = StateManager::getState("gameOver");
     }
     
     m_stars.scroll(elapsed, (m_mobMgr.speed() / 2.0) + 100.0);
@@ -84,9 +91,9 @@ bool RaceState::handleNotifiedEvents(sf::Event& event)
             m_mobMgr.increaseSpeed(-10);
         else if (event.key.code == sf::Keyboard::F1)
         {
-            cout << "pause requested" << endl;
+            m_isPaused = true;
             m_loopAgain = false;
-            m_pNextState = new PauseState(*this);
+            m_pNextState = StateManager::getState("pause");
         }
     }
     

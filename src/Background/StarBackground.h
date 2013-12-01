@@ -14,6 +14,7 @@ class StarBackground : public sf::Drawable {
 public:
     StarBackground();
     StarBackground(StarBackground& orig);
+    void init();
     void scroll(float elapsedTime, float speed);
     virtual ~StarBackground();
     

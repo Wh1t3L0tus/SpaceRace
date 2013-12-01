@@ -8,6 +8,7 @@
 #include "GameOverState.h"
 #include "ContentManager.h"
 #include "RaceState.h"
+#include "StateManager.h"
 
 GameOverState::GameOverState() : m_sprite(ContentManager::getInstance()->getTexture("gameover")){
 }
@@ -37,7 +38,7 @@ bool GameOverState::handleNotifiedEvents(sf::Event& event)
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Return))
         {
             m_loopAgain = false;
-            m_pNextState = new RaceState();
+            m_pNextState = StateManager::getState("race");
         }
         else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
         {

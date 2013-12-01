@@ -14,7 +14,7 @@
 
 class PauseState : public GameState {
 public:
-    PauseState(RaceState pausedState);
+    PauseState();
     virtual ~PauseState();
     
     virtual void init();
@@ -24,7 +24,6 @@ public:
 private:
     sf::Texture m_texture;
     sf::Sprite m_sprite;
-    RaceState m_pausedGame;
 
 };
 

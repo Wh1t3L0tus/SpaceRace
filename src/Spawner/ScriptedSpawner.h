@@ -18,8 +18,10 @@ using namespace std;
 
 class ScriptedSpawner : public Spawner {
 public:
-    ScriptedSpawner(string filename);
+    ScriptedSpawner();
     virtual ~ScriptedSpawner();
+    
+    bool loadScript(string filename);
     
     void updateImplementation(float elapsedTime);
     SpawnResult spawnImplementation(float speed);

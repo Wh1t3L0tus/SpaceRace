@@ -13,26 +13,23 @@
 #include "GameState/RaceState.h"
 #include "GameState/PauseState.h"
 #include "ContentManager/ContentManager.h"
+#include "StateManager.h"
+#include "GameOverState.h"
 
 using namespace std;
 
 int main(int argc, char** argv) {
     
-    GameState *gs = new MenuState();
-    
+    StateManager::addState("menu", new MenuState());
+    StateManager::addState("race", new RaceState());
+    StateManager::addState("pause", new PauseState());
+    StateManager::addState("intro", new IntroState());
+    StateManager::addState("gameOver", new GameOverState());
     
     sf::RenderWindow window(sf::VideoMode(900, 700), "Space Race");
     window.setFramerateLimit(60);
-
-    while (window.isOpen() && gs != NULL)
-    {
-        gs->initState();
-        while (gs->updateLoop(window));
-        GameState* freeThis = gs;
-        gs = gs->quit();
-        delete freeThis;
-    }
     
+    StateManager::run("menu", window);    
     
     return 0;
 }

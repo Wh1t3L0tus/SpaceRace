@@ -49,6 +49,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/GameState/MenuState.o \
 	${OBJECTDIR}/src/GameState/PauseState.o \
 	${OBJECTDIR}/src/GameState/RaceState.o \
+	${OBJECTDIR}/src/GameState/StateManager.o \
 	${OBJECTDIR}/src/Gui/RaceGui.o \
 	${OBJECTDIR}/src/Random.o \
 	${OBJECTDIR}/src/Spawner/ScriptedSpawner.o \
@@ -153,6 +154,11 @@ ${OBJECTDIR}/src/GameState/RaceState.o: src/GameState/RaceState.cpp
 	${MKDIR} -p ${OBJECTDIR}/src/GameState
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -I../lib/SFML-2.1/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -I../lib/jsoncpp-src-0.5.0/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/GameState/RaceState.o src/GameState/RaceState.cpp
+
+${OBJECTDIR}/src/GameState/StateManager.o: src/GameState/StateManager.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/GameState
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -I../lib/SFML-2.1/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -I../lib/jsoncpp-src-0.5.0/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/GameState/StateManager.o src/GameState/StateManager.cpp
 
 ${OBJECTDIR}/src/Gui/RaceGui.o: src/Gui/RaceGui.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/Gui
