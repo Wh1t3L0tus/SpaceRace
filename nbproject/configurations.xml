@@ -148,8 +148,9 @@
       </toolsSet>
       <compileType>
         <ccTool>
+          <developmentMode>6</developmentMode>
           <incDir>
-            <pElem>../lib/SFML-2.1/include</pElem>
+            <pElem>/usr/local/include</pElem>
             <pElem>src/Background</pElem>
             <pElem>src/Collider</pElem>
             <pElem>src/ContentManager</pElem>
@@ -159,19 +160,23 @@
             <pElem>src/Spawner</pElem>
             <pElem>src</pElem>
             <pElem>src/WavesLoader</pElem>
-            <pElem>../lib/jsoncpp-src-0.5.0/include</pElem>
           </incDir>
+          <commandLine>-Wextra -pedantic</commandLine>
           <warningLevel>2</warningLevel>
         </ccTool>
         <linkerTool>
+          <output>spacerace_debug</output>
           <linkerAddLib>
-            <pElem>../lib/jsoncpp-src-0.5.0/libs/linux-gcc-4.7</pElem>
+            <pElem>/usr/local/lib</pElem>
           </linkerAddLib>
+          <linkerDynSerch>
+            <pElem>/usr/local/lib</pElem>
+          </linkerDynSerch>
           <linkerLibItems>
             <linkerLibLibItem>sfml-graphics</linkerLibLibItem>
             <linkerLibLibItem>sfml-window</linkerLibLibItem>
             <linkerLibLibItem>sfml-system</linkerLibLibItem>
-            <linkerLibFileItem>../lib/jsoncpp-src-0.5.0/libs/linux-gcc-4.7/libjson_linux-gcc-4.7_libmt.a</linkerLibFileItem>
+            <linkerLibLibItem>json_linux-gcc-4.7_libmt</linkerLibLibItem>
           </linkerLibItems>
         </linkerTool>
       </compileType>
@@ -335,9 +340,9 @@
           <developmentMode>5</developmentMode>
         </cTool>
         <ccTool>
-          <developmentMode>5</developmentMode>
+          <developmentMode>0</developmentMode>
           <incDir>
-            <pElem>../lib/SFML-2.1/include</pElem>
+            <pElem>/usr/local/include</pElem>
             <pElem>src/Background</pElem>
             <pElem>src/Collider</pElem>
             <pElem>src/ContentManager</pElem>
@@ -347,8 +352,9 @@
             <pElem>src/Spawner</pElem>
             <pElem>src</pElem>
             <pElem>src/WavesLoader</pElem>
-            <pElem>../lib/jsoncpp-src-0.5.0/include</pElem>
           </incDir>
+          <commandLine>-Wextra -pedantic</commandLine>
+          <warningLevel>2</warningLevel>
         </ccTool>
         <fortranCompilerTool>
           <developmentMode>5</developmentMode>
@@ -357,14 +363,18 @@
           <developmentMode>5</developmentMode>
         </asmTool>
         <linkerTool>
+          <output>spacerace_release</output>
           <linkerAddLib>
-            <pElem>../lib/jsoncpp-src-0.5.0/libs/linux-gcc-4.7</pElem>
+            <pElem>/usr/local/lib</pElem>
           </linkerAddLib>
+          <linkerDynSerch>
+            <pElem>/usr/local/lib</pElem>
+          </linkerDynSerch>
           <linkerLibItems>
             <linkerLibLibItem>sfml-graphics</linkerLibLibItem>
             <linkerLibLibItem>sfml-window</linkerLibLibItem>
             <linkerLibLibItem>sfml-system</linkerLibLibItem>
-            <linkerLibFileItem>../lib/jsoncpp-src-0.5.0/libs/linux-gcc-4.7/libjson_linux-gcc-4.7_libmt.a</linkerLibFileItem>
+            <linkerLibLibItem>json_linux-gcc-4.7_libmt</linkerLibLibItem>
           </linkerLibItems>
         </linkerTool>
       </compileType>

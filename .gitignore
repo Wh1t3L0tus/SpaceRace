@@ -1,3 +1,5 @@
 /build/
 /dist/
 nbproject/private
+spacerace_debug
+spacerace_release

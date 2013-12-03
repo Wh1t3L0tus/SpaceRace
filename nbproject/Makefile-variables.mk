@@ -8,17 +8,17 @@ CND_BUILDDIR=build
 CND_DISTDIR=dist
 # Debug configuration
 CND_PLATFORM_Debug=GNU-Linux-x86
-CND_ARTIFACT_DIR_Debug=dist/Debug/GNU-Linux-x86
-CND_ARTIFACT_NAME_Debug=spacerace
-CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-Linux-x86/spacerace
+CND_ARTIFACT_DIR_Debug=
+CND_ARTIFACT_NAME_Debug=spacerace_debug
+CND_ARTIFACT_PATH_Debug=spacerace_debug
 CND_PACKAGE_DIR_Debug=dist/Debug/GNU-Linux-x86/package
 CND_PACKAGE_NAME_Debug=spacerace.tar
 CND_PACKAGE_PATH_Debug=dist/Debug/GNU-Linux-x86/package/spacerace.tar
 # Release configuration
 CND_PLATFORM_Release=GNU-Linux-x86
-CND_ARTIFACT_DIR_Release=dist/Release/GNU-Linux-x86
-CND_ARTIFACT_NAME_Release=spacerace
-CND_ARTIFACT_PATH_Release=dist/Release/GNU-Linux-x86/spacerace
+CND_ARTIFACT_DIR_Release=
+CND_ARTIFACT_NAME_Release=spacerace_release
+CND_ARTIFACT_PATH_Release=spacerace_release
 CND_PACKAGE_DIR_Release=dist/Release/GNU-Linux-x86/package
 CND_PACKAGE_NAME_Release=spacerace.tar
 CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux-x86/package/spacerace.tar
