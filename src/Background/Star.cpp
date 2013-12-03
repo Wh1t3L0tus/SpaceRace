@@ -78,7 +78,7 @@ void Star::setRadius(double radius)
 Star::~Star() {
 }
 
-void Star::draw(sf::RenderTarget& target, sf::RenderStates states) const
+void Star::draw(sf::RenderTarget& target, sf::RenderStates) const
 {
     target.draw(m_circle);
 }

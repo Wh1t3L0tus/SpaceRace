@@ -41,7 +41,7 @@ void RaceGui::update(int speed, int mileage)
     m_mileageText.setString("Mileage : " + os2.str());
 }
 
-void RaceGui::draw(sf::RenderTarget& target, sf::RenderStates states) const
+void RaceGui::draw(sf::RenderTarget& target, sf::RenderStates) const
 {
     target.draw(m_speedText);
     target.draw(m_mileageText);

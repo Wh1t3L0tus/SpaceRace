@@ -31,7 +31,7 @@ bool GameOverState::update(sf::RenderWindow& window, float elapsedTime)
     return m_loopAgain;
 }
 
-bool GameOverState::handleNotifiedEvents(sf::Event& event, float elapsedTime)
+bool GameOverState::handleNotifiedEvents(sf::Event& event, float)
 {
     if (event.type == sf::Event::KeyPressed)
     {

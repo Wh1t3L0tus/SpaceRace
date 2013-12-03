@@ -17,7 +17,7 @@ StarField::StarField(sf::Vector2f size, sf::Vector2f pos) : m_textureSize(size) 
     generate(size, pos);
 }
 
-StarField::StarField(StarField& orig)
+StarField::StarField(StarField& orig) : Entity::Entity(orig.position())
 {
     // Set the starfield at the same position than orig
     setPosition(orig.position());

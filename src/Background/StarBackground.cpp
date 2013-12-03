@@ -30,7 +30,7 @@ void StarBackground::scroll(float elapsedTime, float speed)
     m_starfield.scroll(elapsedTime * speed);
 }
 
-void StarBackground::draw(sf::RenderTarget& target, sf::RenderStates states) const
+void StarBackground::draw(sf::RenderTarget& target, sf::RenderStates) const
 {
     target.draw(m_starfield);
 }

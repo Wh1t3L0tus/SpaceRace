@@ -26,7 +26,7 @@ void IntroState::init()
     m_sprite.setPosition(0, 0);
 }
 
-bool IntroState::update(sf::RenderWindow& window, float elapsedTime)
+bool IntroState::update(sf::RenderWindow& window, float)
 {
     if (m_clock.getElapsedTime().asSeconds() >= 2)
     {

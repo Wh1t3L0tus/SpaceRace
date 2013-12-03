@@ -21,7 +21,7 @@ void MenuState::init()
     m_sprite.setPosition(0, 0);
 }
 
-bool MenuState::update(sf::RenderWindow &window, float elapsedTime)
+bool MenuState::update(sf::RenderWindow &window, float)
 {
     window.clear();
     sf::sleep(sf::milliseconds(10));
@@ -30,7 +30,7 @@ bool MenuState::update(sf::RenderWindow &window, float elapsedTime)
     return m_loopAgain;
 }
 
-bool MenuState::handleNotifiedEvents(sf::Event& event, float elapsedTime)
+bool MenuState::handleNotifiedEvents(sf::Event& event, float)
 {
     if (event.type == sf::Event::KeyPressed)
     {

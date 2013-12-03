@@ -33,10 +33,10 @@ public:
     /** handleNotifiedEvents
      * Put here codes to handle notified events such as key released or mouse wheel moved
      * 
-     * @param event : the event to handle
-     * @param elapsedTime : the time elapsed since the last frame
+     * @param sf::Event& event : the event to handle
+     * @param float elapsedTime : the time elapsed since the last frame
      */
-    virtual bool handleNotifiedEvents(sf::Event &event, float elapsedTime){return true;}
+    virtual bool handleNotifiedEvents(sf::Event&, float){return true;}
     
     /** updateLoop
      * Call update and the handleX methods which are defined by the user

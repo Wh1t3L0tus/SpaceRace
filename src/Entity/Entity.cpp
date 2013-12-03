@@ -8,6 +8,7 @@
 #include "Entity.h"
 
 Entity::Entity(sf::Vector2f pos) : m_size(0, 0), m_speed(0.0) {
+    setPosition(pos);
 }
 
 Entity::Entity(sf::Texture &texture, sf::Vector2f pos) : m_sprite(texture), /**m_position(pos), **/m_size(m_sprite.getTextureRect().width, m_sprite.getTextureRect().height), m_speed(0.0) {
@@ -77,7 +78,7 @@ void Entity::setTexture(const sf::Texture& texture)
     m_size = sf::Vector2f(m_sprite.getTexture()->getSize().x, m_sprite.getTexture()->getSize().y);
 }
 
-void Entity::draw(sf::RenderTarget& target, sf::RenderStates states) const
+void Entity::draw(sf::RenderTarget& target, sf::RenderStates) const
 {
     target.draw(m_sprite);
 }

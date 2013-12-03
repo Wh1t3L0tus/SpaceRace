@@ -22,7 +22,7 @@ bool ScriptedSpawner::loadScript(string filename) {
     return toReturn;
 }
 
-void ScriptedSpawner::updateImplementation(float elapsedTime)
+void ScriptedSpawner::updateImplementation(float)
 {
     
 }
