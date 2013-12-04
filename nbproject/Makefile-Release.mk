@@ -52,6 +52,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/GameState/StateManager.o \
 	${OBJECTDIR}/src/Gui/RaceGui.o \
 	${OBJECTDIR}/src/Random.o \
+	${OBJECTDIR}/src/ScoreManager/ScoreManager.o \
 	${OBJECTDIR}/src/Spawner/ScriptedSpawner.o \
 	${OBJECTDIR}/src/Spawner/Spawner.o \
 	${OBJECTDIR}/src/WavesLoader/Wave.o \
@@ -166,6 +167,11 @@ ${OBJECTDIR}/src/Random.o: src/Random.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
 	$(COMPILE.cc) -Wall -I/usr/local/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Random.o src/Random.cpp
+
+${OBJECTDIR}/src/ScoreManager/ScoreManager.o: src/ScoreManager/ScoreManager.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/ScoreManager
+	${RM} "$@.d"
+	$(COMPILE.cc) -Wall -I/usr/local/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/ScoreManager/ScoreManager.o src/ScoreManager/ScoreManager.cpp
 
 ${OBJECTDIR}/src/Spawner/ScriptedSpawner.o: src/Spawner/ScriptedSpawner.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/Spawner
