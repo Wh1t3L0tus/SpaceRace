@@ -31,7 +31,7 @@ private:
     sf::View m_raceArea;
     RaceGui m_gui;
     bool m_isPaused;
-
+    float m_score;
 };
 
 #endif	/* RACESTATE_H */

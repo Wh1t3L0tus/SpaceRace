@@ -15,12 +15,12 @@ public:
     RaceGui();
     virtual ~RaceGui();
     
-    void update(int speed, int mileage);
+    void update(int speed, int score);
     
     void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 private:
     sf::Text m_speedText;
-    sf::Text m_mileageText;
+    sf::Text m_scoreText;
 };
 
 #endif	/* RACEGUI_H */

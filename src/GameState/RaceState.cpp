@@ -19,7 +19,7 @@
 
 using namespace std;
 
-RaceState::RaceState() : m_raceArea(sf::FloatRect(0, 0, 800, 600)), m_isPaused(false) {
+RaceState::RaceState() : m_raceArea(sf::FloatRect(0, 0, 800, 600)), m_isPaused(false), m_score(0) {
     m_pNextState = NULL;
     m_raceArea.setViewport(sf::FloatRect((1.0 - (800.0 / 900.0)) / 2.0, 0.01, 800.0 / 900.0, 600.0 / 700.0));
 }
@@ -57,7 +57,15 @@ bool RaceState::update(sf::RenderWindow& window, float elapsedTime)
     }
     
     m_stars.scroll(elapsedTime, (m_mobMgr.speed() / 2.0) + 100.0);
-    m_gui.update(m_mobMgr.speed(), m_player.getMileage());
+    
+    float multiplicator;
+    if (m_mobMgr.speed() == 0.0)
+        multiplicator = 0.0;
+    else
+        multiplicator = m_mobMgr.speed() / 1060;
+    
+    m_score += multiplicator  * (elapsedTime * 100);
+    m_gui.update(m_mobMgr.speed(), (int)m_score);
     
     
     window.clear(sf::Color(255, 255, 255));
