@@ -30,6 +30,31 @@ void ScoreManager::init(string filename) {
         cout << m_scores.at(i)->first << " " << m_scores.at(i)->second << endl;
 }
 
+int ScoreManager::getRank(int score) {
+    int challenger = -1;
+    for (unsigned int i = 0; i < m_scores.size(); i++) {
+        if (score > m_scores.at(i)->second) {
+            challenger = i;
+            break;
+        }
+        else if (score == m_scores.at(i)->second) {
+            challenger = i;
+        }
+        else if (challenger != -1) {
+            challenger = i;
+            break;
+        }
+    }
+    
+    if (challenger != -1)
+        return challenger + 1;
+    
+    if (m_scores.size() < 10)
+        return m_scores.size() + 1;
+    
+    return -1;
+}
+
 void ScoreManager::saveBestScore(string name, int score) {
     
     m_scores.push_back(new pair<string, int>(name, score));
