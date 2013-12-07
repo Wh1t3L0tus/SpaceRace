@@ -61,7 +61,14 @@ int WavesLoader::getWaveCount() {
 }
 
 list<int>& WavesLoader::getWaveOrder(int index) {
-    return *(*(m_wavesOrders.begin().operator ++(index)));
+    int counter = 0;
+    list<int>* toReturn = NULL;
+    for (list<list<int> *>::iterator it = m_wavesOrders.begin(); it != m_wavesOrders.end(); it++) {
+        if (counter == index)
+            toReturn = *it;
+        counter++;
+    }
+    return *toReturn;
 }
 
 int WavesLoader::getWaveOrderCount() {

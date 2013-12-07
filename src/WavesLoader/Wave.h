@@ -25,7 +25,7 @@ public:
     pair<int, string> getLine(int index);
     int getLineCount();
     
-    list<int> getLineOrder(int index);
+    list<int>& getLineOrder(int index);
     int getLineOrderCount();
     
     string toString();

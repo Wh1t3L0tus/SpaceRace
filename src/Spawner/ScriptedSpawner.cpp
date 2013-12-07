@@ -65,12 +65,12 @@ void ScriptedSpawner::nextWave() {
     m_currentWave = m_wavesLoader.getWave(m_currentWaveOrder.front());
     m_currentWaveSpacing = m_currentWave->getSpacing();
     m_currentWaveOrder.pop_front();
-    m_currentLineOrder = m_currentWave->getLineOrder(Random::range(0, m_currentWave->getLineOrderCount()));
+    m_currentLineOrder = m_currentWave->getLineOrder(Random::range(0, m_currentWave->getLineOrderCount() - 1));
     nextLine();
 }
 
 void ScriptedSpawner::generateNewWaves() {
-    m_currentWaveOrder = m_wavesLoader.getWaveOrder(Random::range(0, m_wavesLoader.getWaveOrderCount()));
+    m_currentWaveOrder = m_wavesLoader.getWaveOrder(Random::range(0, m_wavesLoader.getWaveOrderCount() - 1));
     nextWave();
 }
 

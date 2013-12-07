@@ -59,7 +59,7 @@ void RaceState::update(sf::RenderWindow& window, float elapsedTime)
     if (m_player.isAlive() == false)
     {
         int rank = m_scoreMgr.getRank(m_score);
-        if (rank > 10)
+        if (rank > 10 || rank < 1)
             goToState(StateManager::getState("gameOver"));
         else {
             ((NewRecordState*) StateManager::getState("newRecord"))->init(&m_scoreMgr, m_score);

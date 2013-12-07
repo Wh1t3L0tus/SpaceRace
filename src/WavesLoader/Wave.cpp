@@ -21,7 +21,7 @@ Wave::Wave(Json::Value wave) {
             lineOrder->push_back(wave["linesOrders"][i][j].asInt());
             
         m_lineOrders.push_back(lineOrder);
-    }
+    }        
 }
 
 Wave::~Wave() {
@@ -55,8 +55,15 @@ int Wave::getLineCount() {
     return m_lines.size();
 }
 
-list<int> Wave::getLineOrder(int index) {
-    return *(*(m_lineOrders.begin().operator ++(index)));
+list<int>& Wave::getLineOrder(int index) {
+    int counter = 0;
+    list<int>* toReturn = NULL;
+    for (list<list<int>* >::iterator it = m_lineOrders.begin(); it != m_lineOrders.end(); it++) {
+        if (counter == index)
+            toReturn = *it;
+        counter++;
+    }
+    return *toReturn;
 }
 
 int Wave::getLineOrderCount() {
