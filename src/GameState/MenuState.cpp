@@ -39,6 +39,10 @@ bool MenuState::handleNotifiedEvents(sf::Event& event, float)
             m_loopAgain = false;
             m_pNextState = StateManager::getState("race");
         }
+        else if (event.key.code == sf::Keyboard::Escape) {
+            m_loopAgain = false;
+            m_pNextState = NULL;
+        }
     }
     
     return m_loopAgain;

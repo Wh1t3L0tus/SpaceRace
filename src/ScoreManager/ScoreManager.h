@@ -43,6 +43,12 @@ public:
     
     void clean();
     
+    /**
+     * Get the scores of the 10 top players
+     * @return a vector of pointers to pair<string, int> (with a size between 0 and 10)
+     */
+    const vector<pair<string, int>* >& getScores();
+    
     virtual ~ScoreManager();
 private:
     string                      m_filename;

@@ -47,6 +47,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/GameState/GameOverState.o \
 	${OBJECTDIR}/src/GameState/IntroState.o \
 	${OBJECTDIR}/src/GameState/MenuState.o \
+	${OBJECTDIR}/src/GameState/NewRecordState.o \
 	${OBJECTDIR}/src/GameState/PauseState.o \
 	${OBJECTDIR}/src/GameState/RaceState.o \
 	${OBJECTDIR}/src/GameState/StateManager.o \
@@ -86,117 +87,122 @@ spacerace_debug: ${OBJECTFILES}
 ${OBJECTDIR}/src/Background/Star.o: src/Background/Star.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/Background
 	${RM} "$@.d"
-	$(COMPILE.cc) -O3 -Wall -I/usr/local/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Background/Star.o src/Background/Star.cpp
+	$(COMPILE.cc) -O3 -Wall -I/usr/local/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -Isrc/ScoreManager -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Background/Star.o src/Background/Star.cpp
 
 ${OBJECTDIR}/src/Background/StarBackground.o: src/Background/StarBackground.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/Background
 	${RM} "$@.d"
-	$(COMPILE.cc) -O3 -Wall -I/usr/local/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Background/StarBackground.o src/Background/StarBackground.cpp
+	$(COMPILE.cc) -O3 -Wall -I/usr/local/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -Isrc/ScoreManager -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Background/StarBackground.o src/Background/StarBackground.cpp
 
 ${OBJECTDIR}/src/Background/StarField.o: src/Background/StarField.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/Background
 	${RM} "$@.d"
-	$(COMPILE.cc) -O3 -Wall -I/usr/local/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Background/StarField.o src/Background/StarField.cpp
+	$(COMPILE.cc) -O3 -Wall -I/usr/local/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -Isrc/ScoreManager -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Background/StarField.o src/Background/StarField.cpp
 
 ${OBJECTDIR}/src/Collider/Collider.o: src/Collider/Collider.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/Collider
 	${RM} "$@.d"
-	$(COMPILE.cc) -O3 -Wall -I/usr/local/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Collider/Collider.o src/Collider/Collider.cpp
+	$(COMPILE.cc) -O3 -Wall -I/usr/local/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -Isrc/ScoreManager -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Collider/Collider.o src/Collider/Collider.cpp
 
 ${OBJECTDIR}/src/ContentManager/ContentManager.o: src/ContentManager/ContentManager.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/ContentManager
 	${RM} "$@.d"
-	$(COMPILE.cc) -O3 -Wall -I/usr/local/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/ContentManager/ContentManager.o src/ContentManager/ContentManager.cpp
+	$(COMPILE.cc) -O3 -Wall -I/usr/local/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -Isrc/ScoreManager -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/ContentManager/ContentManager.o src/ContentManager/ContentManager.cpp
 
 ${OBJECTDIR}/src/Entity/Entity.o: src/Entity/Entity.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/Entity
 	${RM} "$@.d"
-	$(COMPILE.cc) -O3 -Wall -I/usr/local/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Entity/Entity.o src/Entity/Entity.cpp
+	$(COMPILE.cc) -O3 -Wall -I/usr/local/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -Isrc/ScoreManager -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Entity/Entity.o src/Entity/Entity.cpp
 
 ${OBJECTDIR}/src/Entity/MobManager.o: src/Entity/MobManager.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/Entity
 	${RM} "$@.d"
-	$(COMPILE.cc) -O3 -Wall -I/usr/local/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Entity/MobManager.o src/Entity/MobManager.cpp
+	$(COMPILE.cc) -O3 -Wall -I/usr/local/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -Isrc/ScoreManager -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Entity/MobManager.o src/Entity/MobManager.cpp
 
 ${OBJECTDIR}/src/Entity/Player.o: src/Entity/Player.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/Entity
 	${RM} "$@.d"
-	$(COMPILE.cc) -O3 -Wall -I/usr/local/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Entity/Player.o src/Entity/Player.cpp
+	$(COMPILE.cc) -O3 -Wall -I/usr/local/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -Isrc/ScoreManager -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Entity/Player.o src/Entity/Player.cpp
 
 ${OBJECTDIR}/src/Entity/SpaceShip.o: src/Entity/SpaceShip.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/Entity
 	${RM} "$@.d"
-	$(COMPILE.cc) -O3 -Wall -I/usr/local/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Entity/SpaceShip.o src/Entity/SpaceShip.cpp
+	$(COMPILE.cc) -O3 -Wall -I/usr/local/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -Isrc/ScoreManager -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Entity/SpaceShip.o src/Entity/SpaceShip.cpp
 
 ${OBJECTDIR}/src/GameState/GameOverState.o: src/GameState/GameOverState.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/GameState
 	${RM} "$@.d"
-	$(COMPILE.cc) -O3 -Wall -I/usr/local/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/GameState/GameOverState.o src/GameState/GameOverState.cpp
+	$(COMPILE.cc) -O3 -Wall -I/usr/local/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -Isrc/ScoreManager -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/GameState/GameOverState.o src/GameState/GameOverState.cpp
 
 ${OBJECTDIR}/src/GameState/IntroState.o: src/GameState/IntroState.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/GameState
 	${RM} "$@.d"
-	$(COMPILE.cc) -O3 -Wall -I/usr/local/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/GameState/IntroState.o src/GameState/IntroState.cpp
+	$(COMPILE.cc) -O3 -Wall -I/usr/local/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -Isrc/ScoreManager -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/GameState/IntroState.o src/GameState/IntroState.cpp
 
 ${OBJECTDIR}/src/GameState/MenuState.o: src/GameState/MenuState.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/GameState
 	${RM} "$@.d"
-	$(COMPILE.cc) -O3 -Wall -I/usr/local/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/GameState/MenuState.o src/GameState/MenuState.cpp
+	$(COMPILE.cc) -O3 -Wall -I/usr/local/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -Isrc/ScoreManager -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/GameState/MenuState.o src/GameState/MenuState.cpp
+
+${OBJECTDIR}/src/GameState/NewRecordState.o: src/GameState/NewRecordState.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/GameState
+	${RM} "$@.d"
+	$(COMPILE.cc) -O3 -Wall -I/usr/local/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -Isrc/ScoreManager -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/GameState/NewRecordState.o src/GameState/NewRecordState.cpp
 
 ${OBJECTDIR}/src/GameState/PauseState.o: src/GameState/PauseState.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/GameState
 	${RM} "$@.d"
-	$(COMPILE.cc) -O3 -Wall -I/usr/local/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/GameState/PauseState.o src/GameState/PauseState.cpp
+	$(COMPILE.cc) -O3 -Wall -I/usr/local/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -Isrc/ScoreManager -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/GameState/PauseState.o src/GameState/PauseState.cpp
 
 ${OBJECTDIR}/src/GameState/RaceState.o: src/GameState/RaceState.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/GameState
 	${RM} "$@.d"
-	$(COMPILE.cc) -O3 -Wall -I/usr/local/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/GameState/RaceState.o src/GameState/RaceState.cpp
+	$(COMPILE.cc) -O3 -Wall -I/usr/local/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -Isrc/ScoreManager -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/GameState/RaceState.o src/GameState/RaceState.cpp
 
 ${OBJECTDIR}/src/GameState/StateManager.o: src/GameState/StateManager.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/GameState
 	${RM} "$@.d"
-	$(COMPILE.cc) -O3 -Wall -I/usr/local/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/GameState/StateManager.o src/GameState/StateManager.cpp
+	$(COMPILE.cc) -O3 -Wall -I/usr/local/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -Isrc/ScoreManager -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/GameState/StateManager.o src/GameState/StateManager.cpp
 
 ${OBJECTDIR}/src/Gui/RaceGui.o: src/Gui/RaceGui.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/Gui
 	${RM} "$@.d"
-	$(COMPILE.cc) -O3 -Wall -I/usr/local/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Gui/RaceGui.o src/Gui/RaceGui.cpp
+	$(COMPILE.cc) -O3 -Wall -I/usr/local/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -Isrc/ScoreManager -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Gui/RaceGui.o src/Gui/RaceGui.cpp
 
 ${OBJECTDIR}/src/Random.o: src/Random.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -O3 -Wall -I/usr/local/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Random.o src/Random.cpp
+	$(COMPILE.cc) -O3 -Wall -I/usr/local/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -Isrc/ScoreManager -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Random.o src/Random.cpp
 
 ${OBJECTDIR}/src/ScoreManager/ScoreManager.o: src/ScoreManager/ScoreManager.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/ScoreManager
 	${RM} "$@.d"
-	$(COMPILE.cc) -O3 -Wall -I/usr/local/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/ScoreManager/ScoreManager.o src/ScoreManager/ScoreManager.cpp
+	$(COMPILE.cc) -O3 -Wall -I/usr/local/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -Isrc/ScoreManager -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/ScoreManager/ScoreManager.o src/ScoreManager/ScoreManager.cpp
 
 ${OBJECTDIR}/src/Spawner/ScriptedSpawner.o: src/Spawner/ScriptedSpawner.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/Spawner
 	${RM} "$@.d"
-	$(COMPILE.cc) -O3 -Wall -I/usr/local/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Spawner/ScriptedSpawner.o src/Spawner/ScriptedSpawner.cpp
+	$(COMPILE.cc) -O3 -Wall -I/usr/local/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -Isrc/ScoreManager -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Spawner/ScriptedSpawner.o src/Spawner/ScriptedSpawner.cpp
 
 ${OBJECTDIR}/src/Spawner/Spawner.o: src/Spawner/Spawner.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/Spawner
 	${RM} "$@.d"
-	$(COMPILE.cc) -O3 -Wall -I/usr/local/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Spawner/Spawner.o src/Spawner/Spawner.cpp
+	$(COMPILE.cc) -O3 -Wall -I/usr/local/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -Isrc/ScoreManager -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Spawner/Spawner.o src/Spawner/Spawner.cpp
 
 ${OBJECTDIR}/src/WavesLoader/Wave.o: src/WavesLoader/Wave.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/WavesLoader
 	${RM} "$@.d"
-	$(COMPILE.cc) -O3 -Wall -I/usr/local/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/WavesLoader/Wave.o src/WavesLoader/Wave.cpp
+	$(COMPILE.cc) -O3 -Wall -I/usr/local/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -Isrc/ScoreManager -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/WavesLoader/Wave.o src/WavesLoader/Wave.cpp
 
 ${OBJECTDIR}/src/WavesLoader/WavesLoader.o: src/WavesLoader/WavesLoader.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/WavesLoader
 	${RM} "$@.d"
-	$(COMPILE.cc) -O3 -Wall -I/usr/local/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/WavesLoader/WavesLoader.o src/WavesLoader/WavesLoader.cpp
+	$(COMPILE.cc) -O3 -Wall -I/usr/local/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -Isrc/ScoreManager -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/WavesLoader/WavesLoader.o src/WavesLoader/WavesLoader.cpp
 
 ${OBJECTDIR}/src/main.o: src/main.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -O3 -Wall -I/usr/local/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/main.o src/main.cpp
+	$(COMPILE.cc) -O3 -Wall -I/usr/local/include -Isrc/Background -Isrc/Collider -Isrc/ContentManager -Isrc/Entity -Isrc/GameState -Isrc/Gui -Isrc/Spawner -Isrc -Isrc/WavesLoader -Isrc/ScoreManager -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/main.o src/main.cpp
 
 # Subprojects
 .build-subprojects:

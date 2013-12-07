@@ -13,6 +13,7 @@
 #include "MobManager.h"
 #include "StarBackground.h"
 #include "RaceGui.h"
+#include "ScoreManager.h"
 
 
 class RaceState : public GameState {
@@ -25,6 +26,7 @@ public:
     virtual bool handleNotifiedEvents(sf::Event &event, float elapsedTime);
 //    virtual GameState* quit();
 private:
+    ScoreManager m_scoreMgr;
     MobManager m_mobMgr;    
     Player m_player;
     StarBackground m_stars;

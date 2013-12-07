@@ -14,6 +14,7 @@ ScoreManager::ScoreManager() {
 }
 
 void ScoreManager::init(string filename) {
+    clean();
     m_filename = filename;
 
     fstream file(filename.c_str(), fstream::in);
@@ -25,9 +26,6 @@ void ScoreManager::init(string filename) {
     
     for (Json::UInt i = 0; i < jsonRoot["scores"].size(); i++)
         m_scores.push_back(new pair<string, int>(jsonRoot["scores"][i]["name"].asString(), jsonRoot["scores"][i]["score"].asInt()));
-    
-    for (unsigned int i = 0; i < m_scores.size(); i++)
-        cout << m_scores.at(i)->first << " " << m_scores.at(i)->second << endl;
 }
 
 int ScoreManager::getRank(int score) {
@@ -87,13 +85,13 @@ void ScoreManager::saveBestScore(string name, int score) {
     fstream file(m_filename.c_str(), fstream::out);
     Json::StyledWriter jsonWriter;
     file << jsonWriter.write(newJsonRoot);
-    cout << jsonWriter.write(newJsonRoot) << endl;
     file.close();
 }
 
 void ScoreManager::clean() {
     for (unsigned int i = 0; i < m_scores.size(); i++)
         delete m_scores.at(i);
+    m_scores.clear();
 }
 
 
@@ -101,3 +99,6 @@ ScoreManager::~ScoreManager() {
     clean();
 }
 
+const vector<pair<string, int>* >& ScoreManager::getScores() {
+    return m_scores;
+}

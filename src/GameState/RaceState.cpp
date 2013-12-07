@@ -14,6 +14,10 @@
 #include "LaneExplorer.h"
 #include "Gui/RaceGui.h"
 #include "StateManager.h"
+#include "ScoreManager.h"
+#include "NewRecordState.h"
+
+#include <math.h>
 
 #include <iostream>
 
@@ -35,6 +39,8 @@ void RaceState::init()
         m_player.setPosition(LaneExplorer::getAbscissaFromLane(3), 600 - m_player.size().y);
         m_player.setSpeed(2000);
         m_stars.init();
+        m_scoreMgr.init("etc/scripts/scores.json");
+        m_score = 0;
     }
     else
         m_isPaused = false;
@@ -53,7 +59,15 @@ bool RaceState::update(sf::RenderWindow& window, float elapsedTime)
     if (m_player.isAlive() == false)
     {
         m_loopAgain = false;
-        m_pNextState = StateManager::getState("gameOver");
+        
+        
+        int tmp = m_scoreMgr.getRank(m_score);
+        if (tmp > 10)
+            m_pNextState = StateManager::getState("gameOver");
+        else {
+            m_pNextState = StateManager::getState("newRecord");
+            ((NewRecordState*) m_pNextState)->init(&m_scoreMgr, m_score);
+        }
     }
     
     m_stars.scroll(elapsedTime, (m_mobMgr.speed() / 2.0) + 100.0);
@@ -62,7 +76,7 @@ bool RaceState::update(sf::RenderWindow& window, float elapsedTime)
     if (m_mobMgr.speed() == 0.0)
         multiplicator = 0.0;
     else
-        multiplicator = m_mobMgr.speed() / 1060;
+        multiplicator = exp(m_mobMgr.speed() / 1060.0 * 3.0);
     
     m_score += multiplicator  * (elapsedTime * 100);
     m_gui.update(m_mobMgr.speed(), (int)m_score);

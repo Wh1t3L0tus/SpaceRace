@@ -21,7 +21,7 @@ void GameOverState::init()
     m_sprite.setPosition(0, 0);
 }
 
-bool GameOverState::update(sf::RenderWindow& window, float elapsedTime)
+bool GameOverState::update(sf::RenderWindow& window, float)
 {
         window.clear();
         window.draw(m_sprite);

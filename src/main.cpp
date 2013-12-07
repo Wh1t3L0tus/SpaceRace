@@ -15,6 +15,7 @@
 #include "ContentManager/ContentManager.h"
 #include "StateManager.h"
 #include "GameOverState.h"
+#include "NewRecordState.h"
 
 using namespace std;
 
@@ -25,6 +26,7 @@ int main(int , char**) {
     StateManager::addState("pause", new PauseState());
     StateManager::addState("intro", new IntroState());
     StateManager::addState("gameOver", new GameOverState());
+    StateManager::addState("newRecord", new NewRecordState());
     
     sf::RenderWindow window(sf::VideoMode(900, 700), "Space Race");
     window.setFramerateLimit(60);

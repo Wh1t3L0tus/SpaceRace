@@ -13,6 +13,7 @@
           <itemPath>etc/fonts/arial.ttf</itemPath>
         </logicalFolder>
         <logicalFolder name="scripts" displayName="scripts" projectFiles="true">
+          <itemPath>etc/scripts/scores.json</itemPath>
           <itemPath>etc/scripts/spawner.ini</itemPath>
           <itemPath>etc/scripts/spawner.json</itemPath>
         </logicalFolder>
@@ -80,6 +81,8 @@
         <itemPath>src/GameState/IntroState.h</itemPath>
         <itemPath>src/GameState/MenuState.cpp</itemPath>
         <itemPath>src/GameState/MenuState.h</itemPath>
+        <itemPath>src/GameState/NewRecordState.cpp</itemPath>
+        <itemPath>src/GameState/NewRecordState.h</itemPath>
         <itemPath>src/GameState/PauseState.cpp</itemPath>
         <itemPath>src/GameState/PauseState.h</itemPath>
         <itemPath>src/GameState/RaceState.cpp</itemPath>
@@ -164,6 +167,7 @@
             <pElem>src/Spawner</pElem>
             <pElem>src</pElem>
             <pElem>src/WavesLoader</pElem>
+            <pElem>src/ScoreManager</pElem>
           </incDir>
           <commandLine>-Wextra -pedantic</commandLine>
           <warningLevel>2</warningLevel>
@@ -213,6 +217,8 @@
       <item path="etc/ospacecraft4.png" ex="false" tool="3" flavor2="0">
       </item>
       <item path="etc/pause.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="etc/scripts/scores.json" ex="false" tool="3" flavor2="0">
       </item>
       <item path="etc/scripts/spawner.ini" ex="false" tool="3" flavor2="0">
       </item>
@@ -291,6 +297,10 @@
       <item path="src/GameState/MenuState.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/GameState/MenuState.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/GameState/NewRecordState.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/GameState/NewRecordState.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/GameState/PauseState.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -360,6 +370,7 @@
             <pElem>src/Spawner</pElem>
             <pElem>src</pElem>
             <pElem>src/WavesLoader</pElem>
+            <pElem>src/ScoreManager</pElem>
           </incDir>
           <commandLine>-Wextra -pedantic</commandLine>
           <warningLevel>2</warningLevel>
@@ -415,6 +426,8 @@
       <item path="etc/ospacecraft4.png" ex="false" tool="3" flavor2="0">
       </item>
       <item path="etc/pause.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="etc/scripts/scores.json" ex="false" tool="3" flavor2="0">
       </item>
       <item path="etc/scripts/spawner.ini" ex="false" tool="3" flavor2="0">
       </item>
@@ -493,6 +506,10 @@
       <item path="src/GameState/MenuState.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/GameState/MenuState.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/GameState/NewRecordState.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/GameState/NewRecordState.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/GameState/PauseState.cpp" ex="false" tool="1" flavor2="0">
       </item>

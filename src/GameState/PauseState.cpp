@@ -36,11 +36,16 @@ bool PauseState::handleNotifiedEvents(sf::Event& event, float)
 {
     if (event.type == sf::Event::KeyPressed)
     {
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::F1))
+        if (event.key.code == sf::Keyboard::F1)
         {
             m_loopAgain = false;
             m_pNextState = StateManager::getState("race");
-        }    
+        }
+        else if (event.key.code == sf::Keyboard::Escape) {
+            m_loopAgain = false;
+            m_pNextState = NULL;
+        }
+        
     }
     return m_loopAgain;
 }
