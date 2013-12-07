@@ -29,7 +29,6 @@ int main(int , char**) {
     StateManager::addState("newRecord", new NewRecordState());
     
     sf::RenderWindow window(sf::VideoMode(900, 700), "Space Race");
-    window.setFramerateLimit(60);
     
     StateManager::run("menu", window);    
     
