@@ -22,8 +22,8 @@ public:
     
     void init(ScoreManager* scoreMgr, int score);
     
-    virtual bool update(sf::RenderWindow &window, float elapsedTime);
-    virtual bool handleNotifiedEvents(sf::Event&, float);
+    virtual void update(sf::RenderWindow &window, float elapsedTime);
+    virtual void handleNotifiedEvents(sf::Event&, float);
 
 
 private:

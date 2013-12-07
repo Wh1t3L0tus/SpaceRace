@@ -22,30 +22,23 @@ void PauseState::init()
     m_sprite.setPosition(0, 0);
 }
 
-bool PauseState::update(sf::RenderWindow& window, float)
+void PauseState::update(sf::RenderWindow& window, float)
 {
     window.clear(); 
     sf::sleep(sf::milliseconds(10));
     window.draw(m_sprite);
     window.display();
-    
-    return m_loopAgain;
 }
 
-bool PauseState::handleNotifiedEvents(sf::Event& event, float)
+void PauseState::handleNotifiedEvents(sf::Event& event, float)
 {
     if (event.type == sf::Event::KeyPressed)
     {
         if (event.key.code == sf::Keyboard::F1)
-        {
-            m_loopAgain = false;
-            m_pNextState = StateManager::getState("race");
-        }
+            goToState(StateManager::getState("race"));
         else if (event.key.code == sf::Keyboard::Escape) {
-            m_loopAgain = false;
-            m_pNextState = NULL;
+            exit();
         }
         
     }
-    return m_loopAgain;
 }

@@ -36,7 +36,7 @@ public:
      * @param sf::Event& event : the event to handle
      * @param float elapsedTime : the time elapsed since the last frame
      */
-    virtual bool handleNotifiedEvents(sf::Event&, float){return true;}
+    virtual void handleNotifiedEvents(sf::Event&, float){}
     
     /** updateLoop
      * Call update and the handleX methods which are defined by the user
@@ -47,21 +47,21 @@ public:
      */
     bool updateLoop(sf::RenderWindow &window, float elapsedTime) {
         sf::Event event;
-        bool loopAgain = true;
+        m_loopAgain = true;
         while (window.pollEvent(event))
         {
             if (event.type == sf::Event::Closed)
             {
-                return handleCloseEvent(window);
+                handleCloseEvent(window);
             }
             else
-                loopAgain = handleNotifiedEvents(event, elapsedTime);
+                handleNotifiedEvents(event, elapsedTime);
         }
         
-        if (loopAgain)
-            return update(window, elapsedTime);   
-        else
-            return false;
+        if (m_loopAgain)
+            update(window, elapsedTime);   
+        
+        return m_loopAgain;
     }
     
     /** update
@@ -69,21 +69,34 @@ public:
      * 
      * @param window : the window on which to draw
      * @param elapsedTime : the time elapsed since the last frame
-     * @return false when you have to change of state
      */
-    virtual bool update(sf::RenderWindow &window, float elapsedTime) = 0;
+    virtual void update(sf::RenderWindow &window, float elapsedTime) = 0;
     
     /** handleCloseEvent
      * Put here what to do on "close window" requests
      * @param window : the window to close
-     * @return false if the window is closed
      */
-    virtual bool handleCloseEvent(sf::RenderWindow& window)
+    virtual void handleCloseEvent(sf::RenderWindow& window)
     {
         window.close();
         m_pNextState = NULL;
         m_loopAgain = false;
-        return false;
+    }
+    
+    /**
+     * Quit the current state to go to the state "state"
+     * @param state : the next state to run (can be NULL)
+     */
+    void goToState(GameState* state) {
+        m_loopAgain = false;
+        m_pNextState = state;
+    }
+    
+    /**
+     * Quit the current state and quit the StateManager::run() method
+     */
+    void exit() {
+        goToState(NULL);
     }
     
     /** quit

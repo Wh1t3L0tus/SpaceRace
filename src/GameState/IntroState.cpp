@@ -26,18 +26,13 @@ void IntroState::init()
     m_sprite.setPosition(0, 0);
 }
 
-bool IntroState::update(sf::RenderWindow& window, float)
+void IntroState::update(sf::RenderWindow& window, float)
 {
     if (m_clock.getElapsedTime().asSeconds() >= 2)
-    {
-        m_loopAgain = false;
-        m_pNextState = StateManager::getState("intro");
-    }
+        goToState(StateManager::getState("menu"));
     window.clear();
     sf::sleep(sf::milliseconds(10));
     window.draw(m_sprite);
     window.display();
-    
-    return m_loopAgain;
 }
 

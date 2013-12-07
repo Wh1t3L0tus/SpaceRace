@@ -18,8 +18,8 @@ public:
     virtual ~PauseState();
     
     virtual void init();
-    virtual bool update(sf::RenderWindow &window, float elapsedTime);
-    virtual bool handleNotifiedEvents(sf::Event& event, float elapsedTime);
+    virtual void update(sf::RenderWindow &window, float elapsedTime);
+    virtual void handleNotifiedEvents(sf::Event& event, float elapsedTime);
 //    virtual GameState* quit();
 private:
     sf::Texture m_texture;

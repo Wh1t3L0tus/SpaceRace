@@ -21,31 +21,23 @@ void MenuState::init()
     m_sprite.setPosition(0, 0);
 }
 
-bool MenuState::update(sf::RenderWindow &window, float)
+void MenuState::update(sf::RenderWindow &window, float)
 {
     window.clear();
     sf::sleep(sf::milliseconds(10));
     window.draw(m_sprite);
     window.display();
-    return m_loopAgain;
 }
 
-bool MenuState::handleNotifiedEvents(sf::Event& event, float)
+void MenuState::handleNotifiedEvents(sf::Event& event, float)
 {
     if (event.type == sf::Event::KeyPressed)
     {
         if (event.key.code == sf::Keyboard::Return)
-        {
-            m_loopAgain = false;
-            m_pNextState = StateManager::getState("race");
-        }
-        else if (event.key.code == sf::Keyboard::Escape) {
-            m_loopAgain = false;
-            m_pNextState = NULL;
-        }
+            goToState(StateManager::getState("race"));
+        else if (event.key.code == sf::Keyboard::Escape)
+            exit();
     }
-    
-    return m_loopAgain;
 }
 
 MenuState::~MenuState() {

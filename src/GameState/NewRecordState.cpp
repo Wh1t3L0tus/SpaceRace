@@ -77,7 +77,7 @@ void NewRecordState::init(ScoreManager* scoreMgr, int score) {
     m_textNewScore.setString("NEW RECORD : " + oss1.str() + "\nYour rank : " + oss2.str());
 }
 
-bool NewRecordState::update(sf::RenderWindow& window, float) {
+void NewRecordState::update(sf::RenderWindow& window, float) {
     m_delChar = false;
     window.clear(sf::Color::White);
     for (int i = 0; i < 10; i++) {
@@ -93,14 +93,12 @@ bool NewRecordState::update(sf::RenderWindow& window, float) {
     
     sf::sleep(sf::milliseconds(10));
     window.display();
-    return m_loopAgain;
 }
 
-bool NewRecordState::handleNotifiedEvents(sf::Event& event, float) {
+void NewRecordState::handleNotifiedEvents(sf::Event& event, float) {
     if (event.type == sf::Event::KeyPressed) {
         if (event.key.code == sf::Keyboard::Escape) {
-            m_loopAgain = false;
-            m_pNextState = NULL;
+            exit();
         }
         if (event.key.code == sf::Keyboard::BackSpace) {
             m_delChar = true;
@@ -110,14 +108,10 @@ bool NewRecordState::handleNotifiedEvents(sf::Event& event, float) {
                 m_enteredPseudo = m_enteredPseudo.substr(0, m_enteredPseudo.size() - 1);    
         }
         else if (event.key.code == sf::Keyboard::Return) {
-            m_loopAgain = false;
-            m_pNextState = StateManager::getState("menu");
-            m_pScoreMgr->saveBestScore(m_enteredPseudo, m_score);    
+            m_pScoreMgr->saveBestScore(m_enteredPseudo, m_score);
+            goToState(StateManager::getState("menu"));
         }
     }
     else if (event.type == sf::Event::TextEntered && m_enteredPseudo.size() < 10 && !m_delChar)
         m_enteredPseudo += static_cast<char>(event.text.unicode);
-         
-        
-    return m_loopAgain;
 }

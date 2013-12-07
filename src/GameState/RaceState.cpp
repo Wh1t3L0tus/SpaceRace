@@ -46,7 +46,7 @@ void RaceState::init()
         m_isPaused = false;
 }
 
-bool RaceState::update(sf::RenderWindow& window, float elapsedTime)
+void RaceState::update(sf::RenderWindow& window, float elapsedTime)
 {
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
     {
@@ -58,15 +58,12 @@ bool RaceState::update(sf::RenderWindow& window, float elapsedTime)
     
     if (m_player.isAlive() == false)
     {
-        m_loopAgain = false;
-        
-        
-        int tmp = m_scoreMgr.getRank(m_score);
-        if (tmp > 10)
-            m_pNextState = StateManager::getState("gameOver");
+        int rank = m_scoreMgr.getRank(m_score);
+        if (rank > 10)
+            goToState(StateManager::getState("gameOver"));
         else {
-            m_pNextState = StateManager::getState("newRecord");
-            ((NewRecordState*) m_pNextState)->init(&m_scoreMgr, m_score);
+            ((NewRecordState*) StateManager::getState("newRecord"))->init(&m_scoreMgr, m_score);
+            goToState(StateManager::getState("newRecord"));
         }
     }
     
@@ -92,11 +89,9 @@ bool RaceState::update(sf::RenderWindow& window, float elapsedTime)
     window.display();
     
     sf::sleep(sf::milliseconds(10));
-
-    return m_loopAgain;
 }
 
-bool RaceState::handleNotifiedEvents(sf::Event& event, float)
+void RaceState::handleNotifiedEvents(sf::Event& event, float)
 {
     if (event.type == sf::Event::KeyPressed)
     {
@@ -111,10 +106,7 @@ bool RaceState::handleNotifiedEvents(sf::Event& event, float)
         else if (event.key.code == sf::Keyboard::F1)
         {
             m_isPaused = true;
-            m_loopAgain = false;
-            m_pNextState = StateManager::getState("pause");
+            goToState(StateManager::getState("pause"));
         }
     }
-    
-    return m_loopAgain;
 }
